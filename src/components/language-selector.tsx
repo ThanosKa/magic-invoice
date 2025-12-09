@@ -48,15 +48,15 @@ export function LanguageSelector() {
       value={locale}
       onValueChange={(val) => setLocale(val as typeof locale)}
     >
-      <SelectTrigger className="w-40">
+      <SelectTrigger className="w-40 cursor-pointer">
         <div className="flex items-center gap-2">
           <GlobeIcon className="h-4 w-4" />
           <SelectValue placeholder={t("common.language")} />
         </div>
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent className="cursor-pointer">
         {locales.map((loc) => (
-          <SelectItem key={loc} value={loc}>
+          <SelectItem key={loc} value={loc} className="cursor-pointer">
             {labels[loc]}
           </SelectItem>
         ))}

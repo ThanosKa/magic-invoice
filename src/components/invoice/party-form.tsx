@@ -43,7 +43,7 @@ export function PartyForm() {
                         )}
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="space-y-3">
                         <div className="space-y-2">
                             <Label htmlFor="sender-email">{t('invoice.form.party.sender.emailLabel')}</Label>
                             <Input
@@ -140,7 +140,7 @@ export function PartyForm() {
                         )}
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="space-y-3">
                         <div className="space-y-2">
                             <Label htmlFor="receiver-email">{t('invoice.form.party.receiver.emailLabel')}</Label>
                             <Input
