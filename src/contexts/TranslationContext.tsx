@@ -2,42 +2,65 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import enTranslations from '@/i18n/locales/en.json';
+import grTranslations from '@/i18n/locales/gr.json';
 
+export type Locale = 'en' | 'gr';
 type Translations = typeof enTranslations;
+type TranslationMap = Record<Locale, Translations>;
 
 interface TranslationContextType {
-    locale: string;
+    locale: Locale;
     t: (key: string) => string;
-    setLocale: (locale: string) => void;
+    setLocale: (locale: Locale) => void;
 }
 
 const TranslationContext = createContext<TranslationContextType | undefined>(undefined);
 
+export const LOCALE_TO_BCP47: Record<Locale, string> = {
+    en: 'en-US',
+    gr: 'el-GR',
+};
+
+const TRANSLATIONS: TranslationMap = {
+    en: enTranslations,
+    gr: grTranslations,
+};
+
+const FALLBACK_LOCALE: Locale = 'en';
+
 export function TranslationProvider({ children }: { children: React.ReactNode }) {
-    const [locale, setLocaleState] = useState('en');
+    const [locale, setLocaleState] = useState<Locale>(FALLBACK_LOCALE);
     const [translations, setTranslations] = useState<Translations>(enTranslations);
+
+    const setLocale = (newLocale: Locale) => {
+        const nextLocale = TRANSLATIONS[newLocale] ? newLocale : FALLBACK_LOCALE;
+        setLocaleState(nextLocale);
+        localStorage.setItem('magic-invoice-locale', nextLocale);
+    };
 
     useEffect(() => {
         // Load locale from localStorage on mount
-        const savedLocale = localStorage.getItem('magic-invoice-locale') || 'en';
-        setLocaleState(savedLocale);
+        const savedLocale = (localStorage.getItem('magic-invoice-locale') as Locale | null) || FALLBACK_LOCALE;
+        setLocale(savedLocale);
     }, []);
 
-    const setLocale = (newLocale: string) => {
-        setLocaleState(newLocale);
-        localStorage.setItem('magic-invoice-locale', newLocale);
-    };
+    useEffect(() => {
+        const resolvedTranslations = TRANSLATIONS[locale] || TRANSLATIONS[FALLBACK_LOCALE];
+        setTranslations(resolvedTranslations);
+    }, [locale]);
 
     const t = (key: string): string => {
         const keys = key.split('.');
-        let value: unknown = translations;
+        const lookup = (source: Translations): string | undefined => {
+            let value: unknown = source;
+            for (const k of keys) {
+                value = (value as Record<string, unknown>)?.[k];
+                if (value === undefined) return undefined;
+            }
+            return typeof value === 'string' ? value : undefined;
+        };
 
-        for (const k of keys) {
-            value = (value as Record<string, unknown>)?.[k];
-            if (value === undefined) return key;
-        }
-
-        return typeof value === 'string' ? value : key;
+        return lookup(translations) || lookup(TRANSLATIONS[FALLBACK_LOCALE]) || key;
     };
 
     return (

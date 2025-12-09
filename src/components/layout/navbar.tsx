@@ -7,11 +7,13 @@ import { motion } from "framer-motion";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/contexts/TranslationContext";
 
 export function Navbar() {
     const { setTheme, theme } = useTheme();
     const [isScrolled, setIsScrolled] = React.useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+    const { t } = useTranslation();
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -22,9 +24,9 @@ export function Navbar() {
     }, []);
 
     const navLinks = [
-        { href: "#features", label: "Features" },
-        { href: "#how-it-works", label: "How it Works" },
-        { href: "#testimonials", label: "Testimonials" },
+        { href: "#features", label: t('header.features') },
+        { href: "#how-it-works", label: t('header.howItWorks') },
+        { href: "#testimonials", label: t('header.testimonials') },
     ];
 
     return (
@@ -42,7 +44,7 @@ export function Navbar() {
             <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 group">
                     <div className="size-8 rounded-lg bg-foreground group-hover:scale-105 transition-transform duration-300" />
-                    <span className="text-xl font-bold tracking-tight">Magic Invoice</span>
+                    <span className="text-xl font-bold tracking-tight">{t('common.appName')}</span>
                 </Link>
 
                 {/* Desktop Nav */}
@@ -67,9 +69,9 @@ export function Navbar() {
                     >
                         <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                         <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                        <span className="sr-only">Toggle theme</span>
+                        <span className="sr-only">{t('common.toggleTheme')}</span>
                     </Button>
-                    <Button className="rounded-full px-6 font-medium">Get Started</Button>
+                    <Button className="rounded-full px-6 font-medium">{t('header.getStarted')}</Button>
                 </div>
 
                 {/* Mobile Menu Toggle */}
@@ -101,7 +103,7 @@ export function Navbar() {
                             </Link>
                         ))}
                         <div className="flex items-center justify-between mt-4">
-                            <span className="text-muted-foreground text-sm">Switch Theme</span>
+                            <span className="text-muted-foreground text-sm">{t('common.toggleTheme')}</span>
                             <Button
                                 variant="outline"
                                 size="icon"
@@ -112,7 +114,7 @@ export function Navbar() {
                                 <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                             </Button>
                         </div>
-                        <Button className="w-full rounded-full mt-4" size="lg">Get Started</Button>
+                        <Button className="w-full rounded-full mt-4" size="lg">{t('header.getStarted')}</Button>
                     </nav>
                 </motion.div>
             )}

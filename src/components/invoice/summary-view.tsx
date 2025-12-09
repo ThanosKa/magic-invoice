@@ -4,11 +4,12 @@ import { useFormContext, useWatch } from 'react-hook-form';
 import { FormSchemaType } from '@/lib/schemas';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { formatCurrency, formatDate } from '@/lib/helpers';
-import { useTranslation } from "@/contexts/TranslationContext";
+import { LOCALE_TO_BCP47, useTranslation } from "@/contexts/TranslationContext";
 
 export function SummaryView() {
     const { control } = useFormContext<FormSchemaType>();
-    const { t } = useTranslation();
+    const { t, locale } = useTranslation();
+    const intlLocale = LOCALE_TO_BCP47[locale];
     const values = useWatch({ control });
 
     if (!values.details) return null;
@@ -59,16 +60,16 @@ export function SummaryView() {
                         </div>
                         <div>
                             <p className="text-sm text-muted-foreground">{t('invoice.form.summary.dateLabel')}</p>
-                            <p className="font-medium">{details.invoiceDate ? formatDate(details.invoiceDate) : '-'}</p>
+                            <p className="font-medium">{details.invoiceDate ? formatDate(details.invoiceDate, undefined, intlLocale) : '-'}</p>
                         </div>
                         <div>
                             <p className="text-sm text-muted-foreground">{t('invoice.form.summary.dueDateLabel')}</p>
-                            <p className="font-medium">{details.dueDate ? formatDate(details.dueDate) : '-'}</p>
+                            <p className="font-medium">{details.dueDate ? formatDate(details.dueDate, undefined, intlLocale) : '-'}</p>
                         </div>
                         <div>
                             <p className="text-sm text-muted-foreground">{t('invoice.form.summary.totalLabel')}</p>
                             <p className="font-bold text-primary">
-                                {formatCurrency(Number(details.totalAmount || 0), details.currency)}
+                                {formatCurrency(Number(details.totalAmount || 0), details.currency, intlLocale)}
                             </p>
                         </div>
                     </div>
@@ -79,7 +80,7 @@ export function SummaryView() {
                             {details.items?.map((item, i) => (
                                 <li key={i} className="flex justify-between text-sm">
                                     <span>{item.name} x {item.quantity}</span>
-                                    <span>{formatCurrency(Number(item.total || 0), details.currency)}</span>
+                                    <span>{formatCurrency(Number(item.total || 0), details.currency, intlLocale)}</span>
                                 </li>
                             ))}
                         </ul>

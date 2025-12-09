@@ -41,8 +41,8 @@ export function DetailsForm() {
                         {...register('details.invoiceNumber')}
                         placeholder={t('invoice.form.details.invoiceNumberPlaceholder')}
                     />
-                    {errors.details?.invoiceNumber && (
-                        <p className="text-sm text-destructive">{errors.details.invoiceNumber.message}</p>
+                    {errors.details?.invoiceNumber?.message && (
+                        <p className="text-sm text-destructive">{t(errors.details.invoiceNumber.message as string)}</p>
                     )}
                 </div>
 
@@ -64,8 +64,8 @@ export function DetailsForm() {
                             ))}
                         </SelectContent>
                     </Select>
-                    {errors.details?.currency && (
-                        <p className="text-sm text-destructive">{errors.details.currency.message}</p>
+                    {errors.details?.currency?.message && (
+                        <p className="text-sm text-destructive">{t(errors.details.currency.message as string)}</p>
                     )}
                 </div>
 
@@ -98,8 +98,8 @@ export function DetailsForm() {
                             />
                         </PopoverContent>
                     </Popover>
-                    {errors.details?.invoiceDate && (
-                        <p className="text-sm text-destructive">{errors.details.invoiceDate.message}</p>
+                    {errors.details?.invoiceDate?.message && (
+                        <p className="text-sm text-destructive">{t(errors.details.invoiceDate.message as string)}</p>
                     )}
                 </div>
 
@@ -132,8 +132,8 @@ export function DetailsForm() {
                             />
                         </PopoverContent>
                     </Popover>
-                    {errors.details?.dueDate && (
-                        <p className="text-sm text-destructive">{errors.details.dueDate.message}</p>
+                    {errors.details?.dueDate?.message && (
+                        <p className="text-sm text-destructive">{t(errors.details.dueDate.message as string)}</p>
                     )}
                 </div>
 

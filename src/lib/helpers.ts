@@ -1,11 +1,21 @@
 
 
-export function formatNumberWithCommas(num: number): string {
-    return num.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+export function formatNumberWithCommas(num: number, locale: string = 'en-US'): string {
+    if (!Number.isFinite(num)) return '0.00';
+    return num.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
-export function formatCurrency(amount: number, currency: string = 'USD'): string {
-    return `${getCurrencySymbol(currency)}${formatNumberWithCommas(amount)}`;
+export function formatCurrency(amount: number, currency: string = 'USD', locale: string = 'en-US'): string {
+    try {
+        return new Intl.NumberFormat(locale, {
+            style: 'currency',
+            currency,
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        }).format(amount);
+    } catch (error) {
+        return `${getCurrencySymbol(currency)}${formatNumberWithCommas(amount, locale)}`;
+    }
 }
 
 export function getCurrencySymbol(currency: string): string {
@@ -41,8 +51,12 @@ export const SHORT_DATE_OPTIONS: Intl.DateTimeFormatOptions = {
     day: 'numeric',
 };
 
-export function formatDate(date: Date, options: Intl.DateTimeFormatOptions = DATE_OPTIONS): string {
-    return new Intl.DateTimeFormat('en-US', options).format(date);
+export function formatDate(
+    date: Date,
+    options: Intl.DateTimeFormatOptions = DATE_OPTIONS,
+    locale: string = 'en-US'
+): string {
+    return new Intl.DateTimeFormat(locale, options).format(date);
 }
 
 

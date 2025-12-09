@@ -12,10 +12,36 @@
         "twitter": "Twitter",
         "toggleTheme": "Toggle theme",
         "previous": "Previous",
-        "next": "Next"
+        "next": "Next",
+        "switchToEnglish": "Switch to English",
+        "switchToGreek": "Switch to Greek",
+        "languageEnglish": "English",
+        "languageGreek": "Greek"
+    },
+    "errors": {
+        "customKeyRequired": "Key is required",
+        "customValueRequired": "Value is required",
+        "nameRequired": "Name is required",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email address",
+        "phoneRequired": "Phone is required",
+        "addressRequired": "Address is required",
+        "itemNameRequired": "Item name is required",
+        "quantityPositive": "Quantity must be positive",
+        "unitPricePositive": "Unit price must be positive",
+        "numberRequired": "A value is required",
+        "numberInvalid": "Please enter a valid number",
+        "amountNonNegative": "Amount must be zero or more",
+        "invoiceNumberRequired": "Invoice number is required",
+        "dateRequired": "Date is required",
+        "dateInvalid": "Please select a valid date",
+        "currencyRequired": "Currency is required",
+        "itemsRequired": "Add at least one line item"
     },
     "header": {
         "features": "Features",
+        "howItWorks": "How it Works",
+        "testimonials": "Testimonials",
         "faq": "FAQ",
         "getStarted": "Get Started"
     },
@@ -161,6 +187,28 @@
                 "totalLabel": "Total",
                 "itemsLabel": "Items"
             }
+        },
+        "preview": {
+            "livePreview": "Live Preview",
+            "a4Format": "A4 Format",
+            "invoiceLabel": "Invoice",
+            "dateIssue": "Date Issue",
+            "dateDue": "Date Due",
+            "description": "Description",
+            "amountLabel": "Amount",
+            "noItems": "No items added",
+            "subtotal": "Subtotal",
+            "discount": "Discount",
+            "tax": "Tax",
+            "shipping": "Shipping",
+            "total": "Total",
+            "logoPlaceholder": "Logo",
+            "logoAlt": "Invoice logo",
+            "itemPlaceholder": "Item Name",
+            "placeholderSenderName": "Sender Name",
+            "placeholderSenderAddress": "Sender Address...",
+            "placeholderClientName": "Client Name",
+            "placeholderClientAddress": "Client Address..."
         }
     }
 }

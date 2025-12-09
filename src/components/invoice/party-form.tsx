@@ -23,8 +23,8 @@ export function PartyForm() {
                             {...register('sender.name')}
                             placeholder={t('invoice.form.party.sender.namePlaceholder')}
                         />
-                        {errors.sender?.name && (
-                            <p className="text-sm text-destructive">{errors.sender.name.message}</p>
+                        {errors.sender?.name?.message && (
+                            <p className="text-sm text-destructive">{t(errors.sender.name.message as string)}</p>
                         )}
                     </div>
 
@@ -36,8 +36,8 @@ export function PartyForm() {
                             {...register('sender.email')}
                             placeholder={t('invoice.form.party.sender.emailPlaceholder')}
                         />
-                        {errors.sender?.email && (
-                            <p className="text-sm text-destructive">{errors.sender.email.message}</p>
+                        {errors.sender?.email?.message && (
+                            <p className="text-sm text-destructive">{t(errors.sender.email.message as string)}</p>
                         )}
                     </div>
 
@@ -48,8 +48,8 @@ export function PartyForm() {
                             {...register('sender.phone')}
                             placeholder={t('invoice.form.party.sender.phonePlaceholder')}
                         />
-                        {errors.sender?.phone && (
-                            <p className="text-sm text-destructive">{errors.sender.phone.message}</p>
+                        {errors.sender?.phone?.message && (
+                            <p className="text-sm text-destructive">{t(errors.sender.phone.message as string)}</p>
                         )}
                     </div>
 
@@ -60,8 +60,8 @@ export function PartyForm() {
                             {...register('sender.address')}
                             placeholder={t('invoice.form.party.sender.addressPlaceholder')}
                         />
-                        {errors.sender?.address && (
-                            <p className="text-sm text-destructive">{errors.sender.address.message}</p>
+                        {errors.sender?.address?.message && (
+                            <p className="text-sm text-destructive">{t(errors.sender.address.message as string)}</p>
                         )}
                     </div>
                 </div>
@@ -78,8 +78,8 @@ export function PartyForm() {
                             {...register('receiver.name')}
                             placeholder={t('invoice.form.party.receiver.namePlaceholder')}
                         />
-                        {errors.receiver?.name && (
-                            <p className="text-sm text-destructive">{errors.receiver.name.message}</p>
+                        {errors.receiver?.name?.message && (
+                            <p className="text-sm text-destructive">{t(errors.receiver.name.message as string)}</p>
                         )}
                     </div>
 
@@ -91,8 +91,8 @@ export function PartyForm() {
                             {...register('receiver.email')}
                             placeholder={t('invoice.form.party.receiver.emailPlaceholder')}
                         />
-                        {errors.receiver?.email && (
-                            <p className="text-sm text-destructive">{errors.receiver.email.message}</p>
+                        {errors.receiver?.email?.message && (
+                            <p className="text-sm text-destructive">{t(errors.receiver.email.message as string)}</p>
                         )}
                     </div>
 
@@ -103,8 +103,8 @@ export function PartyForm() {
                             {...register('receiver.phone')}
                             placeholder={t('invoice.form.party.receiver.phonePlaceholder')}
                         />
-                        {errors.receiver?.phone && (
-                            <p className="text-sm text-destructive">{errors.receiver.phone.message}</p>
+                        {errors.receiver?.phone?.message && (
+                            <p className="text-sm text-destructive">{t(errors.receiver.phone.message as string)}</p>
                         )}
                     </div>
 
@@ -115,8 +115,8 @@ export function PartyForm() {
                             {...register('receiver.address')}
                             placeholder={t('invoice.form.party.receiver.addressPlaceholder')}
                         />
-                        {errors.receiver?.address && (
-                            <p className="text-sm text-destructive">{errors.receiver.address.message}</p>
+                        {errors.receiver?.address?.message && (
+                            <p className="text-sm text-destructive">{t(errors.receiver.address.message as string)}</p>
                         )}
                     </div>
                 </div>

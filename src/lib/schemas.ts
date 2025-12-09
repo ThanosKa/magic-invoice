@@ -2,32 +2,32 @@ import { z } from 'zod';
 
 // Custom Input Schema
 export const customInputSchema = z.object({
-    key: z.string().min(1, 'Key is required'),
-    value: z.string().min(1, 'Value is required'),
+    key: z.string({ required_error: 'errors.customKeyRequired' }).min(1, 'errors.customKeyRequired'),
+    value: z.string({ required_error: 'errors.customValueRequired' }).min(1, 'errors.customValueRequired'),
 });
 
 // Party Schema (Sender/Receiver)
 export const partySchema = z.object({
-    name: z.string().min(1, 'Name is required'),
-    email: z.string().email('Invalid email address'),
-    phone: z.string().min(1, 'Phone is required'),
-    address: z.string().min(1, 'Address is required'),
+    name: z.string({ required_error: 'errors.nameRequired' }).min(1, 'errors.nameRequired'),
+    email: z.string({ required_error: 'errors.emailRequired' }).email('errors.emailInvalid'),
+    phone: z.string({ required_error: 'errors.phoneRequired' }).min(1, 'errors.phoneRequired'),
+    address: z.string({ required_error: 'errors.addressRequired' }).min(1, 'errors.addressRequired'),
     customInputs: z.array(customInputSchema).optional(),
 });
 
 // Item Schema
 export const itemSchema = z.object({
-    name: z.string().min(1, 'Item name is required'),
+    name: z.string({ required_error: 'errors.itemNameRequired' }).min(1, 'errors.itemNameRequired'),
     description: z.string(),
-    quantity: z.number().min(0.01, 'Quantity must be positive'),
-    unitPrice: z.number().min(0, 'Unit price must be positive'),
-    total: z.number(),
+    quantity: z.number({ required_error: 'errors.numberRequired', invalid_type_error: 'errors.numberInvalid' }).min(0.01, 'errors.quantityPositive'),
+    unitPrice: z.number({ required_error: 'errors.numberRequired', invalid_type_error: 'errors.numberInvalid' }).min(0, 'errors.unitPricePositive'),
+    total: z.number({ required_error: 'errors.numberRequired', invalid_type_error: 'errors.numberInvalid' }),
 });
 
 // Charge Schema (Discount/Tax/Shipping)
 export const chargeSchema = z.object({
     enabled: z.boolean(),
-    amount: z.number().min(0),
+    amount: z.number({ required_error: 'errors.numberRequired', invalid_type_error: 'errors.numberInvalid' }).min(0, 'errors.amountNonNegative'),
     amountType: z.enum(['amount', 'percentage']),
 });
 
@@ -40,14 +40,14 @@ export const signatureSchema = z.object({
 
 // Invoice Details Schema
 export const invoiceDetailsSchema = z.object({
-    invoiceNumber: z.string().min(1, 'Invoice number is required'),
-    invoiceDate: z.date(),
-    dueDate: z.date(),
+    invoiceNumber: z.string({ required_error: 'errors.invoiceNumberRequired' }).min(1, 'errors.invoiceNumberRequired'),
+    invoiceDate: z.date({ required_error: 'errors.dateRequired', invalid_type_error: 'errors.dateInvalid' }),
+    dueDate: z.date({ required_error: 'errors.dateRequired', invalid_type_error: 'errors.dateInvalid' }),
     invoiceLogo: z.string().optional(),
-    currency: z.string().min(1, 'Currency is required'),
-    items: z.array(itemSchema).min(1, 'At least one item is required'),
-    subTotal: z.number(),
-    totalAmount: z.number(),
+    currency: z.string({ required_error: 'errors.currencyRequired' }).min(1, 'errors.currencyRequired'),
+    items: z.array(itemSchema).min(1, 'errors.itemsRequired'),
+    subTotal: z.number({ required_error: 'errors.numberRequired', invalid_type_error: 'errors.numberInvalid' }),
+    totalAmount: z.number({ required_error: 'errors.numberRequired', invalid_type_error: 'errors.numberInvalid' }),
     pdfTemplate: z.union([z.literal(1), z.literal(2)]),
 
     // Charges

@@ -8,10 +8,12 @@ import { useEffect } from 'react';
 import { saveToLocalStorage, loadFromLocalStorage } from '@/lib/helpers';
 import { InvoiceForm } from '@/components/invoice/invoice-form';
 import { InvoicePreview } from '@/components/invoice/invoice-preview';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 const DRAFT_KEY = 'magic-invoice:invoiceDraft';
 
 export default function InvoicePage() {
+    const { t } = useTranslation();
     const methods = useForm<FormSchemaType>({
         resolver: zodResolver(formSchema),
         defaultValues: FORM_DEFAULT_VALUES,
@@ -52,7 +54,7 @@ export default function InvoicePage() {
                             {/* Form Section */}
                             <div className="space-y-6">
                                 <div className="flex items-center justify-between">
-                                    <h1 className="text-3xl font-bold tracking-tight">Create Invoice</h1>
+                                    <h1 className="text-3xl font-bold tracking-tight">{t('invoice.title')}</h1>
                                 </div>
                                 <InvoiceForm />
                             </div>
