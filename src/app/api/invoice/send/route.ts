@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { logger } from "@/lib/logger";
 
 export const runtime = "nodejs";
 
@@ -11,6 +12,7 @@ export async function POST(req: Request) {
     const file = formData.get("invoicePdf") as File | null;
 
     if (!email || !file) {
+      logger.warn({ hasEmail: Boolean(email), hasFile: Boolean(file) }, "Missing email or file");
       return new NextResponse("Missing email or file", { status: 400 });
     }
 
@@ -38,9 +40,10 @@ export async function POST(req: Request) {
       ],
     });
 
+    logger.info({ email, invoiceNumber }, "Invoice email sent");
     return NextResponse.json({ ok: true });
   } catch (error) {
-    console.error(error);
+    logger.error({ err: error }, "Email send failed");
     return new NextResponse("Email send failed", { status: 500 });
   }
 }

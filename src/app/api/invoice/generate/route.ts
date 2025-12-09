@@ -1,12 +1,14 @@
 import { NextResponse } from "next/server";
 import chromium from "@sparticuz/chromium";
 import puppeteer from "puppeteer-core";
+import { logger } from "@/lib/logger";
 
 export const runtime = "nodejs";
 
 export async function POST(req: Request) {
   try {
     const { invoice } = await req.json();
+    logger.info("Generating invoice PDF");
     const html = renderInvoiceHtml(invoice);
 
     const browser = await puppeteer.launch({
@@ -31,7 +33,7 @@ export async function POST(req: Request) {
       },
     });
   } catch (error) {
-    console.error(error);
+    logger.error({ err: error }, "PDF generation failed");
     return new NextResponse("PDF generation failed", { status: 500 });
   }
 }

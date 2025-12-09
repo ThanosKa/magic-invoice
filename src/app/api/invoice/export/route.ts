@@ -1,12 +1,15 @@
 import { NextResponse } from "next/server";
 import { Parser as Json2CsvParser } from "json2csv";
 import { Builder as XmlBuilder } from "xml2js";
+import { logger } from "@/lib/logger";
 
 export async function POST(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
     const format = (searchParams.get("format") || "json") as "json" | "csv" | "xml";
     const body = await req.json();
+
+    logger.info({ format }, "Export invoice payload");
 
     if (format === "json") {
       const data = JSON.stringify(body, null, 2);
@@ -41,7 +44,7 @@ export async function POST(req: Request) {
       },
     });
   } catch (error) {
-    console.error(error);
+    logger.error({ err: error }, "Export failed");
     return new NextResponse("Export failed", { status: 500 });
   }
 }
