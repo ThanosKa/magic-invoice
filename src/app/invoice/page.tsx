@@ -1,50 +1,70 @@
 'use client';
 
-import type { Metadata } from "next";
-import { useTranslation } from "@/contexts/TranslationContext";
+import { useForm, FormProvider, useFieldArray } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { formSchema, FORM_DEFAULT_VALUES, FormSchemaType } from '@/lib/schemas';
+import { ChargesProvider } from '@/contexts/ChargesContext';
+import { useEffect } from 'react';
+import { saveToLocalStorage, loadFromLocalStorage } from '@/lib/helpers';
+import { InvoiceForm } from '@/components/invoice/invoice-form';
+import { InvoicePreview } from '@/components/invoice/invoice-preview';
+
+const DRAFT_KEY = 'magic-invoice:invoiceDraft';
 
 export default function InvoicePage() {
-    const { t } = useTranslation();
+    const methods = useForm<FormSchemaType>({
+        resolver: zodResolver(formSchema),
+        defaultValues: FORM_DEFAULT_VALUES,
+        mode: 'onChange',
+    });
 
-    // JSON-LD Schema for WebApplication
-    const webAppSchema = {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        name: "Magic Invoice Editor",
-        applicationCategory: "BusinessApplication",
-        offers: {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "USD",
-        },
-        description: "Real-time invoice editor with PDF export",
-    };
+    const { watch, reset } = methods;
+
+    // Load draft on mount
+    useEffect(() => {
+        const draft = loadFromLocalStorage<FormSchemaType | null>(DRAFT_KEY, null);
+        if (draft) {
+            // Revive dates
+            if (draft.details.invoiceDate) {
+                draft.details.invoiceDate = new Date(draft.details.invoiceDate);
+            }
+            if (draft.details.dueDate) {
+                draft.details.dueDate = new Date(draft.details.dueDate);
+            }
+            reset(draft);
+        }
+    }, [reset]);
+
+    // Auto-save draft on change
+    useEffect(() => {
+        const subscription = watch((value) => {
+            saveToLocalStorage(DRAFT_KEY, value);
+        });
+        return () => subscription.unsubscribe();
+    }, [watch]);
 
     return (
-        <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(webAppSchema),
-                }}
-            />
+        <FormProvider {...methods}>
+            <ChargesProvider>
+                <div className="min-h-screen bg-background">
+                    <div className="container mx-auto p-4 lg:p-8">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            {/* Form Section */}
+                            <div className="space-y-6">
+                                <div className="flex items-center justify-between">
+                                    <h1 className="text-3xl font-bold tracking-tight">Create Invoice</h1>
+                                </div>
+                                <InvoiceForm />
+                            </div>
 
-            <div className="flex min-h-screen flex-col items-center justify-center bg-background p-8">
-                <div className="w-full max-w-4xl rounded-xl border border-border bg-card p-12 text-center shadow-lg">
-                    <h1 className="mb-4 text-4xl font-bold tracking-tight">
-                        {t('invoice.title')}
-                    </h1>
-                    <p className="mb-8 text-lg text-muted-foreground">
-                        {t('invoice.subtitle')}
-                        <br />
-                        {t('invoice.comingSoon')}
-                    </p>
-                    <div className="inline-flex items-center gap-2 rounded-full bg-muted px-6 py-2 text-sm">
-                        <span className="text-2xl">🎉</span>
-                        <span>{t('invoice.badge')}</span>
+                            {/* Preview Section */}
+                            <div className="lg:sticky lg:top-8 lg:self-start">
+                                <InvoicePreview />
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </>
+            </ChargesProvider>
+        </FormProvider>
     );
 }
