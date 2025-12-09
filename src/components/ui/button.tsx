@@ -14,9 +14,9 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
-          "border border-border bg-white shadow-[0px_1px_2px_rgba(55,50,47,0.12)] hover:bg-accent hover:text-accent-foreground",
+          "border-2 border-border bg-card dark:bg-card shadow-[0px_1px_2px_rgba(55,50,47,0.12)] dark:shadow-[0px_1px_2px_rgba(0,0,0,0.3)] hover:bg-accent hover:text-accent-foreground transition-all",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
+          "bg-secondary text-secondary-foreground border border-border shadow-[0px_1px_1px_rgba(55,50,47,0.08)] dark:shadow-[0px_1px_1px_rgba(0,0,0,0.2)] hover:bg-secondary/80 transition-all",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },
