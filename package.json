@@ -44,6 +44,7 @@
     "react-signature-canvas": "1.1.0-alpha.2",
     "react-use-wizard": "^2.3.0",
     "tailwind-merge": "^3.4.0",
+    "to-words": "^4.9.0",
     "xml2js": "^0.6.2",
     "zod": "^4.1.13"
   },

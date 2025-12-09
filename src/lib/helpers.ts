@@ -69,6 +69,28 @@ export function formatDate(
   return new Intl.DateTimeFormat(locale, options).format(date);
 }
 
+import { ToWords } from "to-words";
+
+const TO_WORDS_LOCALES: Record<string, string> = {
+  en: "en-US",
+  gr: "el-GR",
+};
+
+const CURRENCY_LABELS = {
+  en: {
+    singular: "Dollar",
+    plural: "Dollars",
+    centSingular: "Cent",
+    centPlural: "Cents",
+  },
+  gr: {
+    singular: "Δολάριο",
+    plural: "Δολάρια",
+    centSingular: "Σεντ",
+    centPlural: "Σεντ",
+  },
+} as const;
+
 export function formatPriceToString(
   amount: number,
   currency: string = "USD",
@@ -76,52 +98,62 @@ export function formatPriceToString(
 ): string {
   if (!Number.isFinite(amount)) return "Zero";
 
-  const safeLocale =
+  const localeKey =
     locale.toLowerCase().startsWith("el") ||
     locale.toLowerCase().startsWith("gr")
       ? "gr"
       : "en";
-  const formatter = safeLocale === "gr" ? numberToWordsGr : numberToWordsEn;
+
+  const toWords = getToWords(localeKey);
+  const fallbackFormatter =
+    localeKey === "gr" ? numberToWordsGr : numberToWordsEn;
+
+  const convert = (value: number): string => {
+    try {
+      return toWords.convert(value, { ignoreDecimal: true });
+    } catch {
+      return fallbackFormatter(value);
+    }
+  };
 
   const isNegative = amount < 0;
   const absolute = Math.abs(amount);
   const integerPart = Math.floor(absolute);
   const decimalPart = Math.round((absolute - integerPart) * 100);
 
-  const words = formatter(integerPart);
-  const currencyLabels =
-    safeLocale === "gr"
-      ? {
-          singular: "Δολάριο",
-          plural: "Δολάρια",
-          centSingular: "Σεντ",
-          centPlural: "Σεντ",
-        }
-      : {
-          singular: "Dollar",
-          plural: "Dollars",
-          centSingular: "Cent",
-          centPlural: "Cents",
-        };
+  const currencyLabels = CURRENCY_LABELS[localeKey] || CURRENCY_LABELS.en;
 
+  const integerWords = convert(integerPart);
   const currencyWord =
     currency === "USD"
       ? integerPart === 1
         ? currencyLabels.singular
         : currencyLabels.plural
       : currency;
-  const centsWord =
-    currency === "USD"
-      ? decimalPart === 1
-        ? currencyLabels.centSingular
-        : currencyLabels.centPlural
-      : `${currency}`;
 
   const decimalText =
-    decimalPart > 0 ? ` and ${formatter(decimalPart)} ${centsWord}` : "";
-  const prefix = isNegative ? (safeLocale === "gr" ? "Μείον " : "Minus ") : "";
+    decimalPart > 0
+      ? ` and ${convert(decimalPart)} ${
+          currency === "USD"
+            ? decimalPart === 1
+              ? currencyLabels.centSingular
+              : currencyLabels.centPlural
+            : currency
+        }`
+      : "";
 
-  return `${prefix}${words} ${currencyWord}${decimalText}`.trim();
+  const prefix = isNegative ? (localeKey === "gr" ? "Μείον " : "Minus ") : "";
+
+  return `${prefix}${integerWords} ${currencyWord}${decimalText}`.trim();
+}
+
+function getToWords(localeKey: "en" | "gr") {
+  const localeCode = TO_WORDS_LOCALES[localeKey] || "en-US";
+  try {
+    return new ToWords({ localeCode });
+  } catch {
+    return new ToWords({ localeCode: "en-US" });
+  }
 }
 
 function numberToWordsEn(num: number): string {
