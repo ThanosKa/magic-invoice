@@ -167,7 +167,12 @@
                 "logoChange": "Change",
                 "logoRemove": "Remove",
                 "signatureLabel": "Signature",
-                "signatureSaved": "Signature saved"
+                "signatureSaved": "Signature saved",
+                "templateLabel": "Template",
+                "template": "Template",
+                "templateDescription": "Switch layout for PDF/preview",
+                "totalInWordsLabel": "Total in words",
+                "totalInWordsHelp": "Show the total amount written out in words"
             },
             "signature": {
                 "draw": "Draw",
@@ -175,12 +180,6 @@
                 "upload": "Upload",
                 "typePlaceholder": "Type your signature",
                 "signatureSaved": "Signature saved"
-            },
-            "templateLabel": "Template",
-            "template": "Template",
-            "templateDescription": "Switch layout for PDF/preview",
-            "totalInWordsLabel": "Total in words",
-            "totalInWordsHelp": "Show the total amount written out in words"
             },
             "items": {
                 "title": "Line Items",
@@ -248,3 +247,4 @@
             "savedList": "Saved invoices"
         }
     }
+}

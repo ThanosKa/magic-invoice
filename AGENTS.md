@@ -50,6 +50,7 @@ This file guides AI coding agents working on Magic Invoice.
 
 ### Don’t
 
+- Never run the server. Never run `pnpm run dev`.
 - Don’t create class components.
 - Don’t use inline styles when Tailwind or component props suffice.
 - Don’t bypass zod schemas or `react-hook-form` validation.

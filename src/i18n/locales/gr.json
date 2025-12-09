@@ -167,7 +167,12 @@
                 "logoChange": "Αλλαγή",
                 "logoRemove": "Αφαίρεση",
                 "signatureLabel": "Υπογραφή",
-                "signatureSaved": "Η υπογραφή αποθηκεύτηκε"
+                "signatureSaved": "Η υπογραφή αποθηκεύτηκε",
+                "templateLabel": "Πρότυπο",
+                "template": "Πρότυπο",
+                "templateDescription": "Αλλάξτε τη διάταξη για PDF/προεπισκόπηση",
+                "totalInWordsLabel": "Σύνολο με λέξεις",
+                "totalInWordsHelp": "Εμφάνιση συνολικού ποσού γραπτώς"
             },
             "signature": {
                 "draw": "Σχεδίαση",
@@ -175,12 +180,6 @@
                 "upload": "Μεταφόρτωση",
                 "typePlaceholder": "Πληκτρολογήστε την υπογραφή σας",
                 "signatureSaved": "Η υπογραφή αποθηκεύτηκε"
-            },
-            "templateLabel": "Πρότυπο",
-            "template": "Πρότυπο",
-            "templateDescription": "Αλλάξτε τη διάταξη για PDF/προεπισκόπηση",
-            "totalInWordsLabel": "Σύνολο με λέξεις",
-            "totalInWordsHelp": "Εμφάνιση συνολικού ποσού γραπτώς"
             },
             "items": {
                 "title": "Γραμμές τιμολογίου",
@@ -248,3 +247,4 @@
             "savedList": "Αποθηκευμένα τιμολόγια"
         }
     }
+}

@@ -244,7 +244,7 @@ export function DetailsForm() {
                                 size="sm"
                                 onClick={() => setMode(m)}
                             >
-                                {t(`invoice.form.details.signature.${m}`)}
+                                {t(`invoice.form.signature.${m}`)}
                             </Button>
                         ))}
                         <Button type="button" variant="ghost" size="sm" onClick={clearSignature}>
@@ -272,7 +272,7 @@ export function DetailsForm() {
                                     setTypedSignature(e.target.value);
                                     setTyped(e.target.value, typedFont);
                                 }}
-                                placeholder={t('invoice.form.details.signature.typePlaceholder')}
+                                placeholder={t('invoice.form.signature.typePlaceholder')}
                             />
                         </div>
                     )}
