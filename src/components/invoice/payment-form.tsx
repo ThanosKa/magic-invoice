@@ -19,13 +19,19 @@ import { useTranslation } from "@/contexts/TranslationContext";
 export function PaymentForm() {
     const { t } = useTranslation();
     const { register, control, setValue } = useFormContext<FormSchemaType>();
+
+    // Watch all values at component level (not conditionally!)
     const currency = useWatch({ control, name: 'details.currency' });
     const currencySymbol = getCurrencySymbol(currency || 'USD');
 
-
     const discountEnabled = useWatch({ control, name: 'details.discountDetails.enabled' });
+    const discountAmountType = useWatch({ control, name: 'details.discountDetails.amountType' });
+
     const taxEnabled = useWatch({ control, name: 'details.taxDetails.enabled' });
+    const taxAmountType = useWatch({ control, name: 'details.taxDetails.amountType' });
+
     const shippingEnabled = useWatch({ control, name: 'details.shippingDetails.enabled' });
+    const shippingAmountType = useWatch({ control, name: 'details.shippingDetails.amountType' });
 
     return (
         <div className="space-y-8">
@@ -51,7 +57,7 @@ export function PaymentForm() {
                             />
                             <Select
                                 onValueChange={(v: "amount" | "percentage") => setValue('details.discountDetails.amountType', v)}
-                                defaultValue={useWatch({ control, name: 'details.discountDetails.amountType' })}
+                                value={discountAmountType}
                             >
                                 <SelectTrigger className="w-24">
                                     <SelectValue />
@@ -84,7 +90,7 @@ export function PaymentForm() {
                             />
                             <Select
                                 onValueChange={(v: "amount" | "percentage") => setValue('details.taxDetails.amountType', v)}
-                                defaultValue={useWatch({ control, name: 'details.taxDetails.amountType' })}
+                                value={taxAmountType}
                             >
                                 <SelectTrigger className="w-24">
                                     <SelectValue />
@@ -117,7 +123,7 @@ export function PaymentForm() {
                             />
                             <Select
                                 onValueChange={(v: "amount" | "percentage") => setValue('details.shippingDetails.amountType', v)}
-                                defaultValue={useWatch({ control, name: 'details.shippingDetails.amountType' })}
+                                value={shippingAmountType}
                             >
                                 <SelectTrigger className="w-24">
                                     <SelectValue />

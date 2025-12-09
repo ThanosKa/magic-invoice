@@ -19,7 +19,9 @@
         "languageGreek": "Ελληνικά",
         "language": "Γλώσσα",
         "remove": "Αφαίρεση",
-        "clear": "Καθαρισμός"
+        "clear": "Καθαρισμός",
+        "load": "Φόρτωση",
+        "delete": "Διαγραφή"
     },
     "errors": {
         "customKeyRequired": "Απαιτείται κλειδί",

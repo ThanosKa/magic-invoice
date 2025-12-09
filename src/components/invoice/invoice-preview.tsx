@@ -26,16 +26,22 @@ export function InvoicePreview() {
 
     if (!sender || !receiver || !details) return null;
 
-    const variantClass = details.pdfTemplate === 2 ? "bg-slate-50" : "bg-white";
+    // Template 1: Classic (white bg, gray accents)
+    // Template 2: Modern (slate bg, blue accents)
+    const isTemplate2 = details.pdfTemplate === 2;
+    const bgClass = isTemplate2 ? "bg-slate-50" : "bg-white";
+    const accentColor = isTemplate2 ? "text-blue-600" : "text-slate-900";
+    const borderColor = isTemplate2 ? "border-blue-200" : "border-slate-200";
+    const headingColor = isTemplate2 ? "text-blue-500" : "text-slate-400";
 
     return (
-        <Card className={`overflow-hidden border-2 shadow-xl ${variantClass} text-slate-900`} id="invoice-preview">
+        <Card className={`overflow-hidden border-2 shadow-xl ${bgClass} text-slate-900`} id="invoice-preview">
             {/* Invoice Header / Status Bar */}
             <div className="bg-slate-100 p-3 border-b flex justify-between items-center text-xs text-slate-500">
                 <div className="flex items-center gap-2">
                     <Eye className="h-3 w-3" /> {t('invoice.preview.livePreview')}
                 </div>
-                <div>{t('invoice.preview.a4Format')}</div>
+                <div>{t('invoice.preview.a4Format')} - {t('invoice.form.details.template')} {details.pdfTemplate}</div>
             </div>
 
             {/* Invoice Content (Scaled A4 representation) */}
@@ -43,7 +49,7 @@ export function InvoicePreview() {
                 {/* Header */}
                 <div className="flex justify-between items-start mb-12">
                     <div>
-                        <h1 className="text-4xl font-bold tracking-tight text-slate-900">{t('invoice.preview.invoiceLabel')}</h1>
+                        <h1 className={`text-4xl font-bold tracking-tight ${accentColor}`}>{t('invoice.preview.invoiceLabel')}</h1>
                         <p className="text-slate-500 mt-1">#{details.invoiceNumber}</p>
                     </div>
                     <div className="text-right">
@@ -61,7 +67,7 @@ export function InvoicePreview() {
                 {/* Addresses */}
                 <div className="grid grid-cols-2 gap-8 mb-12">
                     <div>
-                        <h3 className="text-xs uppercase tracking-wider font-bold text-slate-400 mb-2">
+                        <h3 className={`text-xs uppercase tracking-wider font-bold ${headingColor} mb-2`}>
                             {t('invoice.form.summary.fromTitle')}
                         </h3>
                         <div className="font-semibold text-slate-900">{sender.name || t('invoice.preview.placeholderSenderName')}</div>
@@ -81,7 +87,7 @@ export function InvoicePreview() {
                         )}
                     </div>
                     <div className="text-right">
-                        <h3 className="text-xs uppercase tracking-wider font-bold text-slate-400 mb-2">
+                        <h3 className={`text-xs uppercase tracking-wider font-bold ${headingColor} mb-2`}>
                             {t('invoice.form.summary.toTitle')}
                         </h3>
                         <div className="font-semibold text-slate-900">{receiver.name || t('invoice.preview.placeholderClientName')}</div>
@@ -103,9 +109,9 @@ export function InvoicePreview() {
                 </div>
 
                 {/* Dates */}
-                <div className="grid grid-cols-2 gap-8 mb-12 bg-slate-50 p-6 rounded-lg">
+                <div className={`grid grid-cols-2 gap-8 mb-12 bg-slate-50 p-6 rounded-lg border ${borderColor}`}>
                     <div>
-                        <div className="text-xs uppercase tracking-wider font-bold text-slate-400 mb-1">
+                        <div className={`text-xs uppercase tracking-wider font-bold ${headingColor} mb-1`}>
                             {t('invoice.preview.dateIssue')}
                         </div>
                         <div className="font-medium cursor-pointer">
@@ -115,7 +121,7 @@ export function InvoicePreview() {
                         </div>
                     </div>
                     <div className="text-right">
-                        <div className="text-xs uppercase tracking-wider font-bold text-slate-400 mb-1">
+                        <div className={`text-xs uppercase tracking-wider font-bold ${headingColor} mb-1`}>
                             {t('invoice.preview.dateDue')}
                         </div>
                         <div className="font-medium">
@@ -221,6 +227,14 @@ export function InvoicePreview() {
                             <span>{t('invoice.preview.total')}</span>
                             <span>{formatCurrency(Number(details.totalAmount || 0), details.currency, intlLocale)}</span>
                         </div>
+
+                        {details.totalInWordsEnabled && details.totalInWords && (
+                            <div className="border-t border-slate-100 pt-2 mt-2">
+                                <p className="text-xs text-slate-500 italic text-right">
+                                    {details.totalInWords}
+                                </p>
+                            </div>
+                        )}
                     </div>
                 </div>
 

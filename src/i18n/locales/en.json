@@ -19,7 +19,9 @@
         "languageGreek": "Greek",
         "language": "Language",
         "remove": "Remove",
-        "clear": "Clear"
+        "clear": "Clear",
+        "load": "Load",
+        "delete": "Delete"
     },
     "errors": {
         "customKeyRequired": "Key is required",
