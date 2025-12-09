@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff',
     },
     pageModern: {
-        backgroundColor: '#f8fafc',
+        backgroundColor: '#f8fafc', // slate-50
     },
     header: {
         flexDirection: 'row',
@@ -20,28 +20,28 @@ const styles = StyleSheet.create({
         marginBottom: 32,
     },
     title: {
-        fontSize: 36,
+        fontSize: 30, // text-3xl
         fontWeight: 'bold',
-        color: '#0f172a',
+        color: '#0f172a', // slate-900
+        marginBottom: 4,
     },
     titleModern: {
-        color: '#2563eb',
+        color: '#3b82f6', // blue-500
     },
     invoiceNumber: {
-        fontSize: 10,
-        color: '#64748b',
-        marginTop: 4,
+        fontSize: 12,
+        color: '#64748b', // slate-500
     },
     logo: {
-        width: 64,
-        height: 64,
+        width: 80,
+        height: 80,
         objectFit: 'contain',
     },
     logoPlaceholder: {
-        width: 64,
-        height: 64,
-        backgroundColor: '#f1f5f9',
-        borderRadius: 4,
+        width: 80,
+        height: 80,
+        backgroundColor: '#f1f5f9', // slate-100
+        borderRadius: 8,
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -49,43 +49,47 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginBottom: 32,
+        gap: 24,
     },
     addressBlock: {
         flex: 1,
     },
     addressTitle: {
-        fontSize: 9,
+        fontSize: 10,
         fontWeight: 'bold',
-        color: '#94a3b8',
+        color: '#64748b', // slate-500
         textTransform: 'uppercase',
         marginBottom: 8,
         letterSpacing: 0.5,
     },
     addressTitleModern: {
-        color: '#60a5fa',
+        color: '#3b82f6', // blue-500
     },
     addressName: {
-        fontSize: 11,
+        fontSize: 12,
         fontWeight: 'bold',
-        color: '#0f172a',
+        color: '#0f172a', // slate-900
         marginBottom: 4,
     },
     addressText: {
         fontSize: 10,
-        color: '#475569',
+        color: '#334155', // slate-700
         marginTop: 2,
+        lineHeight: 1.4,
     },
     datesSection: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        backgroundColor: '#f8fafc',
-        padding: 16,
+        backgroundColor: '#f8fafc', // slate-50
+        padding: 20,
         borderRadius: 8,
         marginBottom: 32,
-        border: '1pt solid #e2e8f0',
+        borderWidth: 1,
+        borderColor: '#e2e8f0', // slate-200
     },
     datesSectionModern: {
-        border: '1pt solid #bfdbfe',
+        backgroundColor: '#eff6ff', // blue-50
+        borderColor: '#bfdbfe', // blue-200
     },
     dateBlock: {
         flex: 1,
@@ -93,139 +97,151 @@ const styles = StyleSheet.create({
     dateLabel: {
         fontSize: 9,
         fontWeight: 'bold',
-        color: '#94a3b8',
+        color: '#64748b', // slate-500
         textTransform: 'uppercase',
         marginBottom: 4,
     },
     dateLabelModern: {
-        color: '#60a5fa',
+        color: '#3b82f6', // blue-500
     },
     dateValue: {
-        fontSize: 10,
+        fontSize: 11,
         fontWeight: 'bold',
-        color: '#0f172a',
+        color: '#0f172a', // slate-900
     },
     table: {
-        marginBottom: 16,
+        marginBottom: 24,
     },
     tableHeader: {
         flexDirection: 'row',
-        borderBottom: '1pt solid #e2e8f0',
-        paddingBottom: 8,
-        marginBottom: 8,
+        borderBottomWidth: 1,
+        borderBottomColor: '#e2e8f0', // slate-200
+        paddingBottom: 12,
+        marginBottom: 12,
     },
     tableHeaderCell: {
         fontSize: 10,
         fontWeight: 'bold',
-        color: '#0f172a',
+        color: '#0f172a', // slate-900
     },
     tableRow: {
         flexDirection: 'row',
-        borderBottom: '0.5pt solid #f1f5f9',
+        borderBottomWidth: 1,
+        borderBottomColor: '#f1f5f9', // slate-100
         paddingVertical: 12,
     },
     tableCell: {
         fontSize: 10,
-        color: '#475569',
+        color: '#334155', // slate-700
     },
     tableCellBold: {
+        fontSize: 10,
         fontWeight: 'bold',
-        color: '#0f172a',
+        color: '#0f172a', // slate-900
     },
     colDescription: {
         flex: 3,
     },
     colQty: {
         flex: 1,
-        textAlign: 'right',
+        textAlign: 'center',
     },
     colPrice: {
-        flex: 1,
+        flex: 1.5,
         textAlign: 'right',
     },
     colAmount: {
-        flex: 1,
+        flex: 1.5,
         textAlign: 'right',
     },
     totalsSection: {
         alignItems: 'flex-end',
-        marginBottom: 32,
+        marginBottom: 40,
     },
     totalsBox: {
-        width: 250,
+        width: 280,
     },
     totalRow: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginBottom: 12,
-        color: '#475569',
+        marginBottom: 8,
+        paddingVertical: 2,
     },
     totalLabel: {
-        fontSize: 10,
+        fontSize: 11,
+        color: '#64748b', // slate-500
     },
     totalValue: {
-        fontSize: 10,
+        fontSize: 11,
+        color: '#0f172a', // slate-900
+        fontWeight: 'medium',
     },
     grandTotalRow: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingTop: 12,
-        borderTop: '1pt solid #e2e8f0',
-        marginBottom: 12,
+        borderTopWidth: 2,
+        borderTopColor: '#e2e8f0', // slate-200
+        marginTop: 8,
     },
     grandTotalLabel: {
         fontSize: 14,
         fontWeight: 'bold',
-        color: '#0f172a',
+        color: '#0f172a', // slate-900
     },
     grandTotalValue: {
-        fontSize: 14,
+        fontSize: 18,
         fontWeight: 'bold',
-        color: '#0f172a',
+        color: '#0f172a', // slate-900
     },
     totalInWords: {
-        fontSize: 9,
+        fontSize: 10,
         fontStyle: 'italic',
-        color: '#64748b',
+        color: '#64748b', // slate-500
         textAlign: 'right',
         marginTop: 8,
     },
     footer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingTop: 24,
-        borderTop: '1pt solid #e2e8f0',
+        paddingTop: 32,
+        borderTopWidth: 1,
+        borderTopColor: '#e2e8f0', // slate-200
+        gap: 32,
     },
     footerSection: {
         flex: 1,
     },
     footerTitle: {
-        fontSize: 10,
+        fontSize: 11,
         fontWeight: 'bold',
-        color: '#0f172a',
-        marginBottom: 4,
+        color: '#0f172a', // slate-900
+        marginBottom: 6,
     },
     footerText: {
-        fontSize: 9,
-        color: '#475569',
+        fontSize: 10,
+        color: '#475569', // slate-600
+        lineHeight: 1.5,
     },
     signature: {
         alignItems: 'flex-end',
-        marginTop: 24,
+        marginTop: 32,
     },
     signatureLabel: {
-        fontSize: 9,
-        color: '#94a3b8',
+        fontSize: 10,
+        fontWeight: 'bold',
+        color: '#64748b', // slate-500
         textTransform: 'uppercase',
-        marginBottom: 8,
+        marginBottom: 12,
     },
     signatureImage: {
-        width: 150,
+        width: 140,
         height: 60,
+        objectFit: 'contain',
     },
     signatureText: {
-        fontSize: 20,
-        fontWeight: 'bold',
+        fontSize: 24,
+        fontFamily: 'Helvetica',
     },
 });
 
@@ -262,7 +278,7 @@ export function InvoicePDF({ data }: InvoicePDFProps) {
                             <Image src={details.invoiceLogo} style={styles.logo} />
                         ) : (
                             <View style={styles.logoPlaceholder}>
-                                <Text style={{ fontSize: 8, color: '#94a3b8' }}>LOGO</Text>
+                                <Text style={{ fontSize: 10, color: '#94a3b8' }}>LOGO</Text>
                             </View>
                         )}
                     </View>
@@ -286,17 +302,19 @@ export function InvoicePDF({ data }: InvoicePDFProps) {
                     </View>
                     <View style={[styles.addressBlock, { alignItems: 'flex-end' }]}>
                         <Text style={isModern ? [styles.addressTitle, styles.addressTitleModern] : styles.addressTitle}>TO</Text>
-                        <Text style={styles.addressName}>{receiver.name || 'Client Name'}</Text>
-                        {receiver.address && <Text style={styles.addressText}>{receiver.address}</Text>}
-                        {receiver.email && <Text style={styles.addressText}>{receiver.email}</Text>}
-                        {receiver.phone && <Text style={styles.addressText}>{receiver.phone}</Text>}
-                        {receiver.customInputs?.map((custom, idx) => (
-                            custom.key && custom.value && (
-                                <Text key={idx} style={styles.addressText}>
-                                    {custom.key}: {custom.value}
-                                </Text>
-                            )
-                        ))}
+                        <Text style={[styles.addressName, { textAlign: 'right' }]}>{receiver.name || 'Client Name'}</Text>
+                        <View style={{ alignItems: 'flex-end' }}>
+                            {receiver.address && <Text style={styles.addressText}>{receiver.address}</Text>}
+                            {receiver.email && <Text style={styles.addressText}>{receiver.email}</Text>}
+                            {receiver.phone && <Text style={styles.addressText}>{receiver.phone}</Text>}
+                            {receiver.customInputs?.map((custom, idx) => (
+                                custom.key && custom.value && (
+                                    <Text key={idx} style={styles.addressText}>
+                                        {custom.key}: {custom.value}
+                                    </Text>
+                                )
+                            ))}
+                        </View>
                     </View>
                 </View>
 
@@ -328,7 +346,7 @@ export function InvoicePDF({ data }: InvoicePDFProps) {
                         <View key={i} style={styles.tableRow}>
                             <View style={styles.colDescription}>
                                 <Text style={styles.tableCellBold}>{item.name || 'Item'}</Text>
-                                {item.description && <Text style={[styles.tableCell, { fontSize: 8, marginTop: 2 }]}>{item.description}</Text>}
+                                {item.description && <Text style={[styles.tableCell, { fontSize: 9, marginTop: 4 }]}>{item.description}</Text>}
                             </View>
                             <Text style={[styles.tableCell, styles.colQty]}>{item.quantity}</Text>
                             <Text style={[styles.tableCell, styles.colPrice]}>{details.currency} {Number(item.unitPrice || 0).toFixed(2)}</Text>
@@ -336,8 +354,8 @@ export function InvoicePDF({ data }: InvoicePDFProps) {
                         </View>
                     ))}
                     {(!details.items || details.items.length === 0) && (
-                        <View style={{ paddingVertical: 24, alignItems: 'center' }}>
-                            <Text style={{ color: '#94a3b8' }}>No items</Text>
+                        <View style={{ paddingVertical: 32, alignItems: 'center' }}>
+                            <Text style={{ color: '#94a3b8' }}>No items added</Text>
                         </View>
                     )}
                 </View>
@@ -351,11 +369,11 @@ export function InvoicePDF({ data }: InvoicePDFProps) {
                         </View>
 
                         {details.discountDetails?.enabled && (
-                            <View style={[styles.totalRow, { color: '#10b981' }]}>
-                                <Text style={styles.totalLabel}>
+                            <View style={styles.totalRow}>
+                                <Text style={[styles.totalLabel, { color: '#16a34a' }]}>
                                     Discount {details.discountDetails.amountType === 'percentage' && `(${details.discountDetails.amount}%)`}
                                 </Text>
-                                <Text style={styles.totalValue}>
+                                <Text style={[styles.totalValue, { color: '#16a34a' }]}>
                                     - {details.currency} {(
                                         details.discountDetails.amountType === 'percentage'
                                             ? (Number(details.subTotal || 0) * Number(details.discountDetails.amount || 0) / 100)
@@ -408,7 +426,7 @@ export function InvoicePDF({ data }: InvoicePDFProps) {
                 <View style={styles.footer}>
                     <View style={styles.footerSection}>
                         {details.paymentInformation && (
-                            <View style={{ marginBottom: 16 }}>
+                            <View style={{ marginBottom: 20 }}>
                                 <Text style={styles.footerTitle}>Payment Information</Text>
                                 <Text style={styles.footerText}>{details.paymentInformation}</Text>
                             </View>
@@ -422,9 +440,9 @@ export function InvoicePDF({ data }: InvoicePDFProps) {
                     </View>
 
                     {details.notes && (
-                        <View style={[styles.footerSection, { alignItems: 'flex-end' }]}>
+                        <View style={[styles.footerSection, { alignItems: 'flex-end', marginLeft: 16 }]}>
                             <Text style={styles.footerTitle}>Notes</Text>
-                            <Text style={[styles.footerText, { fontStyle: 'italic' }]}>{details.notes}</Text>
+                            <Text style={[styles.footerText, { fontStyle: 'italic', textAlign: 'right' }]}>{details.notes}</Text>
                         </View>
                     )}
                 </View>
