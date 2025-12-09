@@ -32,9 +32,8 @@ export function InvoiceForm() {
 
     return (
         <div className="space-y-6">
-            <WizardProgress steps={steps} errors={formState.errors} />
             <Wizard
-                header={null}
+                header={<WizardProgress steps={steps} errors={formState.errors} />}
                 footer={
                     <WizardNavigation
                         steps={steps}
