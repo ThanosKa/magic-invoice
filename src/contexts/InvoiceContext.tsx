@@ -24,7 +24,6 @@ interface InvoiceContextType {
     saveInvoice: () => void;
     loadInvoice: (invoiceNumber: string) => FormSchemaType | null;
     deleteInvoice: (invoiceNumber: string) => void;
-    importInvoice: (file: File) => Promise<FormSchemaType>;
     setInvoicePdf: (blob: Blob | null) => void;
 }
 
@@ -80,17 +79,6 @@ export function InvoiceProvider({ children }: { children: React.ReactNode }) {
         const updated = list.filter((i) => i.invoiceNumber !== invoiceNumber);
         persistSavedInvoices(updated);
     }, []);
-
-    const importInvoice = useCallback(
-        async (file: File) => {
-            const text = await file.text();
-            const parsed = JSON.parse(text) as FormSchemaType;
-            const revived = reviveDates(parsed);
-            reset(revived);
-            return revived;
-        },
-        [reset]
-    );
 
     const generatePdf = useCallback(async () => {
         setGenerating(true);
@@ -164,7 +152,6 @@ export function InvoiceProvider({ children }: { children: React.ReactNode }) {
         saveInvoice,
         loadInvoice,
         deleteInvoice,
-        importInvoice,
         setInvoicePdf,
     };
 

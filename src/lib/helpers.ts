@@ -71,12 +71,26 @@ export function formatDate(
 
 import { ToWords } from "to-words";
 
-const TO_WORDS_LOCALES: Record<string, string> = {
+type WordsLocaleKey = "en" | "gr" | "it" | "es" | "de" | "fr";
+
+const TO_WORDS_LOCALES: Record<WordsLocaleKey, string> = {
   en: "en-US",
   gr: "el-GR",
+  it: "it-IT",
+  es: "es-ES",
+  de: "de-DE",
+  fr: "fr-FR",
 };
 
-const CURRENCY_LABELS = {
+const CURRENCY_LABELS: Record<
+  WordsLocaleKey,
+  {
+    singular: string;
+    plural: string;
+    centSingular: string;
+    centPlural: string;
+  }
+> = {
   en: {
     singular: "Dollar",
     plural: "Dollars",
@@ -89,7 +103,31 @@ const CURRENCY_LABELS = {
     centSingular: "Σεντ",
     centPlural: "Σεντ",
   },
-} as const;
+  it: {
+    singular: "Dollaro",
+    plural: "Dollari",
+    centSingular: "Cent",
+    centPlural: "Cent",
+  },
+  es: {
+    singular: "Dólar",
+    plural: "Dólares",
+    centSingular: "Centavo",
+    centPlural: "Centavos",
+  },
+  de: {
+    singular: "Dollar",
+    plural: "Dollar",
+    centSingular: "Cent",
+    centPlural: "Cent",
+  },
+  fr: {
+    singular: "Dollar",
+    plural: "Dollars",
+    centSingular: "Centime",
+    centPlural: "Centimes",
+  },
+};
 
 export function formatPriceToString(
   amount: number,
@@ -98,11 +136,7 @@ export function formatPriceToString(
 ): string {
   if (!Number.isFinite(amount)) return "Zero";
 
-  const localeKey =
-    locale.toLowerCase().startsWith("el") ||
-    locale.toLowerCase().startsWith("gr")
-      ? "gr"
-      : "en";
+  const localeKey = getLocaleKey(locale);
 
   const toWords = getToWords(localeKey);
   const fallbackFormatter =
@@ -142,12 +176,30 @@ export function formatPriceToString(
         }`
       : "";
 
-  const prefix = isNegative ? (localeKey === "gr" ? "Μείον " : "Minus ") : "";
+  const prefixMap: Partial<Record<WordsLocaleKey, string>> = {
+    gr: "Μείον ",
+    en: "Minus ",
+    it: "Meno ",
+    es: "Menos ",
+    de: "Minus ",
+    fr: "Moins ",
+  };
+  const prefix = isNegative ? prefixMap[localeKey] || "Minus " : "";
 
   return `${prefix}${integerWords} ${currencyWord}${decimalText}`.trim();
 }
 
-function getToWords(localeKey: "en" | "gr") {
+function getLocaleKey(locale: string): WordsLocaleKey {
+  const lower = locale.toLowerCase();
+  if (lower.startsWith("gr") || lower.startsWith("el")) return "gr";
+  if (lower.startsWith("it")) return "it";
+  if (lower.startsWith("es")) return "es";
+  if (lower.startsWith("de")) return "de";
+  if (lower.startsWith("fr")) return "fr";
+  return "en";
+}
+
+function getToWords(localeKey: WordsLocaleKey) {
   const localeCode = TO_WORDS_LOCALES[localeKey] || "en-US";
   try {
     return new ToWords({ localeCode });

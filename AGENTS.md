@@ -47,6 +47,8 @@ This file guides AI coding agents working on Magic Invoice.
 - Use `cn` helper from `src/lib/utils` to merge classes.
 - Keep imports ordered: external, aliased `@/...`, then relative.
 - Add small, purposeful comments only when logic is non-obvious.
+- Do not live TODO comments on the code.
+- Do not add comments on the code.
 
 ### Don’t
 

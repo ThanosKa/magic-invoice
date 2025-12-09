@@ -13,7 +13,7 @@ export function SummaryView() {
     const { t, locale } = useTranslation();
     const intlLocale = LOCALE_TO_BCP47[locale];
     const values = useWatch({ control });
-    const { generatePdf, downloadPdf, exportInvoice, saveInvoice, savedInvoices, loadInvoice, deleteInvoice, importInvoice } = useInvoice();
+    const { generatePdf, downloadPdf, exportInvoice, saveInvoice, savedInvoices, loadInvoice, deleteInvoice } = useInvoice();
 
     if (!values.details) return null;
 
@@ -28,18 +28,6 @@ export function SummaryView() {
                 <Button size="sm" variant="outline" onClick={() => exportInvoice('json')}>JSON</Button>
                 <Button size="sm" variant="outline" onClick={() => exportInvoice('csv')}>CSV</Button>
                 <Button size="sm" variant="outline" onClick={() => exportInvoice('xml')}>XML</Button>
-                <label className="text-sm flex items-center gap-2 cursor-pointer">
-                    <input
-                        type="file"
-                        accept=".json,application/json"
-                        className="hidden"
-                        onChange={async (e) => {
-                            const file = e.target.files?.[0];
-                            if (file) await importInvoice(file);
-                        }}
-                    />
-                    <span className="px-3 py-1 border rounded">{t('invoice.actions.importJson')}</span>
-                </label>
             </div>
 
             {savedInvoices.length > 0 && (
