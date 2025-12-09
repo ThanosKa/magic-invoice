@@ -2,6 +2,13 @@
 
 @custom-variant dark (&:is(.dark *));
 
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: var(--muted-foreground);
+  opacity: 0.9;
+}
+
 html {
   scroll-behavior: smooth;
 }

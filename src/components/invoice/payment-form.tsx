@@ -77,7 +77,9 @@ export function PaymentForm() {
                 if (c) ensureAmount("details.discountDetails.amount");
               }}
             />
-            <Label>{t("invoice.form.payment.applyDiscount")}</Label>
+            <Label className="cursor-pointer">
+              {t("invoice.form.payment.applyDiscount")}
+            </Label>
           </div>
 
           {discountEnabled && (
@@ -101,12 +103,16 @@ export function PaymentForm() {
                 }
                 value={discountAmountType}
               >
-                <SelectTrigger className="w-24">
+                <SelectTrigger className="w-24 cursor-pointer">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="amount">{currencySymbol}</SelectItem>
-                  <SelectItem value="percentage">%</SelectItem>
+                <SelectContent className="cursor-pointer">
+                  <SelectItem value="amount" className="cursor-pointer">
+                    {currencySymbol}
+                  </SelectItem>
+                  <SelectItem value="percentage" className="cursor-pointer">
+                    %
+                  </SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -122,7 +128,9 @@ export function PaymentForm() {
                 if (c) ensureAmount("details.taxDetails.amount");
               }}
             />
-            <Label>{t("invoice.form.payment.applyTax")}</Label>
+            <Label className="cursor-pointer">
+              {t("invoice.form.payment.applyTax")}
+            </Label>
           </div>
 
           {taxEnabled && (
@@ -146,12 +154,16 @@ export function PaymentForm() {
                 }
                 value={taxAmountType}
               >
-                <SelectTrigger className="w-24">
+                <SelectTrigger className="w-24 cursor-pointer">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="amount">{currencySymbol}</SelectItem>
-                  <SelectItem value="percentage">%</SelectItem>
+                <SelectContent className="cursor-pointer">
+                  <SelectItem value="amount" className="cursor-pointer">
+                    {currencySymbol}
+                  </SelectItem>
+                  <SelectItem value="percentage" className="cursor-pointer">
+                    %
+                  </SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -167,7 +179,9 @@ export function PaymentForm() {
                 if (c) ensureAmount("details.shippingDetails.amount");
               }}
             />
-            <Label>{t("invoice.form.payment.shippingCost")}</Label>
+            <Label className="cursor-pointer">
+              {t("invoice.form.payment.shippingCost")}
+            </Label>
           </div>
 
           {shippingEnabled && (
@@ -191,12 +205,16 @@ export function PaymentForm() {
                 }
                 value={shippingAmountType}
               >
-                <SelectTrigger className="w-24">
+                <SelectTrigger className="w-24 cursor-pointer">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="amount">{currencySymbol}</SelectItem>
-                  <SelectItem value="percentage">%</SelectItem>
+                <SelectContent className="cursor-pointer">
+                  <SelectItem value="amount" className="cursor-pointer">
+                    {currencySymbol}
+                  </SelectItem>
+                  <SelectItem value="percentage" className="cursor-pointer">
+                    %
+                  </SelectItem>
                 </SelectContent>
               </Select>
             </div>
