@@ -13,8 +13,8 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden py-12 md:py-16 lg:py-20">
-      {/* Radial gradient background */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-muted via-background to-background" />
+      {/* Subtle radial gradient background */}
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-secondary via-background to-background" />
 
       <div className="container mx-auto max-w-6xl px-4">
         <div className="mx-auto max-w-4xl text-center">
