@@ -16,7 +16,10 @@
         "switchToEnglish": "Switch to English",
         "switchToGreek": "Switch to Greek",
         "languageEnglish": "English",
-        "languageGreek": "Greek"
+        "languageGreek": "Greek",
+        "language": "Language",
+        "remove": "Remove",
+        "clear": "Clear"
     },
     "errors": {
         "customKeyRequired": "Key is required",
@@ -127,7 +130,11 @@
                     "phoneLabel": "Phone",
                     "phonePlaceholder": "+1 234 567 8900",
                     "addressLabel": "Address",
-                    "addressPlaceholder": "123 Main St, City, Country"
+                    "addressPlaceholder": "123 Main St, City, Country",
+                    "customInputs": "Custom fields",
+                    "customKey": "Label",
+                    "customValue": "Value",
+                    "customHint": "Add custom fields like VAT, registration, department, etc."
                 },
                 "receiver": {
                     "title": "To (Client)",
@@ -138,7 +145,11 @@
                     "phoneLabel": "Phone",
                     "phonePlaceholder": "+1 234 567 8900",
                     "addressLabel": "Address",
-                    "addressPlaceholder": "456 Client St, City, Country"
+                    "addressPlaceholder": "456 Client St, City, Country",
+                    "customInputs": "Custom fields",
+                    "customKey": "Label",
+                    "customValue": "Value",
+                    "customHint": "Add client-specific fields like VAT, PO number, department."
                 }
             },
             "details": {
@@ -149,9 +160,26 @@
                 "dateLabel": "Date",
                 "dueDateLabel": "Due Date",
                 "pickDate": "Pick a date",
-                "logoLabel": "Invoice Logo (URL)",
-                "logoPlaceholder": "https://example.com/logo.png",
-                "logoHelp": "Or leave empty for no logo."
+                "logoLabel": "Invoice Logo",
+                "logoHelp": "Upload a logo to brand your invoice.",
+                "logoUploadCta": "Click to upload or replace logo",
+                "logoUploadButton": "Upload",
+                "logoChange": "Change",
+                "logoRemove": "Remove"
+            },
+            "signature": {
+                "label": "Signature",
+                "draw": "Draw",
+                "type": "Type",
+                "upload": "Upload",
+                "typePlaceholder": "Type your signature",
+                "signatureSaved": "Signature saved"
+            },
+            "templateLabel": "Template",
+            "template": "Template",
+            "templateDescription": "Switch layout for PDF/preview",
+            "totalInWordsLabel": "Total in words",
+            "totalInWordsHelp": "Show the total amount written out in words"
             },
             "items": {
                 "title": "Line Items",
@@ -208,7 +236,14 @@
             "placeholderSenderName": "Sender Name",
             "placeholderSenderAddress": "Sender Address...",
             "placeholderClientName": "Client Name",
-            "placeholderClientAddress": "Client Address..."
+            "placeholderClientAddress": "Client Address...",
+            "signature": "Signature"
+        },
+        "actions": {
+            "save": "Save",
+            "generatePdf": "Generate PDF",
+            "downloadPdf": "Download PDF",
+            "importJson": "Import JSON",
+            "savedList": "Saved invoices"
         }
     }
-}

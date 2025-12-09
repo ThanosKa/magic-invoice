@@ -96,7 +96,7 @@ export const FORM_DEFAULT_VALUES: FormSchemaType = {
         customInputs: [],
     },
     details: {
-        invoiceNumber: `INV-${Date.now()}`,
+        invoiceNumber: '',
         invoiceDate: new Date(),
         dueDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days from now
         currency: 'USD',

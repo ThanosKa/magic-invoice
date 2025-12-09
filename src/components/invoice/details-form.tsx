@@ -41,6 +41,8 @@ export function DetailsForm() {
     const pdfTemplate = watch('details.pdfTemplate');
     const invoiceLogo = watch('details.invoiceLogo');
 
+    const fileInputRef = useRef<HTMLInputElement | null>(null);
+
     const handleLogoUpload = async (file?: File) => {
         if (!file) return;
         const base64 = await fileToBase64(file);
@@ -48,6 +50,10 @@ export function DetailsForm() {
     };
 
     const clearLogo = () => setValue('details.invoiceLogo', '');
+
+    const triggerLogoSelect = () => {
+        fileInputRef.current?.click();
+    };
 
     return (
         <div className="space-y-8">
@@ -160,23 +166,40 @@ export function DetailsForm() {
                 {/* Logo Upload Placeholder - Todo: Implement File Upload */}
                 <div className="space-y-2 md:col-span-2">
                     <Label>{t('invoice.form.details.logoLabel')}</Label>
-                    <div className="flex items-center gap-3">
-                        <Input
-                            type="file"
-                            accept="image/*"
-                            onChange={(e) => handleLogoUpload(e.target.files?.[0])}
-                        />
-                        {invoiceLogo && (
-                            <Button variant="ghost" type="button" onClick={clearLogo}>
-                                {t('common.remove')}
+                    <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={(e) => handleLogoUpload(e.target.files?.[0])}
+                    />
+                    <div
+                        onClick={triggerLogoSelect}
+                        className="flex items-center gap-3 border border-dashed rounded-lg p-3 hover:border-primary cursor-pointer transition bg-card/50"
+                    >
+                        <div className="flex-1">
+                            <p className="text-sm font-medium">{t('invoice.form.details.logoUploadCta')}</p>
+                            <p className="text-xs text-muted-foreground">{t('invoice.form.details.logoHelp')}</p>
+                        </div>
+                        {invoiceLogo ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img src={invoiceLogo} alt="Logo preview" className="h-14 w-14 object-contain rounded border" />
+                        ) : (
+                            <Button type="button" variant="outline" size="sm">
+                                {t('invoice.form.details.logoUploadButton')}
                             </Button>
                         )}
                     </div>
                     {invoiceLogo && (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img src={invoiceLogo} alt="Logo preview" className="h-16 object-contain mt-2" />
+                        <div className="flex gap-2">
+                            <Button variant="outline" size="sm" type="button" onClick={triggerLogoSelect}>
+                                {t('invoice.form.details.logoChange')}
+                            </Button>
+                            <Button variant="ghost" size="sm" type="button" onClick={clearLogo}>
+                                {t('invoice.form.details.logoRemove')}
+                            </Button>
+                        </div>
                     )}
-                    <p className="text-xs text-muted-foreground">{t('invoice.form.details.logoHelp')}</p>
                 </div>
 
                 {/* Template Selector */}

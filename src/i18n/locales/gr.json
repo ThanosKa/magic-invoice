@@ -16,7 +16,10 @@
         "switchToEnglish": "Μετάβαση σε Αγγλικά",
         "switchToGreek": "Μετάβαση σε Ελληνικά",
         "languageEnglish": "Αγγλικά",
-        "languageGreek": "Ελληνικά"
+        "languageGreek": "Ελληνικά",
+        "language": "Γλώσσα",
+        "remove": "Αφαίρεση",
+        "clear": "Καθαρισμός"
     },
     "errors": {
         "customKeyRequired": "Απαιτείται κλειδί",
@@ -127,7 +130,11 @@
                     "phoneLabel": "Τηλέφωνο",
                     "phonePlaceholder": "+30 210 0000000",
                     "addressLabel": "Διεύθυνση",
-                    "addressPlaceholder": "Οδός 123, Πόλη, Χώρα"
+                    "addressPlaceholder": "Οδός 123, Πόλη, Χώρα",
+                    "customInputs": "Προσαρμοσμένα πεδία",
+                    "customKey": "Ετικέτα",
+                    "customValue": "Τιμή",
+                    "customHint": "Προσθέστε πεδία όπως ΑΦΜ, ΓΕΜΗ, τμήμα κ.λπ."
                 },
                 "receiver": {
                     "title": "Προς (Πελάτης)",
@@ -138,7 +145,11 @@
                     "phoneLabel": "Τηλέφωνο",
                     "phonePlaceholder": "+30 210 0000000",
                     "addressLabel": "Διεύθυνση",
-                    "addressPlaceholder": "Οδός 456, Πόλη, Χώρα"
+                    "addressPlaceholder": "Οδός 456, Πόλη, Χώρα",
+                    "customInputs": "Προσαρμοσμένα πεδία",
+                    "customKey": "Ετικέτα",
+                    "customValue": "Τιμή",
+                    "customHint": "Προσθέστε πεδία όπως ΑΦΜ πελάτη, PO, τμήμα."
                 }
             },
             "details": {
@@ -149,9 +160,26 @@
                 "dateLabel": "Ημερομηνία",
                 "dueDateLabel": "Ημερομηνία λήξης",
                 "pickDate": "Επιλέξτε ημερομηνία",
-                "logoLabel": "Λογότυπο τιμολογίου (URL)",
-                "logoPlaceholder": "https://example.com/logo.png",
-                "logoHelp": "Ή αφήστε κενό για χωρίς λογότυπο."
+                "logoLabel": "Λογότυπο τιμολογίου",
+                "logoHelp": "Μεταφορτώστε λογότυπο για να προσαρμόσετε το τιμολόγιο.",
+                "logoUploadCta": "Κάντε κλικ για μεταφόρτωση ή αντικατάσταση λογότυπου",
+                "logoUploadButton": "Μεταφόρτωση",
+                "logoChange": "Αλλαγή",
+                "logoRemove": "Αφαίρεση"
+            },
+            "signature": {
+                "label": "Υπογραφή",
+                "draw": "Σχεδίαση",
+                "type": "Πληκτρολόγηση",
+                "upload": "Μεταφόρτωση",
+                "typePlaceholder": "Πληκτρολογήστε την υπογραφή σας",
+                "signatureSaved": "Η υπογραφή αποθηκεύτηκε"
+            },
+            "templateLabel": "Πρότυπο",
+            "template": "Πρότυπο",
+            "templateDescription": "Αλλάξτε τη διάταξη για PDF/προεπισκόπηση",
+            "totalInWordsLabel": "Σύνολο με λέξεις",
+            "totalInWordsHelp": "Εμφάνιση συνολικού ποσού γραπτώς"
             },
             "items": {
                 "title": "Γραμμές τιμολογίου",
@@ -208,7 +236,15 @@
             "placeholderSenderName": "Όνομα αποστολέα",
             "placeholderSenderAddress": "Διεύθυνση αποστολέα...",
             "placeholderClientName": "Όνομα πελάτη",
-            "placeholderClientAddress": "Διεύθυνση πελάτη..."
+            "placeholderClientAddress": "Διεύθυνση πελάτη...",
+            "signature": "Υπογραφή"
+        },
+        "actions": {
+            "save": "Αποθήκευση",
+            "generatePdf": "Δημιουργία PDF",
+            "downloadPdf": "Λήψη PDF",
+            "importJson": "Εισαγωγή JSON",
+            "savedList": "Αποθηκευμένα τιμολόγια"
         }
     }
 }

@@ -22,7 +22,7 @@ export default function InvoicePage() {
         mode: 'onChange',
     });
 
-    const { watch, reset } = methods;
+    const { watch, reset, setValue, getValues } = methods;
 
     // Load draft on mount
     useEffect(() => {
@@ -38,6 +38,14 @@ export default function InvoicePage() {
             reset(draft);
         }
     }, [reset]);
+
+    // Set default invoice number on client to avoid SSR mismatch
+    useEffect(() => {
+        const current = getValues('details.invoiceNumber');
+        if (!current) {
+            setValue('details.invoiceNumber', `INV-${Date.now()}`);
+        }
+    }, [getValues, setValue]);
 
     // Auto-save draft on change
     useEffect(() => {
