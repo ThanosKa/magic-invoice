@@ -7,7 +7,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from '@/components/ui/accordion';
-import { faqs, FAQItem } from '@/lib/faqs';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 const container = {
     hidden: { opacity: 0 },
@@ -24,7 +24,11 @@ const item = {
     show: { opacity: 1, y: 0 },
 };
 
+const faqKeys = ['isFree', 'accountRequired', 'customize', 'dataSecure'];
+
 export function FAQ() {
+    const { t } = useTranslation();
+
     return (
         <section id="faq" className="border-t border-border py-24">
             <div className="container mx-auto max-w-3xl px-4">
@@ -36,10 +40,10 @@ export function FAQ() {
                     className="text-center"
                 >
                     <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-                        Frequently Asked Questions
+                        {t('faq.title')}
                     </h2>
                     <p className="mt-4 text-lg text-muted-foreground">
-                        Everything you need to know about Magic Invoice
+                        {t('faq.subtitle')}
                     </p>
                 </motion.div>
 
@@ -51,14 +55,14 @@ export function FAQ() {
                     className="mt-12"
                 >
                     <Accordion type="single" collapsible className="w-full">
-                        {faqs.map((faq: FAQItem, index: number) => (
+                        {faqKeys.map((key, index) => (
                             <motion.div key={index} variants={item}>
                                 <AccordionItem value={`item-${index}`}>
                                     <AccordionTrigger className="text-left text-base font-medium">
-                                        {faq.question}
+                                        {t(`faq.questions.${key}.question`)}
                                     </AccordionTrigger>
                                     <AccordionContent className="text-muted-foreground">
-                                        {faq.answer}
+                                        {t(`faq.questions.${key}.answer`)}
                                     </AccordionContent>
                                 </AccordionItem>
                             </motion.div>

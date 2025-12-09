@@ -6,10 +6,13 @@ import { motion, useScroll } from "framer-motion"
 import { Sparkles, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { LanguageSelector } from "@/components/language-selector"
+import { useTranslation } from "@/contexts/TranslationContext"
 
 export function Header() {
     const { scrollY } = useScroll()
     const [scrolled, setScrolled] = React.useState(false)
+    const { t } = useTranslation()
 
     React.useEffect(() => {
         return scrollY.on("change", (latest) => {
@@ -22,14 +25,14 @@ export function Header() {
             <div className="h-16" />
             <header
                 className={`fixed top-0 z-50 w-full transition-all duration-300 ${scrolled
-                        ? "border-b border-border bg-background/80 backdrop-blur"
-                        : "border-b border-transparent bg-transparent"
+                    ? "border-b border-border bg-background/80 backdrop-blur"
+                    : "border-b border-transparent bg-transparent"
                     }`}
             >
                 <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4">
                     <Link href="/" className="flex items-center gap-2 font-bold text-xl">
                         <Sparkles className="h-6 w-6" />
-                        <span>Magic Invoice</span>
+                        <span>{t('common.appName')}</span>
                     </Link>
 
                     <nav className="hidden md:flex items-center gap-6">
@@ -37,26 +40,27 @@ export function Header() {
                             href="#features"
                             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                         >
-                            Features
+                            {t('header.features')}
                         </Link>
                         <Link
                             href="#faq"
                             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                         >
-                            FAQ
+                            {t('header.faq')}
                         </Link>
                     </nav>
 
                     <div className="flex items-center gap-2">
+                        <LanguageSelector />
                         <ThemeToggle />
                         <Button variant="ghost" size="icon" asChild>
                             <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
                                 <Github className="h-5 w-5" />
-                                <span className="sr-only">GitHub</span>
+                                <span className="sr-only">{t('common.github')}</span>
                             </Link>
                         </Button>
                         <Button size="sm" className="rounded-full" asChild>
-                            <Link href="/invoice">Get Started</Link>
+                            <Link href="/invoice">{t('header.getStarted')}</Link>
                         </Button>
                     </div>
                 </div>

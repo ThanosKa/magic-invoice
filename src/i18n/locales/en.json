@@ -1,0 +1,84 @@
+{
+    "common": {
+        "appName": "Magic Invoice",
+        "getStarted": "Get Started",
+        "learnMore": "Learn More",
+        "features": "Features",
+        "faq": "FAQ",
+        "privacy": "Privacy",
+        "terms": "Terms",
+        "github": "GitHub",
+        "email": "Email",
+        "twitter": "Twitter"
+    },
+    "header": {
+        "features": "Features",
+        "faq": "FAQ",
+        "getStarted": "Get Started"
+    },
+    "footer": {
+        "copyright": "© 2024 Magic Invoice. All rights reserved.",
+        "privacy": "Privacy",
+        "terms": "Terms"
+    },
+    "hero": {
+        "announcement": "✨ Create beautiful invoices instantly",
+        "title": "Create Invoices in",
+        "titleHighlight": "Real-Time",
+        "subtitle": "Professional invoice editor with instant PDF export. No sign-up required. Create, customize, and download beautiful invoices in seconds.",
+        "startCreating": "Start Creating",
+        "learnMore": "Learn More",
+        "previewAlt": "Invoice Editor Preview"
+    },
+    "features": {
+        "lightningFast": {
+            "title": "Lightning Fast",
+            "description": "Built for speed. Create, edit, and send invoices in milliseconds."
+        },
+        "privateSecure": {
+            "title": "Private & Secure",
+            "description": "Your data stays on your device. We don't store your financial information."
+        },
+        "globalUniversal": {
+            "title": "Global & Universal",
+            "description": "Support for 100+ currencies and languages."
+        },
+        "pixelPerfect": {
+            "title": "Pixel Perfect PDF",
+            "description": "Generate professionally designed PDFs instantly."
+        }
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Everything you need to know about Magic Invoice",
+        "questions": {
+            "isFree": {
+                "question": "Is Magic Invoice free to use?",
+                "answer": "Yes, Magic Invoice is completely free to use. You can create unlimited invoices without any cost."
+            },
+            "accountRequired": {
+                "question": "Do I need to create an account?",
+                "answer": "No, you can create and download invoices instantly without signing up. Your data stays on your device."
+            },
+            "customize": {
+                "question": "Can I customize the invoice design?",
+                "answer": "Yes, you can add your logo, change colors, and adjust the layout to match your brand identity."
+            },
+            "dataSecure": {
+                "question": "Is my data secure?",
+                "answer": "Absolutely. We don't store your invoice data on our servers. Everything is processed locally in your browser."
+            }
+        }
+    },
+    "cta": {
+        "title": "Ready to create your first invoice?",
+        "subtitle": "Join thousands of freelancers and small businesses who trust Magic Invoice for their invoicing needs.",
+        "buttonText": "Start Creating Now"
+    },
+    "invoice": {
+        "title": "Invoice Editor",
+        "subtitle": "The invoice editor will be implemented in the next phase.",
+        "comingSoon": "Stay tuned for real-time editing and PDF export features!",
+        "badge": "Coming Soon"
+    }
+}
