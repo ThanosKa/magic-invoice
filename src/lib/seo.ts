@@ -16,7 +16,9 @@ export function organizationJsonLd() {
     };
 }
 
-export function faqJsonLd(faqs: any[]) {
+import { FAQItem } from './faqs';
+
+export function faqJsonLd(faqs: FAQItem[]) {
     return {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',

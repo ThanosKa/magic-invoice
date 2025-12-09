@@ -1,4 +1,9 @@
-export const faqs = [
+export interface FAQItem {
+    question: string;
+    answer: string;
+}
+
+export const faqs: FAQItem[] = [
     {
         question: "Is Magic Invoice free to use?",
         answer: "Yes, Magic Invoice is completely free to use. You can create unlimited invoices without any cost."

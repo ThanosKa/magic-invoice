@@ -7,7 +7,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from '@/components/ui/accordion';
-import { faqs } from '@/lib/faqs';
+import { faqs, FAQItem } from '@/lib/faqs';
 
 const container = {
     hidden: { opacity: 0 },
@@ -51,7 +51,7 @@ export function FAQ() {
                     className="mt-12"
                 >
                     <Accordion type="single" collapsible className="w-full">
-                        {faqs.map((faq, index) => (
+                        {faqs.map((faq: FAQItem, index: number) => (
                             <motion.div key={index} variants={item}>
                                 <AccordionItem value={`item-${index}`}>
                                     <AccordionTrigger className="text-left text-base font-medium">
