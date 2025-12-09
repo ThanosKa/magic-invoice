@@ -5,15 +5,12 @@ import { FormSchemaType } from '@/lib/schemas';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { formatCurrency, formatDate } from '@/lib/helpers';
 import { LOCALE_TO_BCP47, useTranslation } from "@/contexts/TranslationContext";
-import { Button } from '@/components/ui/button';
-import { useInvoice } from '@/contexts/InvoiceContext';
 
 export function SummaryView() {
     const { control } = useFormContext<FormSchemaType>();
     const { t, locale } = useTranslation();
     const intlLocale = LOCALE_TO_BCP47[locale];
     const values = useWatch({ control });
-    const { downloadPdf, exportInvoice, saveInvoice, savedInvoices, loadInvoice, deleteInvoice } = useInvoice();
 
     if (!values.details) return null;
 
@@ -21,33 +18,6 @@ export function SummaryView() {
 
     return (
         <div className="space-y-6">
-            <div className="flex flex-wrap gap-2">
-                <Button size="sm" onClick={saveInvoice}>{t('invoice.actions.save')}</Button>
-                <Button size="sm" variant="outline" onClick={downloadPdf}>{t('invoice.actions.downloadPdf')}</Button>
-                <Button size="sm" variant="outline" onClick={() => exportInvoice('json')}>JSON</Button>
-                <Button size="sm" variant="outline" onClick={() => exportInvoice('csv')}>CSV</Button>
-                <Button size="sm" variant="outline" onClick={() => exportInvoice('xml')}>XML</Button>
-            </div>
-
-            {savedInvoices.length > 0 && (
-                <div className="border rounded-lg p-3 space-y-2">
-                    <p className="text-sm font-medium">{t('invoice.actions.savedList')}</p>
-                    <div className="flex flex-wrap gap-2">
-                        {savedInvoices.map((inv) => (
-                            <div key={inv.invoiceNumber} className="flex items-center gap-2 border rounded px-2 py-1">
-                                <span className="text-sm">{inv.invoiceNumber}</span>
-                                <Button size="sm" variant="ghost" onClick={() => loadInvoice(inv.invoiceNumber)}>
-                                    {t('common.load')}
-                                </Button>
-                                <Button size="sm" variant="ghost" onClick={() => deleteInvoice(inv.invoiceNumber)}>
-                                    {t('common.delete')}
-                                </Button>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            )}
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card>
                     <CardHeader>

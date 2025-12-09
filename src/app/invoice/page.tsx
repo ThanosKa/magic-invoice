@@ -11,6 +11,7 @@ import { useTranslation } from '@/contexts/TranslationContext';
 import { InvoiceAppProviders } from '@/contexts/InvoiceAppProviders';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { LanguageSelector } from '@/components/language-selector';
+import { InvoiceActions } from '@/components/invoice/invoice-actions';
 
 const DRAFT_KEY = 'magic-invoice:invoiceDraft';
 
@@ -69,7 +70,8 @@ export default function InvoicePage() {
                         </div>
 
                         {/* Preview Section */}
-                        <div className="lg:sticky lg:top-8 lg:self-start">
+                        <div className="lg:sticky lg:top-8 lg:self-start space-y-4">
+                            <InvoiceActions />
                             <InvoicePreview />
                         </div>
                     </div>
