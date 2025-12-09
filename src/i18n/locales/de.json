@@ -1,252 +1,252 @@
 {
-    "common": {
-        "appName": "Magic Invoice",
-        "getStarted": "Get Started",
-        "learnMore": "Learn More",
-        "features": "Features",
-        "faq": "FAQ",
-        "privacy": "Privacy",
-        "terms": "Terms",
-        "github": "GitHub",
-        "email": "Email",
-        "twitter": "Twitter",
-        "toggleTheme": "Toggle theme",
-        "previous": "Previous",
-        "next": "Next",
-        "switchToEnglish": "Switch to English",
-        "switchToGreek": "Switch to Greek",
-        "languageEnglish": "English",
-        "languageGreek": "Greek",
-        "language": "Language",
-        "remove": "Remove",
-        "clear": "Clear",
-        "load": "Load",
-        "delete": "Delete"
+  "common": {
+    "appName": "Magic Invoice",
+    "getStarted": "Loslegen",
+    "learnMore": "Mehr erfahren",
+    "features": "Funktionen",
+    "faq": "FAQ",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "github": "GitHub",
+    "email": "E-Mail",
+    "twitter": "Twitter",
+    "toggleTheme": "Theme wechseln",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "switchToEnglish": "Auf Englisch wechseln",
+    "switchToGreek": "Auf Griechisch wechseln",
+    "languageEnglish": "Englisch",
+    "languageGreek": "Griechisch",
+    "language": "Sprache",
+    "remove": "Entfernen",
+    "clear": "Leeren",
+    "load": "Laden",
+    "delete": "Löschen"
+  },
+  "errors": {
+    "customKeyRequired": "Schlüssel ist erforderlich",
+    "customValueRequired": "Wert ist erforderlich",
+    "nameRequired": "Name ist erforderlich",
+    "emailRequired": "E-Mail ist erforderlich",
+    "emailInvalid": "Ungültige E-Mail-Adresse",
+    "phoneRequired": "Telefon ist erforderlich",
+    "addressRequired": "Adresse ist erforderlich",
+    "itemNameRequired": "Artikelname ist erforderlich",
+    "quantityPositive": "Menge muss positiv sein",
+    "unitPricePositive": "Stückpreis muss positiv sein",
+    "numberRequired": "Ein Wert ist erforderlich",
+    "numberInvalid": "Bitte gültige Zahl eingeben",
+    "amountNonNegative": "Betrag muss null oder größer sein",
+    "invoiceNumberRequired": "Rechnungsnummer ist erforderlich",
+    "dateRequired": "Datum ist erforderlich",
+    "dateInvalid": "Bitte ein gültiges Datum wählen",
+    "currencyRequired": "Währung ist erforderlich",
+    "itemsRequired": "Füge mindestens eine Position hinzu"
+  },
+  "header": {
+    "features": "Funktionen",
+    "howItWorks": "So funktioniert's",
+    "testimonials": "Referenzen",
+    "faq": "FAQ",
+    "getStarted": "Loslegen"
+  },
+  "footer": {
+    "copyright": "© 2024 Magic Invoice. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutz",
+    "terms": "AGB"
+  },
+  "hero": {
+    "announcement": "✨ Erstelle sofort schöne Rechnungen",
+    "title": "Erstelle Rechnungen in",
+    "titleHighlight": "Echtzeit",
+    "subtitle": "Professioneller Rechnungseditor mit sofortigem PDF-Export. Keine Anmeldung nötig. Erstelle, passe an und lade Rechnungen in Sekunden herunter.",
+    "startCreating": "Jetzt erstellen",
+    "learnMore": "Mehr erfahren",
+    "previewAlt": "Vorschau Rechnungseditor"
+  },
+  "features": {
+    "lightningFast": {
+      "title": "Blitzschnell",
+      "description": "Für Geschwindigkeit gebaut. Erstelle, bearbeite und sende Rechnungen in Millisekunden."
     },
-    "errors": {
-        "customKeyRequired": "Key is required",
-        "customValueRequired": "Value is required",
-        "nameRequired": "Name is required",
-        "emailRequired": "Email is required",
-        "emailInvalid": "Invalid email address",
-        "phoneRequired": "Phone is required",
-        "addressRequired": "Address is required",
-        "itemNameRequired": "Item name is required",
-        "quantityPositive": "Quantity must be positive",
-        "unitPricePositive": "Unit price must be positive",
-        "numberRequired": "A value is required",
-        "numberInvalid": "Please enter a valid number",
-        "amountNonNegative": "Amount must be zero or more",
-        "invoiceNumberRequired": "Invoice number is required",
-        "dateRequired": "Date is required",
-        "dateInvalid": "Please select a valid date",
-        "currencyRequired": "Currency is required",
-        "itemsRequired": "Add at least one line item"
+    "privateSecure": {
+      "title": "Privat & sicher",
+      "description": "Deine Daten bleiben auf deinem Gerät. Wir speichern keine Finanzinformationen."
     },
-    "header": {
-        "features": "Features",
-        "howItWorks": "How it Works",
-        "testimonials": "Testimonials",
-        "faq": "FAQ",
-        "getStarted": "Get Started"
+    "globalUniversal": {
+      "title": "Global & universell",
+      "description": "Unterstützung für über 100 Währungen und Sprachen."
     },
-    "footer": {
-        "copyright": "© 2024 Magic Invoice. All rights reserved.",
-        "privacy": "Privacy",
-        "terms": "Terms"
-    },
-    "hero": {
-        "announcement": "✨ Create beautiful invoices instantly",
-        "title": "Create Invoices in",
-        "titleHighlight": "Real-Time",
-        "subtitle": "Professional invoice editor with instant PDF export. No sign-up required. Create, customize, and download beautiful invoices in seconds.",
-        "startCreating": "Start Creating",
-        "learnMore": "Learn More",
-        "previewAlt": "Invoice Editor Preview"
-    },
-    "features": {
-        "lightningFast": {
-            "title": "Lightning Fast",
-            "description": "Built for speed. Create, edit, and send invoices in milliseconds."
-        },
-        "privateSecure": {
-            "title": "Private & Secure",
-            "description": "Your data stays on your device. We don't store your financial information."
-        },
-        "globalUniversal": {
-            "title": "Global & Universal",
-            "description": "Support for 100+ currencies and languages."
-        },
-        "pixelPerfect": {
-            "title": "Pixel Perfect PDF",
-            "description": "Generate professionally designed PDFs instantly."
-        }
-    },
-    "faq": {
-        "title": "Frequently Asked Questions",
-        "subtitle": "Everything you need to know about Magic Invoice",
-        "questions": {
-            "isFree": {
-                "question": "Is Magic Invoice free to use?",
-                "answer": "Yes, Magic Invoice is completely free to use. You can create unlimited invoices without any cost."
-            },
-            "accountRequired": {
-                "question": "Do I need to create an account?",
-                "answer": "No, you can create and download invoices instantly without signing up. Your data stays on your device."
-            },
-            "customize": {
-                "question": "Can I customize the invoice design?",
-                "answer": "Yes, you can add your logo, change colors, and adjust the layout to match your brand identity."
-            },
-            "dataSecure": {
-                "question": "Is my data secure?",
-                "answer": "Absolutely. We don't store your invoice data on our servers. Everything is processed locally in your browser."
-            }
-        }
-    },
-    "cta": {
-        "title": "Ready to Build Your Professional Invoice?",
-        "subtitle": "Join thousands of professionals who have created stunning invoices with our tool. No sign-up required - start building right now.",
-        "buttonText": "Start Invoicing"
-    },
-    "invoice": {
-        "title": "Invoice Editor",
-        "subtitle": "The invoice editor will be implemented in the next phase.",
-        "comingSoon": "Stay tuned for real-time editing and PDF export features!",
-        "badge": "Coming Soon",
-        "form": {
-            "tabs": {
-                "fromTo": "From/To",
-                "details": "Invoice Details",
-                "items": "Line Items",
-                "payment": "Payment & Notes",
-                "summary": "Overview"
-            },
-            "party": {
-                "sender": {
-                    "title": "From (Sender)",
-                    "nameLabel": "Name / Company",
-                    "namePlaceholder": "Your Name or Company",
-                    "emailLabel": "Email",
-                    "emailPlaceholder": "your@email.com",
-                    "phoneLabel": "Phone",
-                    "phonePlaceholder": "+1 234 567 8900",
-                    "addressLabel": "Address",
-                    "addressPlaceholder": "123 Main St, City, Country",
-                    "customInputs": "Custom fields",
-                    "customKey": "Label",
-                    "customValue": "Value",
-                    "customHint": "Add custom fields like VAT, registration, department, etc."
-                },
-                "receiver": {
-                    "title": "To (Client)",
-                    "nameLabel": "Name / Company",
-                    "namePlaceholder": "Client Name or Company",
-                    "emailLabel": "Email",
-                    "emailPlaceholder": "client@email.com",
-                    "phoneLabel": "Phone",
-                    "phonePlaceholder": "+1 234 567 8900",
-                    "addressLabel": "Address",
-                    "addressPlaceholder": "456 Client St, City, Country",
-                    "customInputs": "Custom fields",
-                    "customKey": "Label",
-                    "customValue": "Value",
-                    "customHint": "Add client-specific fields like VAT, PO number, department."
-                }
-            },
-            "details": {
-                "invoiceNumberLabel": "Invoice Number",
-                "invoiceNumberPlaceholder": "INV-001",
-                "currencyLabel": "Currency",
-                "currencyPlaceholder": "Select currency",
-                "dateLabel": "Date",
-                "dueDateLabel": "Due Date",
-                "pickDate": "Pick a date",
-                "logoLabel": "Invoice Logo",
-                "logoHelp": "Upload a logo to brand your invoice.",
-                "logoUploadCta": "Click to upload or replace logo",
-                "logoUploadButton": "Upload",
-                "logoChange": "Change",
-                "logoRemove": "Remove",
-                "signatureLabel": "Signature",
-                "signatureSaved": "Signature saved",
-                "templateLabel": "Template",
-                "template": "Template",
-                "templateDescription": "Switch layout for PDF/preview",
-                "totalInWordsLabel": "Total in words",
-                "totalInWordsHelp": "Show the total amount written out in words"
-            },
-            "signature": {
-                "draw": "Draw",
-                "type": "Type",
-                "upload": "Upload",
-                "typePlaceholder": "Type your signature",
-                "signatureSaved": "Signature saved"
-            },
-            "items": {
-                "title": "Line Items",
-                "addItem": "Add Item",
-                "emptyState": "No items added yet. Click \"Add Item\" to start.",
-                "itemNameLabel": "Item Name",
-                "itemNamePlaceholder": "Item name",
-                "descriptionPlaceholder": "Description (optional)",
-                "qtyLabel": "Qty",
-                "priceLabel": "Price",
-                "totalLabel": "Total"
-            },
-            "payment": {
-                "chargesTitle": "Charges & Discounts",
-                "applyDiscount": "Apply Discount",
-                "applyTax": "Apply Tax / VAT",
-                "shippingCost": "Shipping Cost",
-                "paymentInfoTitle": "Payment Information",
-                "bankDetailsLabel": "Bank Details / Payment Instructions",
-                "bankDetailsPlaceholder": "Bank Name: Example Bank\nAccount No: 123456789\nSwift Code: EXAMPLE",
-                "termsLabel": "Terms & Conditions",
-                "termsPlaceholder": "Payment due within 30 days...",
-                "notesLabel": "Additional Notes",
-                "notesPlaceholder": "Thank you for your business!"
-            },
-            "summary": {
-                "fromTitle": "From",
-                "toTitle": "To",
-                "invoiceDetailsTitle": "Invoice Details",
-                "numberLabel": "Number",
-                "dateLabel": "Date",
-                "dueDateLabel": "Due Date",
-                "totalLabel": "Total",
-                "itemsLabel": "Items"
-            }
-        },
-        "preview": {
-            "livePreview": "Live Preview",
-            "a4Format": "A4 Format",
-            "invoiceLabel": "Invoice",
-            "dateIssue": "Date Issue",
-            "dateDue": "Date Due",
-            "description": "Description",
-            "amountLabel": "Amount",
-            "noItems": "No items added",
-            "subtotal": "Subtotal",
-            "discount": "Discount",
-            "tax": "Tax",
-            "shipping": "Shipping",
-            "total": "Total",
-            "logoPlaceholder": "Logo",
-            "logoAlt": "Invoice logo",
-            "itemPlaceholder": "Item Name",
-            "placeholderSenderName": "Sender Name",
-            "placeholderSenderAddress": "Sender Address...",
-            "placeholderClientName": "Client Name",
-            "placeholderClientAddress": "Client Address...",
-            "signature": "Signature"
-        },
-        "actions": {
-            "save": "Save",
-            "generatePdf": "Generate PDF",
-            "downloadPdf": "Download PDF",
-            "importJson": "Import JSON",
-            "savedList": "Saved invoices"
-        }
+    "pixelPerfect": {
+      "title": "Perfekter PDF",
+      "description": "Erzeuge professionell gestaltete PDFs sofort."
     }
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Alles, was du über Magic Invoice wissen musst",
+    "questions": {
+      "isFree": {
+        "question": "Ist Magic Invoice kostenlos?",
+        "answer": "Ja, Magic Invoice ist komplett kostenlos. Du kannst unbegrenzt viele Rechnungen erstellen."
+      },
+      "accountRequired": {
+        "question": "Muss ich ein Konto anlegen?",
+        "answer": "Nein, du kannst Rechnungen sofort erstellen und herunterladen ohne Anmeldung. Deine Daten bleiben auf deinem Gerät."
+      },
+      "customize": {
+        "question": "Kann ich das Rechnungsdesign anpassen?",
+        "answer": "Ja, du kannst dein Logo hinzufügen, Farben ändern und das Layout an deine Marke anpassen."
+      },
+      "dataSecure": {
+        "question": "Sind meine Daten sicher?",
+        "answer": "Absolut. Wir speichern deine Rechnungsdaten nicht auf unseren Servern. Alles wird lokal im Browser verarbeitet."
+      }
+    }
+  },
+  "cta": {
+    "title": "Bereit, deine professionelle Rechnung zu erstellen?",
+    "subtitle": "Schließe dich tausenden Profis an, die bereits beeindruckende Rechnungen mit unserem Tool erstellt haben. Keine Anmeldung – fang jetzt an.",
+    "buttonText": "Mit dem Rechnungsstellen beginnen"
+  },
+  "invoice": {
+    "title": "Rechnungseditor",
+    "subtitle": "Der Rechnungseditor wird in der nächsten Phase implementiert.",
+    "comingSoon": "Bleib dran für Live-Editing und PDF-Export!",
+    "badge": "Bald verfügbar",
+    "form": {
+      "tabs": {
+        "fromTo": "Von/An",
+        "details": "Rechnungsdetails",
+        "items": "Positionen",
+        "payment": "Zahlung & Notizen",
+        "summary": "Übersicht"
+      },
+      "party": {
+        "sender": {
+          "title": "Von (Absender)",
+          "nameLabel": "Name / Firma",
+          "namePlaceholder": "Dein Name oder Firma",
+          "emailLabel": "E-Mail",
+          "emailPlaceholder": "dein@email.com",
+          "phoneLabel": "Telefon",
+          "phonePlaceholder": "+49 160 1234567",
+          "addressLabel": "Adresse",
+          "addressPlaceholder": "Beispielstraße 123, Stadt, Land",
+          "customInputs": "Benutzerdefinierte Felder",
+          "customKey": "Beschriftung",
+          "customValue": "Wert",
+          "customHint": "Füge Felder wie USt-ID, Registrierung, Abteilung etc. hinzu."
+        },
+        "receiver": {
+          "title": "An (Kunde)",
+          "nameLabel": "Name / Firma",
+          "namePlaceholder": "Name oder Firma des Kunden",
+          "emailLabel": "E-Mail",
+          "emailPlaceholder": "kunde@email.com",
+          "phoneLabel": "Telefon",
+          "phonePlaceholder": "+49 160 1234567",
+          "addressLabel": "Adresse",
+          "addressPlaceholder": "Kundenstraße 456, Stadt, Land",
+          "customInputs": "Benutzerdefinierte Felder",
+          "customKey": "Beschriftung",
+          "customValue": "Wert",
+          "customHint": "Füge kundenspezifische Felder wie USt-ID, Bestellnummer, Abteilung hinzu."
+        }
+      },
+      "details": {
+        "invoiceNumberLabel": "Rechnungsnummer",
+        "invoiceNumberPlaceholder": "INV-001",
+        "currencyLabel": "Währung",
+        "currencyPlaceholder": "Währung wählen",
+        "dateLabel": "Datum",
+        "dueDateLabel": "Fälligkeitsdatum",
+        "pickDate": "Datum wählen",
+        "logoLabel": "Rechnungslogo",
+        "logoHelp": "Lade ein Logo hoch, um die Rechnung zu branden.",
+        "logoUploadCta": "Klicken zum Hochladen oder Ersetzen",
+        "logoUploadButton": "Hochladen",
+        "logoChange": "Ändern",
+        "logoRemove": "Entfernen",
+        "signatureLabel": "Unterschrift",
+        "signatureSaved": "Unterschrift gespeichert",
+        "templateLabel": "Vorlage",
+        "template": "Vorlage",
+        "templateDescription": "Layout für PDF/Vorschau wechseln",
+        "totalInWordsLabel": "Summe in Worten",
+        "totalInWordsHelp": "Gesamtbetrag ausgeschrieben anzeigen"
+      },
+      "signature": {
+        "draw": "Zeichnen",
+        "type": "Tippen",
+        "upload": "Hochladen",
+        "typePlaceholder": "Tippe deine Unterschrift",
+        "signatureSaved": "Unterschrift gespeichert"
+      },
+      "items": {
+        "title": "Positionen",
+        "addItem": "Position hinzufügen",
+        "emptyState": "Noch keine Positionen. Klicke auf \"Position hinzufügen\", um zu starten.",
+        "itemNameLabel": "Positionsname",
+        "itemNamePlaceholder": "Name der Position",
+        "descriptionPlaceholder": "Beschreibung (optional)",
+        "qtyLabel": "Menge",
+        "priceLabel": "Preis",
+        "totalLabel": "Summe"
+      },
+      "payment": {
+        "chargesTitle": "Gebühren & Rabatte",
+        "applyDiscount": "Rabatt anwenden",
+        "applyTax": "Steuer / MwSt. anwenden",
+        "shippingCost": "Versandkosten",
+        "paymentInfoTitle": "Zahlungsinformationen",
+        "bankDetailsLabel": "Bankdaten / Zahlungsanweisungen",
+        "bankDetailsPlaceholder": "Bank: Beispiel Bank\nKonto: 123456789\nSwift: EXAMPLE",
+        "termsLabel": "AGB / Bedingungen",
+        "termsPlaceholder": "Zahlung fällig innerhalb von 30 Tagen...",
+        "notesLabel": "Zusätzliche Hinweise",
+        "notesPlaceholder": "Vielen Dank für Ihre Zusammenarbeit!"
+      },
+      "summary": {
+        "fromTitle": "Von",
+        "toTitle": "An",
+        "invoiceDetailsTitle": "Rechnungsdetails",
+        "numberLabel": "Nummer",
+        "dateLabel": "Datum",
+        "dueDateLabel": "Fälligkeit",
+        "totalLabel": "Gesamt",
+        "itemsLabel": "Positionen"
+      }
+    },
+    "preview": {
+      "livePreview": "Live-Vorschau",
+      "a4Format": "A4-Format",
+      "invoiceLabel": "Rechnung",
+      "dateIssue": "Ausstellungsdatum",
+      "dateDue": "Fälligkeitsdatum",
+      "description": "Beschreibung",
+      "amountLabel": "Betrag",
+      "noItems": "Keine Positionen",
+      "subtotal": "Zwischensumme",
+      "discount": "Rabatt",
+      "tax": "Steuer",
+      "shipping": "Versand",
+      "total": "Gesamt",
+      "logoPlaceholder": "Logo",
+      "logoAlt": "Rechnungslogo",
+      "itemPlaceholder": "Positionsname",
+      "placeholderSenderName": "Name Absender",
+      "placeholderSenderAddress": "Adresse Absender...",
+      "placeholderClientName": "Name Kunde",
+      "placeholderClientAddress": "Adresse Kunde...",
+      "signature": "Unterschrift"
+    },
+    "actions": {
+      "save": "Speichern",
+      "generatePdf": "PDF erzeugen",
+      "downloadPdf": "PDF herunterladen",
+      "importJson": "JSON importieren",
+      "savedList": "Gespeicherte Rechnungen"
+    }
+  }
 }

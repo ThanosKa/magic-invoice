@@ -13,7 +13,7 @@ export function SummaryView() {
     const { t, locale } = useTranslation();
     const intlLocale = LOCALE_TO_BCP47[locale];
     const values = useWatch({ control });
-    const { generatePdf, downloadPdf, exportInvoice, saveInvoice, savedInvoices, loadInvoice, deleteInvoice } = useInvoice();
+    const { downloadPdf, exportInvoice, saveInvoice, savedInvoices, loadInvoice, deleteInvoice } = useInvoice();
 
     if (!values.details) return null;
 
@@ -23,7 +23,6 @@ export function SummaryView() {
         <div className="space-y-6">
             <div className="flex flex-wrap gap-2">
                 <Button size="sm" onClick={saveInvoice}>{t('invoice.actions.save')}</Button>
-                <Button size="sm" variant="outline" onClick={generatePdf}>{t('invoice.actions.generatePdf')}</Button>
                 <Button size="sm" variant="outline" onClick={downloadPdf}>{t('invoice.actions.downloadPdf')}</Button>
                 <Button size="sm" variant="outline" onClick={() => exportInvoice('json')}>JSON</Button>
                 <Button size="sm" variant="outline" onClick={() => exportInvoice('csv')}>CSV</Button>
