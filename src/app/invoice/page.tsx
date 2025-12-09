@@ -1,14 +1,16 @@
 'use client';
 
-import { useForm, FormProvider, useFieldArray } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { formSchema, FORM_DEFAULT_VALUES, FormSchemaType } from '@/lib/schemas';
-import { ChargesProvider } from '@/contexts/ChargesContext';
 import { useEffect } from 'react';
 import { saveToLocalStorage, loadFromLocalStorage } from '@/lib/helpers';
 import { InvoiceForm } from '@/components/invoice/invoice-form';
 import { InvoicePreview } from '@/components/invoice/invoice-preview';
 import { useTranslation } from '@/contexts/TranslationContext';
+import { InvoiceAppProviders } from '@/contexts/InvoiceAppProviders';
+import { ThemeToggle } from '@/components/theme-toggle';
+import { LanguageSelector } from '@/components/language-selector';
 
 const DRAFT_KEY = 'magic-invoice:invoiceDraft';
 
@@ -46,27 +48,33 @@ export default function InvoicePage() {
     }, [watch]);
 
     return (
-        <FormProvider {...methods}>
-            <ChargesProvider>
-                <div className="min-h-screen bg-background">
-                    <div className="container mx-auto p-4 lg:p-8">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            {/* Form Section */}
-                            <div className="space-y-6">
-                                <div className="flex items-center justify-between">
-                                    <h1 className="text-3xl font-bold tracking-tight">{t('invoice.title')}</h1>
-                                </div>
-                                <InvoiceForm />
-                            </div>
-
-                            {/* Preview Section */}
-                            <div className="lg:sticky lg:top-8 lg:self-start">
-                                <InvoicePreview />
-                            </div>
+        <InvoiceAppProviders methods={methods}>
+            <div className="min-h-screen bg-background">
+                <div className="border-b border-border bg-card/60">
+                    <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                            <h1 className="text-2xl font-semibold tracking-tight">{t('invoice.title')}</h1>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <LanguageSelector />
+                            <ThemeToggle />
                         </div>
                     </div>
                 </div>
-            </ChargesProvider>
-        </FormProvider>
+                <div className="container mx-auto p-4 lg:p-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        {/* Form Section */}
+                        <div className="space-y-6">
+                            <InvoiceForm />
+                        </div>
+
+                        {/* Preview Section */}
+                        <div className="lg:sticky lg:top-8 lg:self-start">
+                            <InvoicePreview />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </InvoiceAppProviders>
     );
 }

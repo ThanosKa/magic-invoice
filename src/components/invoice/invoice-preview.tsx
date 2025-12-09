@@ -26,8 +26,10 @@ export function InvoicePreview() {
 
     if (!sender || !receiver || !details) return null;
 
+    const variantClass = details.pdfTemplate === 2 ? "bg-slate-50" : "bg-white";
+
     return (
-        <Card className="overflow-hidden border-2 shadow-xl bg-white text-slate-900" id="invoice-preview">
+        <Card className={`overflow-hidden border-2 shadow-xl ${variantClass} text-slate-900`} id="invoice-preview">
             {/* Invoice Header / Status Bar */}
             <div className="bg-slate-100 p-3 border-b flex justify-between items-center text-xs text-slate-500">
                 <div className="flex items-center gap-2">
@@ -222,6 +224,21 @@ export function InvoicePreview() {
                         </div>
                     )}
                 </div>
+
+                {details.signature && (
+                    <div className="mt-8 text-right">
+                        <p className="text-xs uppercase tracking-wider text-slate-400 mb-2">{t('invoice.preview.signature')}</p>
+                        {details.signature.type === 'type' && (
+                            <div className="text-2xl font-semibold" style={{ fontFamily: details.signature.font }}>
+                                {details.signature.data}
+                            </div>
+                        )}
+                        {details.signature.type !== 'type' && details.signature.data && (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img src={details.signature.data} alt="Signature" className="h-16 ml-auto" />
+                        )}
+                    </div>
+                )}
             </div>
         </Card>
     );

@@ -19,15 +19,35 @@ import { CalendarIcon } from 'lucide-react';
 import { format } from 'date-fns';
 import currencies from '@/lib/currencies.json';
 import { useTranslation } from "@/contexts/TranslationContext";
+import SignatureCanvas from 'react-signature-canvas';
+import { fileToBase64 } from '@/lib/helpers';
+import { useRef, useState } from 'react';
+import { useSignature } from '@/contexts/SignatureContext';
+import { Switch } from '@/components/ui/switch';
 
 export function DetailsForm() {
     const { register, control, setValue, watch, formState: { errors } } = useFormContext<FormSchemaType>();
     const { t } = useTranslation();
+    const { setDrawData, setTyped, setUploaded, clearSignature, mode, data, setMode } = useSignature();
+    const sigPad = useRef<SignatureCanvas | null>(null);
+    const [typedSignature, setTypedSignature] = useState('');
+    const [typedFont, setTypedFont] = useState('Satisfy');
 
     // Watch dates for calendar logic
     const invoiceDate = watch('details.invoiceDate');
     const dueDate = watch('details.dueDate');
     const currency = watch('details.currency');
+    const totalInWordsEnabled = watch('details.totalInWordsEnabled');
+    const pdfTemplate = watch('details.pdfTemplate');
+    const invoiceLogo = watch('details.invoiceLogo');
+
+    const handleLogoUpload = async (file?: File) => {
+        if (!file) return;
+        const base64 = await fileToBase64(file);
+        setValue('details.invoiceLogo', base64);
+    };
+
+    const clearLogo = () => setValue('details.invoiceLogo', '');
 
     return (
         <div className="space-y-8">
@@ -140,11 +160,116 @@ export function DetailsForm() {
                 {/* Logo Upload Placeholder - Todo: Implement File Upload */}
                 <div className="space-y-2 md:col-span-2">
                     <Label>{t('invoice.form.details.logoLabel')}</Label>
-                    <Input
-                        {...register('details.invoiceLogo')}
-                        placeholder={t('invoice.form.details.logoPlaceholder')}
-                    />
+                    <div className="flex items-center gap-3">
+                        <Input
+                            type="file"
+                            accept="image/*"
+                            onChange={(e) => handleLogoUpload(e.target.files?.[0])}
+                        />
+                        {invoiceLogo && (
+                            <Button variant="ghost" type="button" onClick={clearLogo}>
+                                {t('common.remove')}
+                            </Button>
+                        )}
+                    </div>
+                    {invoiceLogo && (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={invoiceLogo} alt="Logo preview" className="h-16 object-contain mt-2" />
+                    )}
                     <p className="text-xs text-muted-foreground">{t('invoice.form.details.logoHelp')}</p>
+                </div>
+
+                {/* Template Selector */}
+                <div className="space-y-2 md:col-span-2">
+                    <Label>{t('invoice.form.details.templateLabel')}</Label>
+                    <div className="grid grid-cols-2 gap-3">
+                        {[1, 2].map((tpl) => (
+                            <button
+                                key={tpl}
+                                type="button"
+                                onClick={() => setValue('details.pdfTemplate', tpl as 1 | 2)}
+                                className={`border rounded-lg p-3 text-left transition ${pdfTemplate === tpl ? 'border-primary shadow-sm' : 'border-border'}`}
+                            >
+                                <p className="font-medium">{t('invoice.form.details.template')} {tpl}</p>
+                                <p className="text-xs text-muted-foreground">{t('invoice.form.details.templateDescription')}</p>
+                            </button>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Total in words toggle */}
+                <div className="space-y-2 md:col-span-2">
+                    <Label>{t('invoice.form.details.totalInWordsLabel')}</Label>
+                    <div className="flex items-center gap-3">
+                        <Switch
+                            checked={!!totalInWordsEnabled}
+                            onCheckedChange={(checked) => setValue('details.totalInWordsEnabled', checked)}
+                        />
+                        <span className="text-sm text-muted-foreground">{t('invoice.form.details.totalInWordsHelp')}</span>
+                    </div>
+                </div>
+
+                {/* Signature capture */}
+                <div className="space-y-3 md:col-span-2">
+                    <Label>{t('invoice.form.details.signatureLabel')}</Label>
+                    <div className="flex gap-2">
+                        {(['draw', 'type', 'upload'] as const).map((m) => (
+                            <Button
+                                key={m}
+                                type="button"
+                                variant={mode === m ? 'default' : 'outline'}
+                                size="sm"
+                                onClick={() => setMode(m)}
+                            >
+                                {t(`invoice.form.details.signature.${m}`)}
+                            </Button>
+                        ))}
+                        <Button type="button" variant="ghost" size="sm" onClick={clearSignature}>
+                            {t('common.clear')}
+                        </Button>
+                    </div>
+                    {mode === 'draw' && (
+                        <div className="border rounded-lg">
+                            <SignatureCanvas
+                                ref={sigPad}
+                                penColor="#111827"
+                                canvasProps={{ width: 500, height: 160, className: "w-full h-full" }}
+                                onEnd={() => {
+                                    const val = sigPad.current?.getTrimmedCanvas().toDataURL('image/png') || '';
+                                    setDrawData(val);
+                                }}
+                            />
+                        </div>
+                    )}
+                    {mode === 'type' && (
+                        <div className="space-y-2">
+                            <Input
+                                value={typedSignature}
+                                onChange={(e) => {
+                                    setTypedSignature(e.target.value);
+                                    setTyped(e.target.value, typedFont);
+                                }}
+                                placeholder={t('invoice.form.details.signature.typePlaceholder')}
+                            />
+                        </div>
+                    )}
+                    {mode === 'upload' && (
+                        <Input
+                            type="file"
+                            accept="image/*"
+                            onChange={async (e) => {
+                                const file = e.target.files?.[0];
+                                if (!file) return;
+                                const base = await fileToBase64(file);
+                                setUploaded(base);
+                            }}
+                        />
+                    )}
+                    {data && (
+                        <div className="mt-2 text-sm text-muted-foreground">
+                            {t('invoice.form.details.signatureSaved')}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

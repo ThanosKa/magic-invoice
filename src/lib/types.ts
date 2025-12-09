@@ -43,6 +43,7 @@ export type InvoiceDetailsType = {
     // Signature
     signature?: SignatureType;
     totalInWords?: string;
+    totalInWordsEnabled?: boolean;
 };
 
 export type ItemType = {

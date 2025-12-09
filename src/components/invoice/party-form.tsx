@@ -1,14 +1,19 @@
 'use client';
 
-import { useFormContext } from 'react-hook-form';
+import { useFormContext, useFieldArray } from 'react-hook-form';
 import { FormSchemaType } from '@/lib/schemas';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
+import { Plus, Trash2 } from 'lucide-react';
 import { useTranslation } from "@/contexts/TranslationContext";
 
 export function PartyForm() {
-    const { register, formState: { errors } } = useFormContext<FormSchemaType>();
+    const { register, control, formState: { errors } } = useFormContext<FormSchemaType>();
     const { t } = useTranslation();
+
+    const senderCustomInputs = useFieldArray({ control, name: 'sender.customInputs' });
+    const receiverCustomInputs = useFieldArray({ control, name: 'receiver.customInputs' });
 
     return (
         <div className="space-y-8">
@@ -65,6 +70,47 @@ export function PartyForm() {
                         )}
                     </div>
                 </div>
+
+                <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                        <Label>{t('invoice.form.party.sender.customInputs')}</Label>
+                        <Button
+                            type="button"
+                            size="sm"
+                            variant="outline"
+                            onClick={() => senderCustomInputs.append({ key: '', value: '' })}
+                        >
+                            <Plus className="h-4 w-4 mr-1" /> {t('invoice.form.items.addItem')}
+                        </Button>
+                    </div>
+                    <div className="space-y-2">
+                        {senderCustomInputs.fields.map((field, idx) => (
+                            <div key={field.id} className="grid grid-cols-5 gap-2">
+                                <Input
+                                    className="col-span-2"
+                                    placeholder={t('invoice.form.party.sender.customKey')}
+                                    {...register(`sender.customInputs.${idx}.key`)}
+                                />
+                                <Input
+                                    className="col-span-3"
+                                    placeholder={t('invoice.form.party.sender.customValue')}
+                                    {...register(`sender.customInputs.${idx}.value`)}
+                                />
+                                <Button
+                                    type="button"
+                                    variant="ghost"
+                                    size="icon"
+                                    onClick={() => senderCustomInputs.remove(idx)}
+                                >
+                                    <Trash2 className="h-4 w-4" />
+                                </Button>
+                            </div>
+                        ))}
+                        {senderCustomInputs.fields.length === 0 && (
+                            <p className="text-xs text-muted-foreground">{t('invoice.form.party.sender.customHint')}</p>
+                        )}
+                    </div>
+                </div>
             </div>
 
             {/* Receiver Section */}
@@ -117,6 +163,47 @@ export function PartyForm() {
                         />
                         {errors.receiver?.address?.message && (
                             <p className="text-sm text-destructive">{t(errors.receiver.address.message as string)}</p>
+                        )}
+                    </div>
+                </div>
+
+                <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                        <Label>{t('invoice.form.party.receiver.customInputs')}</Label>
+                        <Button
+                            type="button"
+                            size="sm"
+                            variant="outline"
+                            onClick={() => receiverCustomInputs.append({ key: '', value: '' })}
+                        >
+                            <Plus className="h-4 w-4 mr-1" /> {t('invoice.form.items.addItem')}
+                        </Button>
+                    </div>
+                    <div className="space-y-2">
+                        {receiverCustomInputs.fields.map((field, idx) => (
+                            <div key={field.id} className="grid grid-cols-5 gap-2">
+                                <Input
+                                    className="col-span-2"
+                                    placeholder={t('invoice.form.party.receiver.customKey')}
+                                    {...register(`receiver.customInputs.${idx}.key`)}
+                                />
+                                <Input
+                                    className="col-span-3"
+                                    placeholder={t('invoice.form.party.receiver.customValue')}
+                                    {...register(`receiver.customInputs.${idx}.value`)}
+                                />
+                                <Button
+                                    type="button"
+                                    variant="ghost"
+                                    size="icon"
+                                    onClick={() => receiverCustomInputs.remove(idx)}
+                                >
+                                    <Trash2 className="h-4 w-4" />
+                                </Button>
+                            </div>
+                        ))}
+                        {receiverCustomInputs.fields.length === 0 && (
+                            <p className="text-xs text-muted-foreground">{t('invoice.form.party.receiver.customHint')}</p>
                         )}
                     </div>
                 </div>

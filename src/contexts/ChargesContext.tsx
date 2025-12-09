@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useEffect } from 'react';
+import React, { createContext, useContext, useEffect, useCallback } from 'react';
 import { useFormContext, useWatch } from 'react-hook-form';
 import { FormSchemaType } from '@/lib/schemas';
 import { formatPriceToString } from '@/lib/helpers';
@@ -20,9 +20,9 @@ export function ChargesProvider({ children }: { children: React.ReactNode }) {
     const taxDetails = useWatch({ control, name: 'details.taxDetails' });
     const shippingDetails = useWatch({ control, name: 'details.shippingDetails' });
     const currency = useWatch({ control, name: 'details.currency' });
-    const totalInWordsEnabled = useWatch({ control, name: 'details.totalInWords' });
+    const totalInWordsEnabled = useWatch({ control, name: 'details.totalInWordsEnabled' });
 
-    const calculateTotals = () => {
+    const calculateTotals = useCallback(() => {
         if (!items || items.length === 0) return;
 
         // Calculate subtotal
@@ -61,16 +61,18 @@ export function ChargesProvider({ children }: { children: React.ReactNode }) {
         setValue('details.totalAmount', total);
 
         // Generate total in words if enabled
-        if (totalInWordsEnabled !== undefined && totalInWordsEnabled !== '') {
+        if (totalInWordsEnabled) {
             const words = formatPriceToString(total, currency || 'USD');
             setValue('details.totalInWords', words);
+        } else {
+            setValue('details.totalInWords', '');
         }
-    };
+    }, [items, discountDetails, taxDetails, shippingDetails, currency, totalInWordsEnabled, setValue]);
 
     // Recalculate when dependencies change
     useEffect(() => {
         calculateTotals();
-    }, [items, discountDetails, taxDetails, shippingDetails, currency, totalInWordsEnabled]);
+    }, [calculateTotals]);
 
     return (
         <ChargesContext.Provider value={{ calculateTotals }}>
