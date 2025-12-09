@@ -14,13 +14,15 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import { getCurrencySymbol } from '@/lib/helpers';
+import { useTranslation } from "@/contexts/TranslationContext";
 
 export function PaymentForm() {
+    const { t } = useTranslation();
     const { register, control, setValue } = useFormContext<FormSchemaType>();
     const currency = useWatch({ control, name: 'details.currency' });
     const currencySymbol = getCurrencySymbol(currency || 'USD');
 
-    // Watch checks for toggles
+
     const discountEnabled = useWatch({ control, name: 'details.discountDetails.enabled' });
     const taxEnabled = useWatch({ control, name: 'details.taxDetails.enabled' });
     const shippingEnabled = useWatch({ control, name: 'details.shippingDetails.enabled' });
@@ -28,16 +30,16 @@ export function PaymentForm() {
     return (
         <div className="space-y-8">
             <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Charges & Discounts</h3>
+                <h3 className="text-lg font-semibold">{t('invoice.form.payment.chargesTitle')}</h3>
 
-                {/* Discount Toggle */}
+
                 <div className="flex items-center justify-between p-4 border rounded-lg bg-card/30">
                     <div className="flex items-center space-x-4">
                         <Switch
                             checked={discountEnabled}
                             onCheckedChange={(c) => setValue('details.discountDetails.enabled', c)}
                         />
-                        <Label>Apply Discount</Label>
+                        <Label>{t('invoice.form.payment.applyDiscount')}</Label>
                     </div>
 
                     {discountEnabled && (
@@ -48,7 +50,7 @@ export function PaymentForm() {
                                 {...register('details.discountDetails.amount', { valueAsNumber: true })}
                             />
                             <Select
-                                onValueChange={(v: any) => setValue('details.discountDetails.amountType', v)}
+                                onValueChange={(v: "amount" | "percentage") => setValue('details.discountDetails.amountType', v)}
                                 defaultValue={useWatch({ control, name: 'details.discountDetails.amountType' })}
                             >
                                 <SelectTrigger className="w-24">
@@ -63,14 +65,14 @@ export function PaymentForm() {
                     )}
                 </div>
 
-                {/* Tax Toggle */}
+
                 <div className="flex items-center justify-between p-4 border rounded-lg bg-card/30">
                     <div className="flex items-center space-x-4">
                         <Switch
                             checked={taxEnabled}
                             onCheckedChange={(c) => setValue('details.taxDetails.enabled', c)}
                         />
-                        <Label>Apply Tax / VAT</Label>
+                        <Label>{t('invoice.form.payment.applyTax')}</Label>
                     </div>
 
                     {taxEnabled && (
@@ -81,7 +83,7 @@ export function PaymentForm() {
                                 {...register('details.taxDetails.amount', { valueAsNumber: true })}
                             />
                             <Select
-                                onValueChange={(v: any) => setValue('details.taxDetails.amountType', v)}
+                                onValueChange={(v: "amount" | "percentage") => setValue('details.taxDetails.amountType', v)}
                                 defaultValue={useWatch({ control, name: 'details.taxDetails.amountType' })}
                             >
                                 <SelectTrigger className="w-24">
@@ -96,14 +98,14 @@ export function PaymentForm() {
                     )}
                 </div>
 
-                {/* Shipping Toggle */}
+
                 <div className="flex items-center justify-between p-4 border rounded-lg bg-card/30">
                     <div className="flex items-center space-x-4">
                         <Switch
                             checked={shippingEnabled}
                             onCheckedChange={(c) => setValue('details.shippingDetails.enabled', c)}
                         />
-                        <Label>Shipping Cost</Label>
+                        <Label>{t('invoice.form.payment.shippingCost')}</Label>
                     </div>
 
                     {shippingEnabled && (
@@ -114,7 +116,7 @@ export function PaymentForm() {
                                 {...register('details.shippingDetails.amount', { valueAsNumber: true })}
                             />
                             <Select
-                                onValueChange={(v: any) => setValue('details.shippingDetails.amountType', v)}
+                                onValueChange={(v: "amount" | "percentage") => setValue('details.shippingDetails.amountType', v)}
                                 defaultValue={useWatch({ control, name: 'details.shippingDetails.amountType' })}
                             >
                                 <SelectTrigger className="w-24">
@@ -131,29 +133,29 @@ export function PaymentForm() {
             </div>
 
             <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Payment Information</h3>
+                <h3 className="text-lg font-semibold">{t('invoice.form.payment.paymentInfoTitle')}</h3>
                 <div className="space-y-2">
-                    <Label>Bank Details / Payment Instructions</Label>
+                    <Label>{t('invoice.form.payment.bankDetailsLabel')}</Label>
                     <Textarea
                         {...register('details.paymentInformation')}
-                        placeholder="Bank Name: Example Bank&#10;Account No: 123456789&#10;Swift Code: EXAMPLE"
+                        placeholder={t('invoice.form.payment.bankDetailsPlaceholder')}
                         className="h-24"
                     />
                 </div>
 
                 <div className="space-y-2">
-                    <Label>Terms & Conditions</Label>
+                    <Label>{t('invoice.form.payment.termsLabel')}</Label>
                     <Textarea
                         {...register('details.termsConditions')}
-                        placeholder="Payment due within 30 days..."
+                        placeholder={t('invoice.form.payment.termsPlaceholder')}
                     />
                 </div>
 
                 <div className="space-y-2">
-                    <Label>Additional Notes</Label>
+                    <Label>{t('invoice.form.payment.notesLabel')}</Label>
                     <Textarea
                         {...register('details.notes')}
-                        placeholder="Thank you for your business!"
+                        placeholder={t('invoice.form.payment.notesPlaceholder')}
                     />
                 </div>
             </div>

@@ -9,7 +9,10 @@
         "terms": "Terms",
         "github": "GitHub",
         "email": "Email",
-        "twitter": "Twitter"
+        "twitter": "Twitter",
+        "toggleTheme": "Toggle theme",
+        "previous": "Previous",
+        "next": "Next"
     },
     "header": {
         "features": "Features",
@@ -71,14 +74,93 @@
         }
     },
     "cta": {
-        "title": "Ready to create your first invoice?",
-        "subtitle": "Join thousands of freelancers and small businesses who trust Magic Invoice for their invoicing needs.",
-        "buttonText": "Start Creating Now"
+        "title": "Ready to Build Your Professional Invoice?",
+        "subtitle": "Join thousands of professionals who have created stunning invoices with our tool. No sign-up required - start building right now.",
+        "buttonText": "Start Invoicing"
     },
     "invoice": {
         "title": "Invoice Editor",
         "subtitle": "The invoice editor will be implemented in the next phase.",
         "comingSoon": "Stay tuned for real-time editing and PDF export features!",
-        "badge": "Coming Soon"
+        "badge": "Coming Soon",
+        "form": {
+            "tabs": {
+                "fromTo": "From/To",
+                "details": "Invoice Details",
+                "items": "Line Items",
+                "payment": "Payment & Notes",
+                "summary": "Overview"
+            },
+            "party": {
+                "sender": {
+                    "title": "From (Sender)",
+                    "nameLabel": "Name / Company",
+                    "namePlaceholder": "Your Name or Company",
+                    "emailLabel": "Email",
+                    "emailPlaceholder": "your@email.com",
+                    "phoneLabel": "Phone",
+                    "phonePlaceholder": "+1 234 567 8900",
+                    "addressLabel": "Address",
+                    "addressPlaceholder": "123 Main St, City, Country"
+                },
+                "receiver": {
+                    "title": "To (Client)",
+                    "nameLabel": "Name / Company",
+                    "namePlaceholder": "Client Name or Company",
+                    "emailLabel": "Email",
+                    "emailPlaceholder": "client@email.com",
+                    "phoneLabel": "Phone",
+                    "phonePlaceholder": "+1 234 567 8900",
+                    "addressLabel": "Address",
+                    "addressPlaceholder": "456 Client St, City, Country"
+                }
+            },
+            "details": {
+                "invoiceNumberLabel": "Invoice Number",
+                "invoiceNumberPlaceholder": "INV-001",
+                "currencyLabel": "Currency",
+                "currencyPlaceholder": "Select currency",
+                "dateLabel": "Date",
+                "dueDateLabel": "Due Date",
+                "pickDate": "Pick a date",
+                "logoLabel": "Invoice Logo (URL)",
+                "logoPlaceholder": "https://example.com/logo.png",
+                "logoHelp": "Or leave empty for no logo."
+            },
+            "items": {
+                "title": "Line Items",
+                "addItem": "Add Item",
+                "emptyState": "No items added yet. Click \"Add Item\" to start.",
+                "itemNameLabel": "Item Name",
+                "itemNamePlaceholder": "Item name",
+                "descriptionPlaceholder": "Description (optional)",
+                "qtyLabel": "Qty",
+                "priceLabel": "Price",
+                "totalLabel": "Total"
+            },
+            "payment": {
+                "chargesTitle": "Charges & Discounts",
+                "applyDiscount": "Apply Discount",
+                "applyTax": "Apply Tax / VAT",
+                "shippingCost": "Shipping Cost",
+                "paymentInfoTitle": "Payment Information",
+                "bankDetailsLabel": "Bank Details / Payment Instructions",
+                "bankDetailsPlaceholder": "Bank Name: Example Bank\nAccount No: 123456789\nSwift Code: EXAMPLE",
+                "termsLabel": "Terms & Conditions",
+                "termsPlaceholder": "Payment due within 30 days...",
+                "notesLabel": "Additional Notes",
+                "notesPlaceholder": "Thank you for your business!"
+            },
+            "summary": {
+                "fromTitle": "From",
+                "toTitle": "To",
+                "invoiceDetailsTitle": "Invoice Details",
+                "numberLabel": "Number",
+                "dateLabel": "Date",
+                "dueDateLabel": "Due Date",
+                "totalLabel": "Total",
+                "itemsLabel": "Items"
+            }
+        }
     }
 }

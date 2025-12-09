@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Magic Invoice
+
+Magic Invoice is a modern, real-time invoice editor built with Next.js, Shadcn UI, and Tailwind CSS. It allows you to create beautiful, professional invoices instantly and export them as PDFs—all directly in your browser without any sign-up required.
+
+## Features
+
+- **Real-Time Editing**: See your changes instantly as you type.
+- **Privacy First**: All data is processed locally in your browser; no financial information is stored on servers.
+- **Modern Design**: Built with a premium monochrome aesthetic using Shadcn UI and Framer Motion.
+- **PDF Export**: Generate pixel-perfect PDFs of your invoices.
+- **Multilingual Support**: Supports multiple languages via i18n.
+
+## Tech Stack
+
+- **Framework**: Next.js 16
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4, Shadcn UI, OKLCH colors
+- **Form Handling**: React Hook Form, Zod
+- **Animations**: Framer Motion
+- **Date Handling**: date-fns
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Ensure you have Node.js and `pnpm` installed.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1.  Clone the repository:
+    ```bash
+    git clone <repository-url>
+    cd magic-invoice
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2.  Install dependencies:
+    ```bash
+    pnpm install
+    ```
 
-## Learn More
+3.  Run the development server:
+    ```bash
+    pnpm run dev
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `pnpm run dev`: Runs the app in development mode.
+- `pnpm run build`: Builds the app for production.
+- `pnpm run start`: Starts the production server.
+- `pnpm run lint`: Runs ESLint to check for code quality issues.
+- `pnpm run type-check`: Runs TypeScript compiler to check for type errors.
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/app`: Next.js App Router pages and layouts.
+- `src/components`: React components (UI, invoice, landing page).
+- `src/lib`: Helper functions and utilities.
+- `src/hooks`: Custom React hooks.
+- `src/contexts`: React Context providers (e.g., TranslationContext).
+- `src/i18n`: Internationalization locales and configuration.

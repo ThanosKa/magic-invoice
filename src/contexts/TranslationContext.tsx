@@ -30,10 +30,10 @@ export function TranslationProvider({ children }: { children: React.ReactNode })
 
     const t = (key: string): string => {
         const keys = key.split('.');
-        let value: any = translations;
+        let value: unknown = translations;
 
         for (const k of keys) {
-            value = value?.[k];
+            value = (value as Record<string, unknown>)?.[k];
             if (value === undefined) return key;
         }
 

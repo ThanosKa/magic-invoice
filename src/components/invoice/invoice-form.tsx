@@ -9,18 +9,20 @@ import { DetailsForm } from './details-form';
 import { ItemsForm } from './items-form';
 import { PaymentForm } from './payment-form';
 import { SummaryView } from './summary-view';
-
-const tabs = [
-    { id: 'from-to', label: 'From/To' },
-    { id: 'details', label: 'Invoice Details' },
-    { id: 'items', label: 'Line Items' },
-    { id: 'payment', label: 'Payment & Notes' },
-    { id: 'summary', label: 'Overview' },
-] as const;
+import { useTranslation } from "@/contexts/TranslationContext";
 
 export function InvoiceForm() {
     const [activeTab, setActiveTab] = useState(0);
     const { formState } = useFormContext<FormSchemaType>();
+    const { t } = useTranslation();
+
+    const tabs = [
+        { id: 'from-to', label: t('invoice.form.tabs.fromTo') },
+        { id: 'details', label: t('invoice.form.tabs.details') },
+        { id: 'items', label: t('invoice.form.tabs.items') },
+        { id: 'payment', label: t('invoice.form.tabs.payment') },
+        { id: 'summary', label: t('invoice.form.tabs.summary') },
+    ] as const;
 
     const canGoNext = activeTab < tabs.length - 1;
     const canGoBack = activeTab > 0;
@@ -43,8 +45,8 @@ export function InvoiceForm() {
                             key={tab.id}
                             onClick={() => setActiveTab(index)}
                             className={`px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors border-b-2 ${activeTab === index
-                                    ? 'border-foreground text-foreground'
-                                    : 'border-transparent text-muted-foreground hover:text-foreground'
+                                ? 'border-foreground text-foreground'
+                                : 'border-transparent text-muted-foreground hover:text-foreground'
                                 }`}
                         >
                             {tab.label}
@@ -70,14 +72,14 @@ export function InvoiceForm() {
                     onClick={handleBack}
                     disabled={!canGoBack}
                 >
-                    Previous
+                    {t('common.previous')}
                 </Button>
                 <Button
                     type="button"
                     onClick={handleNext}
                     disabled={!canGoNext}
                 >
-                    Next
+                    {t('common.next')}
                 </Button>
             </div>
         </div>

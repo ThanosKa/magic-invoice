@@ -10,8 +10,10 @@ import { Plus, Trash2 } from 'lucide-react';
 import { useCharges } from '@/contexts/ChargesContext';
 import { useEffect } from 'react';
 import { getCurrencySymbol } from '@/lib/helpers';
+import { useTranslation } from "@/contexts/TranslationContext";
 
 export function ItemsForm() {
+    const { t } = useTranslation();
     const { register, control, watch, setValue } = useFormContext<FormSchemaType>();
     const { fields, append, remove } = useFieldArray({
         control,
@@ -42,9 +44,9 @@ export function ItemsForm() {
     return (
         <div className="space-y-6">
             <div className="flex justify-between items-center">
-                <h3 className="text-lg font-semibold">Line Items</h3>
+                <h3 className="text-lg font-semibold">{t('invoice.form.items.title')}</h3>
                 <Button onClick={handleCreateItem} size="sm" className="flex gap-2">
-                    <Plus className="h-4 w-4" /> Add Item
+                    <Plus className="h-4 w-4" /> {t('invoice.form.items.addItem')}
                 </Button>
             </div>
 
@@ -65,20 +67,20 @@ export function ItemsForm() {
                     return (
                         <div key={field.id} className="grid grid-cols-12 gap-4 p-4 border rounded-lg bg-card/50 relative group">
                             <div className="col-span-12 md:col-span-5 space-y-2">
-                                <Label>Item Name</Label>
+                                <Label>{t('invoice.form.items.itemNameLabel')}</Label>
                                 <Input
                                     {...register(`details.items.${index}.name`)}
-                                    placeholder="Item name"
+                                    placeholder={t('invoice.form.items.itemNamePlaceholder')}
                                 />
                                 <Input
                                     {...register(`details.items.${index}.description`)}
-                                    placeholder="Description (optional)"
+                                    placeholder={t('invoice.form.items.descriptionPlaceholder')}
                                     className="text-xs text-muted-foreground h-8"
                                 />
                             </div>
 
                             <div className="col-span-4 md:col-span-2 space-y-2">
-                                <Label>Qty</Label>
+                                <Label>{t('invoice.form.items.qtyLabel')}</Label>
                                 <Input
                                     type="number"
                                     step="0.01"
@@ -88,7 +90,7 @@ export function ItemsForm() {
                             </div>
 
                             <div className="col-span-4 md:col-span-3 space-y-2">
-                                <Label>Price</Label>
+                                <Label>{t('invoice.form.items.priceLabel')}</Label>
                                 <div className="relative">
                                     <span className="absolute left-3 top-2.5 text-xs text-muted-foreground">{currencySymbol}</span>
                                     <Input
@@ -102,7 +104,7 @@ export function ItemsForm() {
                             </div>
 
                             <div className="col-span-3 md:col-span-1 space-y-2">
-                                <Label>Total</Label>
+                                <Label>{t('invoice.form.items.totalLabel')}</Label>
                                 <div className="h-10 flex items-center text-sm font-medium">
                                     {currencySymbol}{(watch(`details.items.${index}.total`) || 0).toFixed(2)}
                                 </div>
@@ -126,7 +128,7 @@ export function ItemsForm() {
 
             {fields.length === 0 && (
                 <div className="text-center p-8 border-2 border-dashed rounded-lg text-muted-foreground">
-                    No items added yet. Click "Add Item" to start.
+                    {t('invoice.form.items.emptyState')}
                 </div>
             )}
         </div>

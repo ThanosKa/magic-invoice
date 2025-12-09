@@ -1,4 +1,4 @@
-// Number and Currency Formatting Helpers
+
 
 export function formatNumberWithCommas(num: number): string {
     return num.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -28,7 +28,7 @@ export function parseNumber(value: string | number): number {
     return parseFloat(value.replace(/,/g, '')) || 0;
 }
 
-// Date formatting
+
 export const DATE_OPTIONS: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: 'long',
@@ -45,7 +45,7 @@ export function formatDate(date: Date, options: Intl.DateTimeFormatOptions = DAT
     return new Intl.DateTimeFormat('en-US', options).format(date);
 }
 
-// Number to words conversion (simple implementation)
+
 export function formatPriceToString(amount: number, currency: string = 'USD'): string {
     if (amount === 0) return 'Zero';
 
@@ -85,8 +85,8 @@ function numberToWords(num: number): string {
     return numberToWords(Math.floor(num / 1000000)) + ' Million' + (num % 1000000 !== 0 ? ' ' + numberToWords(num % 1000000) : '');
 }
 
-// LocalStorage helpers
-export function saveToLocalStorage(key: string, value: any): void {
+
+export function saveToLocalStorage(key: string, value: unknown): void {
     if (typeof window === 'undefined') return;
     try {
         localStorage.setItem(key, JSON.stringify(value));
@@ -115,7 +115,7 @@ export function removeFromLocalStorage(key: string): void {
     }
 }
 
-// Data URL helpers
+
 export function isDataUrl(str: string): boolean {
     return str.startsWith('data:');
 }

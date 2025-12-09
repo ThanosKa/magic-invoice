@@ -18,9 +18,11 @@ import { cn } from '@/lib/utils';
 import { CalendarIcon } from 'lucide-react';
 import { format } from 'date-fns';
 import currencies from '@/lib/currencies.json';
+import { useTranslation } from "@/contexts/TranslationContext";
 
 export function DetailsForm() {
     const { register, control, setValue, watch, formState: { errors } } = useFormContext<FormSchemaType>();
+    const { t } = useTranslation();
 
     // Watch dates for calendar logic
     const invoiceDate = watch('details.invoiceDate');
@@ -33,11 +35,11 @@ export function DetailsForm() {
 
                 {/* Invoice Number */}
                 <div className="space-y-2">
-                    <Label htmlFor="invoice-number">Invoice Number</Label>
+                    <Label htmlFor="invoice-number">{t('invoice.form.details.invoiceNumberLabel')}</Label>
                     <Input
                         id="invoice-number"
                         {...register('details.invoiceNumber')}
-                        placeholder="INV-001"
+                        placeholder={t('invoice.form.details.invoiceNumberPlaceholder')}
                     />
                     {errors.details?.invoiceNumber && (
                         <p className="text-sm text-destructive">{errors.details.invoiceNumber.message}</p>
@@ -46,13 +48,13 @@ export function DetailsForm() {
 
                 {/* Currency Selector */}
                 <div className="space-y-2">
-                    <Label>Currency</Label>
+                    <Label>{t('invoice.form.details.currencyLabel')}</Label>
                     <Select
                         onValueChange={(value) => setValue('details.currency', value)}
                         defaultValue={currency}
                     >
                         <SelectTrigger>
-                            <SelectValue placeholder="Select currency" />
+                            <SelectValue placeholder={t('invoice.form.details.currencyPlaceholder')} />
                         </SelectTrigger>
                         <SelectContent>
                             {currencies.map((curr) => (
@@ -69,7 +71,7 @@ export function DetailsForm() {
 
                 {/* Invoice Date */}
                 <div className="space-y-2 flex flex-col">
-                    <Label>Date</Label>
+                    <Label>{t('invoice.form.details.dateLabel')}</Label>
                     <Popover>
                         <PopoverTrigger asChild>
                             <Button
@@ -82,7 +84,7 @@ export function DetailsForm() {
                                 {invoiceDate ? (
                                     format(invoiceDate, "PPP")
                                 ) : (
-                                    <span>Pick a date</span>
+                                    <span>{t('invoice.form.details.pickDate')}</span>
                                 )}
                                 <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                             </Button>
@@ -103,7 +105,7 @@ export function DetailsForm() {
 
                 {/* Due Date */}
                 <div className="space-y-2 flex flex-col">
-                    <Label>Due Date</Label>
+                    <Label>{t('invoice.form.details.dueDateLabel')}</Label>
                     <Popover>
                         <PopoverTrigger asChild>
                             <Button
@@ -116,7 +118,7 @@ export function DetailsForm() {
                                 {dueDate ? (
                                     format(dueDate, "PPP")
                                 ) : (
-                                    <span>Pick a date</span>
+                                    <span>{t('invoice.form.details.pickDate')}</span>
                                 )}
                                 <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                             </Button>
@@ -137,12 +139,12 @@ export function DetailsForm() {
 
                 {/* Logo Upload Placeholder - Todo: Implement File Upload */}
                 <div className="space-y-2 md:col-span-2">
-                    <Label>Invoice Logo (URL)</Label>
+                    <Label>{t('invoice.form.details.logoLabel')}</Label>
                     <Input
                         {...register('details.invoiceLogo')}
-                        placeholder="https://example.com/logo.png"
+                        placeholder={t('invoice.form.details.logoPlaceholder')}
                     />
-                    <p className="text-xs text-muted-foreground">Or leave empty for no logo.</p>
+                    <p className="text-xs text-muted-foreground">{t('invoice.form.details.logoHelp')}</p>
                 </div>
             </div>
         </div>

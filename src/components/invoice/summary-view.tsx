@@ -4,9 +4,11 @@ import { useFormContext, useWatch } from 'react-hook-form';
 import { FormSchemaType } from '@/lib/schemas';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { formatCurrency, formatDate } from '@/lib/helpers';
+import { useTranslation } from "@/contexts/TranslationContext";
 
 export function SummaryView() {
     const { control } = useFormContext<FormSchemaType>();
+    const { t } = useTranslation();
     const values = useWatch({ control });
 
     if (!values.details) return null;
@@ -18,7 +20,7 @@ export function SummaryView() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card>
                     <CardHeader>
-                        <CardTitle className="text-base text-muted-foreground">From</CardTitle>
+                        <CardTitle className="text-base text-muted-foreground">{t('invoice.form.summary.fromTitle')}</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <p className="font-semibold text-lg">{sender?.name}</p>
@@ -32,7 +34,7 @@ export function SummaryView() {
 
                 <Card>
                     <CardHeader>
-                        <CardTitle className="text-base text-muted-foreground">To</CardTitle>
+                        <CardTitle className="text-base text-muted-foreground">{t('invoice.form.summary.toTitle')}</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <p className="font-semibold text-lg">{receiver?.name}</p>
@@ -47,24 +49,24 @@ export function SummaryView() {
 
             <Card>
                 <CardHeader>
-                    <CardTitle>Invoice Details</CardTitle>
+                    <CardTitle>{t('invoice.form.summary.invoiceDetailsTitle')}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div>
-                            <p className="text-sm text-muted-foreground">Number</p>
+                            <p className="text-sm text-muted-foreground">{t('invoice.form.summary.numberLabel')}</p>
                             <p className="font-medium">{details.invoiceNumber}</p>
                         </div>
                         <div>
-                            <p className="text-sm text-muted-foreground">Date</p>
+                            <p className="text-sm text-muted-foreground">{t('invoice.form.summary.dateLabel')}</p>
                             <p className="font-medium">{details.invoiceDate ? formatDate(details.invoiceDate) : '-'}</p>
                         </div>
                         <div>
-                            <p className="text-sm text-muted-foreground">Due Date</p>
+                            <p className="text-sm text-muted-foreground">{t('invoice.form.summary.dueDateLabel')}</p>
                             <p className="font-medium">{details.dueDate ? formatDate(details.dueDate) : '-'}</p>
                         </div>
                         <div>
-                            <p className="text-sm text-muted-foreground">Total</p>
+                            <p className="text-sm text-muted-foreground">{t('invoice.form.summary.totalLabel')}</p>
                             <p className="font-bold text-primary">
                                 {formatCurrency(Number(details.totalAmount || 0), details.currency)}
                             </p>
@@ -72,7 +74,7 @@ export function SummaryView() {
                     </div>
 
                     <div className="border-t pt-4">
-                        <p className="text-sm text-muted-foreground mb-2">Items ({details.items?.length || 0})</p>
+                        <p className="text-sm text-muted-foreground mb-2">{t('invoice.form.summary.itemsLabel')} ({details.items?.length || 0})</p>
                         <ul className="space-y-2">
                             {details.items?.map((item, i) => (
                                 <li key={i} className="flex justify-between text-sm">
