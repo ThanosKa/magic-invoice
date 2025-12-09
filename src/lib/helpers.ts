@@ -1,144 +1,319 @@
-
-
-export function formatNumberWithCommas(num: number, locale: string = 'en-US'): string {
-    if (!Number.isFinite(num)) return '0.00';
-    return num.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+export function formatNumberWithCommas(
+  num: number,
+  locale: string = "en-US"
+): string {
+  if (!Number.isFinite(num)) return "0.00";
+  return num.toLocaleString(locale, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
 }
 
-export function formatCurrency(amount: number, currency: string = 'USD', locale: string = 'en-US'): string {
-    try {
-        return new Intl.NumberFormat(locale, {
-            style: 'currency',
-            currency,
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
-        }).format(amount);
-    } catch (error) {
-        return `${getCurrencySymbol(currency)}${formatNumberWithCommas(amount, locale)}`;
-    }
+export function formatCurrency(
+  amount: number,
+  currency: string = "USD",
+  locale: string = "en-US"
+): string {
+  try {
+    return new Intl.NumberFormat(locale, {
+      style: "currency",
+      currency,
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(amount);
+  } catch (error) {
+    return `${getCurrencySymbol(currency)}${formatNumberWithCommas(
+      amount,
+      locale
+    )}`;
+  }
 }
 
 export function getCurrencySymbol(currency: string): string {
-    const symbols: Record<string, string> = {
-        USD: '$',
-        EUR: '€',
-        GBP: '£',
-        JPY: '¥',
-        CAD: 'C$',
-        AUD: 'A$',
-        CHF: 'CHF',
-        CNY: '¥',
-        INR: '₹',
-    };
-    return symbols[currency] || currency + ' ';
+  const symbols: Record<string, string> = {
+    USD: "$",
+    EUR: "€",
+    GBP: "£",
+    JPY: "¥",
+    CAD: "C$",
+    AUD: "A$",
+    CHF: "CHF",
+    CNY: "¥",
+    INR: "₹",
+  };
+  return symbols[currency] || currency + " ";
 }
 
 export function parseNumber(value: string | number): number {
-    if (typeof value === 'number') return value;
-    return parseFloat(value.replace(/,/g, '')) || 0;
+  if (typeof value === "number") return value;
+  return parseFloat(value.replace(/,/g, "")) || 0;
 }
 
-
 export const DATE_OPTIONS: Intl.DateTimeFormatOptions = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
+  year: "numeric",
+  month: "long",
+  day: "numeric",
 };
 
 export const SHORT_DATE_OPTIONS: Intl.DateTimeFormatOptions = {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
+  year: "numeric",
+  month: "short",
+  day: "numeric",
 };
 
 export function formatDate(
-    date: Date,
-    options: Intl.DateTimeFormatOptions = DATE_OPTIONS,
-    locale: string = 'en-US'
+  date: Date,
+  options: Intl.DateTimeFormatOptions = DATE_OPTIONS,
+  locale: string = "en-US"
 ): string {
-    return new Intl.DateTimeFormat(locale, options).format(date);
+  return new Intl.DateTimeFormat(locale, options).format(date);
 }
 
+export function formatPriceToString(
+  amount: number,
+  currency: string = "USD",
+  locale: string = "en-US"
+): string {
+  if (!Number.isFinite(amount)) return "Zero";
 
-export function formatPriceToString(amount: number, currency: string = 'USD'): string {
-    if (amount === 0) return 'Zero';
+  const safeLocale =
+    locale.toLowerCase().startsWith("el") ||
+    locale.toLowerCase().startsWith("gr")
+      ? "gr"
+      : "en";
+  const formatter = safeLocale === "gr" ? numberToWordsGr : numberToWordsEn;
 
-    const integerPart = Math.floor(amount);
-    const decimalPart = Math.round((amount - integerPart) * 100);
+  const isNegative = amount < 0;
+  const absolute = Math.abs(amount);
+  const integerPart = Math.floor(absolute);
+  const decimalPart = Math.round((absolute - integerPart) * 100);
 
-    let result = numberToWords(integerPart);
-
-    if (currency === 'USD') {
-        result += integerPart === 1 ? ' Dollar' : ' Dollars';
-        if (decimalPart > 0) {
-            result += ` and ${numberToWords(decimalPart)} ${decimalPart === 1 ? 'Cent' : 'Cents'}`;
+  const words = formatter(integerPart);
+  const currencyLabels =
+    safeLocale === "gr"
+      ? {
+          singular: "Δολάριο",
+          plural: "Δολάρια",
+          centSingular: "Σεντ",
+          centPlural: "Σεντ",
         }
-    } else {
-        result += ` ${currency}`;
-        if (decimalPart > 0) {
-            result += ` and ${decimalPart}/100`;
-        }
+      : {
+          singular: "Dollar",
+          plural: "Dollars",
+          centSingular: "Cent",
+          centPlural: "Cents",
+        };
+
+  const currencyWord =
+    currency === "USD"
+      ? integerPart === 1
+        ? currencyLabels.singular
+        : currencyLabels.plural
+      : currency;
+  const centsWord =
+    currency === "USD"
+      ? decimalPart === 1
+        ? currencyLabels.centSingular
+        : currencyLabels.centPlural
+      : `${currency}`;
+
+  const decimalText =
+    decimalPart > 0 ? ` and ${formatter(decimalPart)} ${centsWord}` : "";
+  const prefix = isNegative ? (safeLocale === "gr" ? "Μείον " : "Minus ") : "";
+
+  return `${prefix}${words} ${currencyWord}${decimalText}`.trim();
+}
+
+function numberToWordsEn(num: number): string {
+  if (!Number.isFinite(num) || num < 0) return "Zero";
+  if (num === 0) return "Zero";
+
+  const belowTwenty = [
+    "Zero",
+    "One",
+    "Two",
+    "Three",
+    "Four",
+    "Five",
+    "Six",
+    "Seven",
+    "Eight",
+    "Nine",
+    "Ten",
+    "Eleven",
+    "Twelve",
+    "Thirteen",
+    "Fourteen",
+    "Fifteen",
+    "Sixteen",
+    "Seventeen",
+    "Eighteen",
+    "Nineteen",
+  ];
+  const tens = [
+    "",
+    "",
+    "Twenty",
+    "Thirty",
+    "Forty",
+    "Fifty",
+    "Sixty",
+    "Seventy",
+    "Eighty",
+    "Ninety",
+  ];
+  const scales = ["", "Thousand", "Million", "Billion", "Trillion"];
+
+  const chunkToWords = (n: number): string => {
+    const hundreds = Math.floor(n / 100);
+    const remainder = n % 100;
+    const tensPart =
+      remainder < 20
+        ? belowTwenty[remainder]
+        : `${tens[Math.floor(remainder / 10)]}${
+            remainder % 10 ? " " + belowTwenty[remainder % 10] : ""
+          }`;
+    const hundredsPart = hundreds
+      ? `${belowTwenty[hundreds]} Hundred${remainder ? " " : ""}`
+      : "";
+    return `${hundredsPart}${remainder ? tensPart : ""}`.trim();
+  };
+
+  const words: string[] = [];
+  let remainder = num;
+  let scaleIndex = 0;
+
+  while (remainder > 0 && scaleIndex < scales.length) {
+    const chunk = remainder % 1000;
+    if (chunk > 0) {
+      const chunkWords = chunkToWords(chunk);
+      const scaleWord = scales[scaleIndex];
+      words.unshift(scaleWord ? `${chunkWords} ${scaleWord}` : chunkWords);
     }
+    remainder = Math.floor(remainder / 1000);
+    scaleIndex += 1;
+  }
 
-    return result;
+  return words.join(" ").trim();
 }
 
-function numberToWords(num: number): string {
-    if (num === 0) return 'Zero';
+function numberToWordsGr(num: number): string {
+  if (!Number.isFinite(num) || num < 0) return "Μηδέν";
+  if (num === 0) return "Μηδέν";
 
-    const ones = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
-    const tens = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
-    const teens = ['Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+  const belowTwenty = [
+    "Μηδέν",
+    "Ένα",
+    "Δύο",
+    "Τρία",
+    "Τέσσερα",
+    "Πέντε",
+    "Έξι",
+    "Επτά",
+    "Οκτώ",
+    "Εννέα",
+    "Δέκα",
+    "Έντεκα",
+    "Δώδεκα",
+    "Δεκατρία",
+    "Δεκατέσσερα",
+    "Δεκαπέντε",
+    "Δεκαέξι",
+    "Δεκαεπτά",
+    "Δεκαοκτώ",
+    "Δεκαεννέα",
+  ];
+  const tens = [
+    "",
+    "",
+    "Είκοσι",
+    "Τριάντα",
+    "Σαράντα",
+    "Πενήντα",
+    "Εξήντα",
+    "Εβδομήντα",
+    "Ογδόντα",
+    "Ενενήντα",
+  ];
+  const scales = [
+    "",
+    "Χίλια",
+    "Εκατομμύριο",
+    "Δισεκατομμύριο",
+    "Τρισεκατομμύριο",
+  ];
 
-    if (num < 10) return ones[num];
-    if (num < 20) return teens[num - 10];
-    if (num < 100) return tens[Math.floor(num / 10)] + (num % 10 !== 0 ? ' ' + ones[num % 10] : '');
-    if (num < 1000) return ones[Math.floor(num / 100)] + ' Hundred' + (num % 100 !== 0 ? ' ' + numberToWords(num % 100) : '');
-    if (num < 1000000) return numberToWords(Math.floor(num / 1000)) + ' Thousand' + (num % 1000 !== 0 ? ' ' + numberToWords(num % 1000) : '');
+  const chunkToWords = (n: number): string => {
+    const hundreds = Math.floor(n / 100);
+    const remainder = n % 100;
+    const hundredsPart = hundreds
+      ? `${belowTwenty[hundreds]} Εκατό${remainder ? "ν " : ""}`
+      : "";
+    const tensPart =
+      remainder < 20
+        ? belowTwenty[remainder]
+        : `${tens[Math.floor(remainder / 10)]}${
+            remainder % 10 ? " " + belowTwenty[remainder % 10] : ""
+          }`;
+    return `${hundredsPart}${remainder ? tensPart : ""}`.trim();
+  };
 
-    return numberToWords(Math.floor(num / 1000000)) + ' Million' + (num % 1000000 !== 0 ? ' ' + numberToWords(num % 1000000) : '');
+  const words: string[] = [];
+  let remainder = num;
+  let scaleIndex = 0;
+
+  while (remainder > 0 && scaleIndex < scales.length) {
+    const chunk = remainder % 1000;
+    if (chunk > 0) {
+      const chunkWords = chunkToWords(chunk);
+      const scaleWord = scales[scaleIndex];
+      words.unshift(scaleWord ? `${chunkWords} ${scaleWord}` : chunkWords);
+    }
+    remainder = Math.floor(remainder / 1000);
+    scaleIndex += 1;
+  }
+
+  return words.join(" ").trim();
 }
-
 
 export function saveToLocalStorage(key: string, value: unknown): void {
-    if (typeof window === 'undefined') return;
-    try {
-        localStorage.setItem(key, JSON.stringify(value));
-    } catch (error) {
-        console.error('Error saving to localStorage:', error);
-    }
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch (error) {
+    console.error("Error saving to localStorage:", error);
+  }
 }
 
 export function loadFromLocalStorage<T>(key: string, defaultValue: T): T {
-    if (typeof window === 'undefined') return defaultValue;
-    try {
-        const item = localStorage.getItem(key);
-        return item ? JSON.parse(item) : defaultValue;
-    } catch (error) {
-        console.error('Error loading from localStorage:', error);
-        return defaultValue;
-    }
+  if (typeof window === "undefined") return defaultValue;
+  try {
+    const item = localStorage.getItem(key);
+    return item ? JSON.parse(item) : defaultValue;
+  } catch (error) {
+    console.error("Error loading from localStorage:", error);
+    return defaultValue;
+  }
 }
 
 export function removeFromLocalStorage(key: string): void {
-    if (typeof window === 'undefined') return;
-    try {
-        localStorage.removeItem(key);
-    } catch (error) {
-        console.error('Error removing from localStorage:', error);
-    }
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.removeItem(key);
+  } catch (error) {
+    console.error("Error removing from localStorage:", error);
+  }
 }
 
-
 export function isDataUrl(str: string): boolean {
-    return str.startsWith('data:');
+  return str.startsWith("data:");
 }
 
 export function fileToBase64(file: File): Promise<string> {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => resolve(reader.result as string);
-        reader.onerror = error => reject(error);
-    });
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = (error) => reject(error);
+  });
 }
