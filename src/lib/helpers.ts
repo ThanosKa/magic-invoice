@@ -82,50 +82,103 @@ const TO_WORDS_LOCALES: Record<WordsLocaleKey, string> = {
   fr: "fr-FR",
 };
 
-const CURRENCY_LABELS: Record<
-  WordsLocaleKey,
-  {
-    singular: string;
-    plural: string;
-    centSingular: string;
-    centPlural: string;
-  }
-> = {
-  en: {
+type CurrencyLabels = {
+  singular: string;
+  plural: string;
+  centSingular: string;
+  centPlural: string;
+};
+
+const CURRENCY_LABELS_BY_CODE: Record<string, CurrencyLabels> = {
+  USD: {
     singular: "Dollar",
     plural: "Dollars",
     centSingular: "Cent",
     centPlural: "Cents",
   },
-  gr: {
-    singular: "Δολάριο",
-    plural: "Δολάρια",
-    centSingular: "Σεντ",
-    centPlural: "Σεντ",
-  },
-  it: {
-    singular: "Dollaro",
-    plural: "Dollari",
+  EUR: {
+    singular: "Euro",
+    plural: "Euros",
     centSingular: "Cent",
-    centPlural: "Cent",
+    centPlural: "Cents",
   },
-  es: {
-    singular: "Dólar",
-    plural: "Dólares",
+  GBP: {
+    singular: "Pound",
+    plural: "Pounds",
+    centSingular: "Penny",
+    centPlural: "Pence",
+  },
+  JPY: {
+    singular: "Yen",
+    plural: "Yen",
+    centSingular: "Sen",
+    centPlural: "Sen",
+  },
+  CAD: {
+    singular: "Canadian Dollar",
+    plural: "Canadian Dollars",
+    centSingular: "Cent",
+    centPlural: "Cents",
+  },
+  AUD: {
+    singular: "Australian Dollar",
+    plural: "Australian Dollars",
+    centSingular: "Cent",
+    centPlural: "Cents",
+  },
+  CHF: {
+    singular: "Swiss Franc",
+    plural: "Swiss Francs",
+    centSingular: "Rappen",
+    centPlural: "Rappen",
+  },
+  CNY: {
+    singular: "Yuan",
+    plural: "Yuan",
+    centSingular: "Jiao",
+    centPlural: "Jiao",
+  },
+  INR: {
+    singular: "Rupee",
+    plural: "Rupees",
+    centSingular: "Paise",
+    centPlural: "Paise",
+  },
+  MXN: {
+    singular: "Peso",
+    plural: "Pesos",
     centSingular: "Centavo",
     centPlural: "Centavos",
   },
-  de: {
-    singular: "Dollar",
-    plural: "Dollar",
-    centSingular: "Cent",
-    centPlural: "Cent",
+  BRL: {
+    singular: "Real",
+    plural: "Reais",
+    centSingular: "Centavo",
+    centPlural: "Centavos",
   },
-  fr: {
-    singular: "Dollar",
-    plural: "Dollars",
-    centSingular: "Centime",
-    centPlural: "Centimes",
+  ZAR: {
+    singular: "Rand",
+    plural: "Rand",
+    centSingular: "Cent",
+    centPlural: "Cents",
+  },
+  SEK: {
+    singular: "Krona",
+    plural: "Kronor",
+    centSingular: "Öre",
+    centPlural: "Öre",
+  },
+  NOK: {
+    singular: "Krone",
+    plural: "Kroner",
+    centSingular: "Øre",
+    centPlural: "Øre",
+  },
+  DKK: {
+    singular: "Krone",
+    plural: "Kroner",
+    centSingular: "Øre",
+    centPlural: "Øre",
   },
 };
 
@@ -137,6 +190,7 @@ export function formatPriceToString(
   if (!Number.isFinite(amount)) return "Zero";
 
   const localeKey = getLocaleKey(locale);
+  const currencyKey = currency.toUpperCase();
 
   const toWords = getToWords(localeKey);
   const fallbackFormatter =
@@ -155,24 +209,23 @@ export function formatPriceToString(
   const integerPart = Math.floor(absolute);
   const decimalPart = Math.round((absolute - integerPart) * 100);
 
-  const currencyLabels = CURRENCY_LABELS[localeKey] || CURRENCY_LABELS.en;
+  const currencyLabels = CURRENCY_LABELS_BY_CODE[currencyKey] || {
+    singular: currencyKey,
+    plural: currencyKey,
+    centSingular: "Cent",
+    centPlural: "Cents",
+  };
 
   const integerWords = convert(integerPart);
   const currencyWord =
-    currency === "USD"
-      ? integerPart === 1
-        ? currencyLabels.singular
-        : currencyLabels.plural
-      : currency;
+    integerPart === 1 ? currencyLabels.singular : currencyLabels.plural;
 
   const decimalText =
     decimalPart > 0
       ? ` and ${convert(decimalPart)} ${
-          currency === "USD"
-            ? decimalPart === 1
-              ? currencyLabels.centSingular
-              : currencyLabels.centPlural
-            : currency
+          decimalPart === 1
+            ? currencyLabels.centSingular
+            : currencyLabels.centPlural
         }`
       : "";
 

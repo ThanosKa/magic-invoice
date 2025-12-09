@@ -55,7 +55,7 @@ function WizardProgress({ steps, errors }: { steps: StepConfig[]; errors: Record
     const { activeStep, goToStep } = useWizard();
     return (
         <div className="border-b border-border">
-            <div className="flex space-x-4 overflow-x-auto">
+            <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
                 {steps.map((step, index) => {
                     const isActive = index === activeStep;
                     const hasError = Object.keys(errors || {}).length > 0 && index <= activeStep;
@@ -63,7 +63,7 @@ function WizardProgress({ steps, errors }: { steps: StepConfig[]; errors: Record
                         <button
                             key={step.id}
                             onClick={() => goToStep(index)}
-                            className={`px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors border-b-2 ${isActive
+                            className={`px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors border-b-2 cursor-pointer ${isActive
                                 ? 'border-foreground text-foreground'
                                 : 'border-transparent text-muted-foreground hover:text-foreground'
                                 } ${hasError ? 'text-destructive' : ''}`}
