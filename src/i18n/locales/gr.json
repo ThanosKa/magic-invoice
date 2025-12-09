@@ -165,10 +165,11 @@
                 "logoUploadCta": "Κάντε κλικ για μεταφόρτωση ή αντικατάσταση λογότυπου",
                 "logoUploadButton": "Μεταφόρτωση",
                 "logoChange": "Αλλαγή",
-                "logoRemove": "Αφαίρεση"
+                "logoRemove": "Αφαίρεση",
+                "signatureLabel": "Υπογραφή",
+                "signatureSaved": "Η υπογραφή αποθηκεύτηκε"
             },
             "signature": {
-                "label": "Υπογραφή",
                 "draw": "Σχεδίαση",
                 "type": "Πληκτρολόγηση",
                 "upload": "Μεταφόρτωση",
@@ -247,5 +248,3 @@
             "savedList": "Αποθηκευμένα τιμολόγια"
         }
     }
-}
-

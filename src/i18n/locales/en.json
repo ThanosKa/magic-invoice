@@ -165,10 +165,11 @@
                 "logoUploadCta": "Click to upload or replace logo",
                 "logoUploadButton": "Upload",
                 "logoChange": "Change",
-                "logoRemove": "Remove"
+                "logoRemove": "Remove",
+                "signatureLabel": "Signature",
+                "signatureSaved": "Signature saved"
             },
             "signature": {
-                "label": "Signature",
                 "draw": "Draw",
                 "type": "Type",
                 "upload": "Upload",
