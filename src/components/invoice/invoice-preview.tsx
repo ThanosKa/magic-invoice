@@ -67,6 +67,18 @@ export function InvoicePreview() {
                         <div className="font-semibold text-slate-900">{sender.name || t('invoice.preview.placeholderSenderName')}</div>
                         <div className="text-slate-600 whitespace-pre-wrap">{sender.address || t('invoice.preview.placeholderSenderAddress')}</div>
                         {sender.email && <div className="text-slate-600 mt-1">{sender.email}</div>}
+                        {sender.phone && <div className="text-slate-600 mt-1">{sender.phone}</div>}
+                        {sender.customInputs && sender.customInputs.length > 0 && (
+                            <div className="mt-2 space-y-1">
+                                {sender.customInputs.map((custom, idx) => (
+                                    custom.key && custom.value && (
+                                        <div key={idx} className="text-xs text-slate-600">
+                                            <span className="font-medium">{custom.key}:</span> {custom.value}
+                                        </div>
+                                    )
+                                ))}
+                            </div>
+                        )}
                     </div>
                     <div className="text-right">
                         <h3 className="text-xs uppercase tracking-wider font-bold text-slate-400 mb-2">
@@ -75,6 +87,18 @@ export function InvoicePreview() {
                         <div className="font-semibold text-slate-900">{receiver.name || t('invoice.preview.placeholderClientName')}</div>
                         <div className="text-slate-600 whitespace-pre-wrap">{receiver.address || t('invoice.preview.placeholderClientAddress')}</div>
                         {receiver.email && <div className="text-slate-600 mt-1">{receiver.email}</div>}
+                        {receiver.phone && <div className="text-slate-600 mt-1">{receiver.phone}</div>}
+                        {receiver.customInputs && receiver.customInputs.length > 0 && (
+                            <div className="mt-2 space-y-1">
+                                {receiver.customInputs.map((custom, idx) => (
+                                    custom.key && custom.value && (
+                                        <div key={idx} className="text-xs text-slate-600">
+                                            <span className="font-medium">{custom.key}:</span> {custom.value}
+                                        </div>
+                                    )
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </div>
 

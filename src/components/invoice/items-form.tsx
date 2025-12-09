@@ -39,11 +39,6 @@ export function ItemsForm() {
     const currency = watch('details.currency');
     const currencySymbol = getCurrencySymbol(currency || 'USD');
 
-    // Recalculate totals when rows are added/removed/reordered
-    useEffect(() => {
-        calculateTotals();
-    }, [fields, calculateTotals]);
-
     const sensors = useSensors(
         useSensor(MouseSensor, { activationConstraint: { distance: 8 } }),
         useSensor(TouchSensor, { activationConstraint: { delay: 150, tolerance: 5 } })
@@ -148,7 +143,8 @@ function SortableItem({
         const total = (parseFloat(String(quantity)) || 0) * (parseFloat(String(unitPrice)) || 0);
         setValue(`details.items.${index}.total`, total);
         calculateTotals();
-    }, [quantity, unitPrice, setValue, index, calculateTotals]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [quantity, unitPrice, index]);
 
     return (
         <div

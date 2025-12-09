@@ -77,7 +77,7 @@ export function DetailsForm() {
                     <Label>{t('invoice.form.details.currencyLabel')}</Label>
                     <Select
                         onValueChange={(value) => setValue('details.currency', value)}
-                        defaultValue={currency}
+                        value={currency}
                     >
                         <SelectTrigger>
                             <SelectValue placeholder={t('invoice.form.details.currencyPlaceholder')} />
