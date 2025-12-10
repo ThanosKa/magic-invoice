@@ -54,8 +54,8 @@ export function TranslationProvider({
     return savedLocale;
   });
 
-  const translations = useMemo(() =>
-    TRANSLATIONS[locale] || TRANSLATIONS[FALLBACK_LOCALE],
+  const translations = useMemo(
+    () => TRANSLATIONS[locale] || TRANSLATIONS[FALLBACK_LOCALE],
     [locale]
   );
 
