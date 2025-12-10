@@ -55,9 +55,9 @@ export function PaymentForm() {
       | "details.taxDetails.amount"
       | "details.shippingDetails.amount"
   ) => {
-    const current = getValues(path as any);
+    const current = getValues(path);
     if (!Number.isFinite(current)) {
-      setValue(path as any, 0);
+      setValue(path, 0);
     }
   };
 

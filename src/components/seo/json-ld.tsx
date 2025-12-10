@@ -1,6 +1,6 @@
 import Script from 'next/script';
 
-export function JsonLd({ data }: { data: Record<string, any> | Record<string, any>[] }) {
+export function JsonLd({ data }: { data: Record<string, unknown> | Record<string, unknown>[] }) {
     return (
         <Script
             id="json-ld"

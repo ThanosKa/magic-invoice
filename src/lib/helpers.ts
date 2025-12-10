@@ -21,7 +21,7 @@ export function formatCurrency(
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }).format(amount);
-  } catch (error) {
+  } catch {
     return `${getCurrencySymbol(currency)}${formatNumberWithCommas(
       amount,
       locale

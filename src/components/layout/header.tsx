@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { motion, useScroll } from "framer-motion";
+import { useScroll } from "framer-motion";
 import { Sparkles, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeDropdown } from "@/components/theme-dropdown";

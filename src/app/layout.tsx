@@ -20,7 +20,13 @@ export const metadata: Metadata = {
   keywords: ["invoice", "invoice generator", "PDF invoice", "free invoice", "invoice maker"],
   authors: [{ name: "Magic Invoice" }],
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/icon.png" },
+    ],
   },
   openGraph: {
     title: "Magic Invoice - Create Beautiful Invoices in Real-Time",

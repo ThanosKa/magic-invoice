@@ -78,13 +78,12 @@ function WizardProgress({ steps, errors }: { steps: StepConfig[]; errors: Record
 }
 
 function WizardNavigation({
-    steps,
     validateCurrentStep,
 }: {
     steps: StepConfig[];
     validateCurrentStep: () => Promise<boolean>;
 }) {
-    const { activeStep, nextStep, previousStep, isFirstStep, isLastStep } = useWizard();
+    const { nextStep, previousStep, isFirstStep, isLastStep } = useWizard();
     const { t } = useTranslation();
 
     const handleNext = async () => {

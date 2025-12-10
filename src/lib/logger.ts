@@ -1,6 +1,3 @@
-// Simple logger that uses console methods
-// Replaced pino to avoid worker thread issues in Next.js
-
 const isDev = process.env.NODE_ENV !== "production";
 const logLevel = process.env.LOG_LEVEL || "info";
 
@@ -15,49 +12,67 @@ const levels = {
 
 const currentLevel = levels[logLevel as keyof typeof levels] ?? levels.info;
 
-function formatMessage(level: string, msg: string, obj?: any) {
+function formatMessage(level: string, msg: string, obj?: unknown) {
   const timestamp = new Date().toISOString();
   const prefix = isDev ? `[${timestamp}] ${level.toUpperCase()}:` : `${level}:`;
 
-  if (obj) {
+  if (obj !== undefined) {
     return `${prefix} ${msg} ${JSON.stringify(obj)}`;
   }
   return `${prefix} ${msg}`;
 }
 
 export const logger = {
-  trace: (msg: string | object, obj?: any) => {
+  trace: (msg: string | unknown, obj?: unknown) => {
     if (currentLevel <= levels.trace) {
-      const message = typeof msg === 'object' ? formatMessage('trace', '', msg) : formatMessage('trace', msg, obj);
+      const message =
+        typeof msg === "object" && msg !== null
+          ? formatMessage("trace", "", msg)
+          : formatMessage("trace", msg as string, obj);
       console.log(message);
     }
   },
-  debug: (msg: string | object, obj?: any) => {
+  debug: (msg: string | unknown, obj?: unknown) => {
     if (currentLevel <= levels.debug) {
-      const message = typeof msg === 'object' ? formatMessage('debug', '', msg) : formatMessage('debug', msg, obj);
+      const message =
+        typeof msg === "object" && msg !== null
+          ? formatMessage("debug", "", msg)
+          : formatMessage("debug", msg as string, obj);
       console.log(message);
     }
   },
-  info: (msg: string | object, obj?: any) => {
+  info: (msg: string | unknown, obj?: unknown) => {
     if (currentLevel <= levels.info) {
-      const message = typeof msg === 'object' ? formatMessage('info', '', msg) : formatMessage('info', msg, obj);
+      const message =
+        typeof msg === "object" && msg !== null
+          ? formatMessage("info", "", msg)
+          : formatMessage("info", msg as string, obj);
       console.log(message);
     }
   },
-  warn: (msg: string | object, obj?: any) => {
+  warn: (msg: string | unknown, obj?: unknown) => {
     if (currentLevel <= levels.warn) {
-      const message = typeof msg === 'object' ? formatMessage('warn', '', msg) : formatMessage('warn', msg, obj);
+      const message =
+        typeof msg === "object" && msg !== null
+          ? formatMessage("warn", "", msg)
+          : formatMessage("warn", msg as string, obj);
       console.warn(message);
     }
   },
-  error: (msg: string | object, obj?: any) => {
+  error: (msg: string | unknown, obj?: unknown) => {
     if (currentLevel <= levels.error) {
-      const message = typeof msg === 'object' ? formatMessage('error', '', msg) : formatMessage('error', msg, obj);
+      const message =
+        typeof msg === "object" && msg !== null
+          ? formatMessage("error", "", msg)
+          : formatMessage("error", msg as string, obj);
       console.error(message);
     }
   },
-  fatal: (msg: string | object, obj?: any) => {
-    const message = typeof msg === 'object' ? formatMessage('fatal', '', msg) : formatMessage('fatal', msg, obj);
+  fatal: (msg: string | unknown, obj?: unknown) => {
+    const message =
+      typeof msg === "object" && msg !== null
+        ? formatMessage("fatal", "", msg)
+        : formatMessage("fatal", msg as string, obj);
     console.error(message);
   },
 };

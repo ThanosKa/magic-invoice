@@ -32,7 +32,6 @@ import { Switch } from "@/components/ui/switch";
 export function DetailsForm() {
   const {
     register,
-    control,
     setValue,
     watch,
     formState: { errors },
@@ -49,7 +48,6 @@ export function DetailsForm() {
   } = useSignature();
   const sigPad = useRef<SignatureCanvas | null>(null);
   const [typedSignature, setTypedSignature] = useState("");
-  const [typedFont, setTypedFont] = useState("Satisfy");
 
   // Watch dates for calendar logic
   const invoiceDate = watch("details.invoiceDate");
@@ -346,7 +344,7 @@ export function DetailsForm() {
                 value={typedSignature}
                 onChange={(e) => {
                   setTypedSignature(e.target.value);
-                  setTyped(e.target.value, typedFont);
+                  setTyped(e.target.value, "Satisfy");
                 }}
                 placeholder={t("invoice.form.signature.typePlaceholder")}
               />

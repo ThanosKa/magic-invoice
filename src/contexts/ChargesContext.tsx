@@ -21,7 +21,6 @@ export function ChargesProvider({ children }: { children: React.ReactNode }) {
   const { setValue, control } = useFormContext<FormSchemaType>();
   const { locale } = useTranslation();
 
-  // Watch relevant fields
   const items = useWatch({ control, name: "details.items" });
   const discountDetails = useWatch({
     control,
@@ -61,7 +60,6 @@ export function ChargesProvider({ children }: { children: React.ReactNode }) {
 
     let total = subTotal;
 
-    // Apply discount
     if (discountDetails?.enabled) {
       const amount = Math.max(0, safeNumber(discountDetails.amount));
       const discountAmount =
@@ -71,7 +69,6 @@ export function ChargesProvider({ children }: { children: React.ReactNode }) {
       total -= discountAmount;
     }
 
-    // Apply tax
     if (taxDetails?.enabled) {
       const amount = Math.max(0, safeNumber(taxDetails.amount));
       const taxAmount =
@@ -81,7 +78,6 @@ export function ChargesProvider({ children }: { children: React.ReactNode }) {
       total += taxAmount;
     }
 
-    // Apply shipping
     if (shippingDetails?.enabled) {
       const amount = Math.max(0, safeNumber(shippingDetails.amount));
       const shippingAmount =
@@ -116,7 +112,6 @@ export function ChargesProvider({ children }: { children: React.ReactNode }) {
     setValue,
   ]);
 
-  // Recalculate when dependencies change
   useEffect(() => {
     calculateTotals();
   }, [calculateTotals]);

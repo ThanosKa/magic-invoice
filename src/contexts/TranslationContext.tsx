@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useMemo } from "react";
 import enTranslations from "@/i18n/locales/en.json";
 import grTranslations from "@/i18n/locales/gr.json";
 import itTranslations from "@/i18n/locales/it.json";
@@ -47,29 +47,23 @@ export function TranslationProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [locale, setLocaleState] = useState<Locale>(FALLBACK_LOCALE);
-  const [translations, setTranslations] =
-    useState<Translations>(enTranslations);
+  const [locale, setLocaleState] = useState<Locale>(() => {
+    const savedLocale =
+      (localStorage.getItem("magic-invoice-locale") as Locale | null) ||
+      FALLBACK_LOCALE;
+    return savedLocale;
+  });
+
+  const translations = useMemo(() =>
+    TRANSLATIONS[locale] || TRANSLATIONS[FALLBACK_LOCALE],
+    [locale]
+  );
 
   const setLocale = (newLocale: Locale) => {
     const nextLocale = TRANSLATIONS[newLocale] ? newLocale : FALLBACK_LOCALE;
     setLocaleState(nextLocale);
     localStorage.setItem("magic-invoice-locale", nextLocale);
   };
-
-  useEffect(() => {
-    // Load locale from localStorage on mount
-    const savedLocale =
-      (localStorage.getItem("magic-invoice-locale") as Locale | null) ||
-      FALLBACK_LOCALE;
-    setLocale(savedLocale);
-  }, []);
-
-  useEffect(() => {
-    const resolvedTranslations =
-      TRANSLATIONS[locale] || TRANSLATIONS[FALLBACK_LOCALE];
-    setTranslations(resolvedTranslations);
-  }, [locale]);
 
   const t = (key: string): string => {
     const keys = key.split(".");

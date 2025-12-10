@@ -5,7 +5,6 @@ import { FormSchemaType } from '@/lib/schemas';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
 import { Plus, Trash2, GripVertical } from 'lucide-react';
 import { useCharges } from '@/contexts/ChargesContext';
 import { useEffect } from 'react';

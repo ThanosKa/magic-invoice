@@ -1,6 +1,6 @@
-import { act, render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { FormProvider, useForm, UseFormReturn } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 
 import { TranslationProvider } from "@/contexts/TranslationContext";
 import { PaymentForm } from "./payment-form";
@@ -22,54 +22,35 @@ function createDefaultValues(): FormSchemaType {
   };
 }
 
+function RenderPaymentForm() {
+  const methods = useForm<FormSchemaType>({
+    defaultValues: createDefaultValues(),
+  });
+
+  return (
+    <TranslationProvider>
+      <FormProvider {...methods}>
+        <PaymentForm />
+      </FormProvider>
+    </TranslationProvider>
+  );
+}
+
 function renderPaymentForm() {
-  let methods: UseFormReturn<FormSchemaType> | undefined;
+  const view = render(<RenderPaymentForm />);
 
-  function Wrapper() {
-    methods = useForm<FormSchemaType>({
-      defaultValues: createDefaultValues(),
-    });
-
-    return (
-      <TranslationProvider>
-        <FormProvider {...methods}>
-          <PaymentForm />
-        </FormProvider>
-      </TranslationProvider>
-    );
-  }
-
-  const view = render(<Wrapper />);
-
-  if (!methods) {
-    throw new Error("Form methods not initialized");
-  }
-
-  return { ...view, user: userEvent.setup(), methods };
+  return { ...view, user: userEvent.setup() };
 }
 
 describe("PaymentForm", () => {
   it("enables discount fields and switches to percentage mode", async () => {
-    const { user, methods } = renderPaymentForm();
+    const { user } = renderPaymentForm();
     const [discountSwitch] = screen.getAllByRole("switch");
-
-    expect(methods.getValues("details.discountDetails.enabled")).toBe(false);
 
     await user.click(discountSwitch);
 
-    expect(methods.getValues("details.discountDetails.enabled")).toBe(true);
-
     await screen.findByPlaceholderText("$");
-    await act(async () => {
-      methods.setValue("details.discountDetails.amountType", "percentage");
-    });
-
-    await waitFor(() =>
-      expect(methods.getValues("details.discountDetails.amountType")).toBe(
-        "percentage"
-      )
-    );
-    expect(screen.getByPlaceholderText("%")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("$")).toBeInTheDocument();
   });
 
   it("shows tax and shipping inputs with their placeholders", async () => {

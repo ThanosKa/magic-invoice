@@ -3,9 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { useTranslation } from "@/contexts/TranslationContext";
 
 export function Hero() {
@@ -80,14 +79,13 @@ export function Hero() {
             className="mx-auto max-w-4xl"
           >
             <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-border bg-background shadow-2xl">
-              <div className="absolute inset-0 flex items-center justify-center bg-muted/50">
-                <div className="text-center">
-                  <Sparkles className="mx-auto mb-4 h-12 w-12 text-muted-foreground" />
-                  <p className="text-sm text-muted-foreground">
-                    {t("hero.previewAlt")}
-                  </p>
-                </div>
-              </div>
+              <Image
+                src="/hero-preview.png"
+                alt="Magic Invoice Editor Preview"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </motion.div>
         </div>

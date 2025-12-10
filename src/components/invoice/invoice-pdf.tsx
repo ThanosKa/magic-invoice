@@ -1,5 +1,6 @@
 'use client';
 
+/* eslint-disable jsx-a11y/alt-text */
 import { Document, Page, Text, View, Image, StyleSheet } from '@react-pdf/renderer';
 import { FormSchemaType } from '@/lib/schemas';
 
