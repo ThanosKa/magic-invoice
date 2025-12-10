@@ -1,6 +1,7 @@
 "use client";
 
 import { useFormContext } from "react-hook-form";
+import Image from "next/image";
 import { FormSchemaType } from "@/lib/schemas";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -218,11 +219,13 @@ export function DetailsForm() {
               </p>
             </div>
             {invoiceLogo ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
+              <Image
                 src={invoiceLogo}
                 alt="Logo preview"
+                width={56}
+                height={56}
                 className="h-14 w-14 object-contain rounded border"
+                unoptimized
               />
             ) : (
               <Button type="button" variant="outline" size="sm">

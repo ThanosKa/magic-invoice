@@ -1,6 +1,7 @@
 "use client";
 
 import { useFormContext, useWatch } from "react-hook-form";
+import Image from "next/image";
 import { FormSchemaType } from "@/lib/schemas";
 import { Card } from "@/components/ui/card";
 import { formatDate, formatCurrency } from "@/lib/helpers";
@@ -59,11 +60,13 @@ export function InvoicePreview() {
           </div>
           <div className="text-right">
             {details.invoiceLogo ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
+              <Image
                 src={details.invoiceLogo}
                 alt={t("invoice.preview.logoAlt")}
+                width={64}
+                height={64}
                 className="h-16 object-contain ml-auto"
+                unoptimized
               />
             ) : (
               <div className="h-16 w-16 bg-slate-100 rounded flex items-center justify-center text-xs text-slate-400 ml-auto">
@@ -402,11 +405,13 @@ export function InvoicePreview() {
               </div>
             )}
             {details.signature.type !== "type" && details.signature.data && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
+              <Image
                 src={details.signature.data}
                 alt="Signature"
+                width={64}
+                height={64}
                 className="h-16 ml-auto"
+                unoptimized
               />
             )}
           </div>

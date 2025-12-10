@@ -156,8 +156,7 @@ function SortableItem({
       (parseFloat(String(unitPrice)) || 0);
     setValue(`details.items.${index}.total`, total);
     calculateTotals();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [quantity, unitPrice, index]);
+  }, [quantity, unitPrice, index, setValue, calculateTotals]);
 
   return (
     <div

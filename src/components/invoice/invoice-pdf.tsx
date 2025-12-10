@@ -11,7 +11,6 @@ import {
 } from "@react-pdf/renderer";
 import { FormSchemaType } from "@/lib/schemas";
 
-// PDF styles (react-pdf uses React Native-style StyleSheet)
 const styles = StyleSheet.create({
   page: {
     padding: 24,
@@ -20,7 +19,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffffff",
   },
   pageModern: {
-    backgroundColor: "#f8fafc", // slate-50
+    backgroundColor: "#f8fafc",
   },
   header: {
     flexDirection: "row",
@@ -28,17 +27,17 @@ const styles = StyleSheet.create({
     marginBottom: 32,
   },
   title: {
-    fontSize: 30, // text-3xl
+    fontSize: 30,
     fontWeight: "bold",
-    color: "#0f172a", // slate-900
+    color: "#0f172a",
     marginBottom: 4,
   },
   titleModern: {
-    color: "#3b82f6", // blue-500
+    color: "#3b82f6",
   },
   invoiceNumber: {
     fontSize: 12,
-    color: "#64748b", // slate-500
+    color: "#64748b",
   },
   logo: {
     width: 80,
@@ -48,7 +47,7 @@ const styles = StyleSheet.create({
   logoPlaceholder: {
     width: 80,
     height: 80,
-    backgroundColor: "#f1f5f9", // slate-100
+    backgroundColor: "#f1f5f9",
     borderRadius: 8,
     alignItems: "center",
     justifyContent: "center",
@@ -65,39 +64,39 @@ const styles = StyleSheet.create({
   addressTitle: {
     fontSize: 10,
     fontWeight: "bold",
-    color: "#64748b", // slate-500
+    color: "#64748b",
     textTransform: "uppercase",
     marginBottom: 8,
     letterSpacing: 0.5,
   },
   addressTitleModern: {
-    color: "#3b82f6", // blue-500
+    color: "#3b82f6",
   },
   addressName: {
     fontSize: 12,
     fontWeight: "bold",
-    color: "#0f172a", // slate-900
+    color: "#0f172a",
     marginBottom: 4,
   },
   addressText: {
     fontSize: 10,
-    color: "#334155", // slate-700
+    color: "#334155",
     marginTop: 2,
     lineHeight: 1.4,
   },
   datesSection: {
     flexDirection: "row",
     justifyContent: "space-between",
-    backgroundColor: "#f8fafc", // slate-50
+    backgroundColor: "#f8fafc",
     padding: 20,
     borderRadius: 8,
     marginBottom: 32,
     borderWidth: 1,
-    borderColor: "#e2e8f0", // slate-200
+    borderColor: "#e2e8f0",
   },
   datesSectionModern: {
-    backgroundColor: "#eff6ff", // blue-50
-    borderColor: "#bfdbfe", // blue-200
+    backgroundColor: "#eff6ff",
+    borderColor: "#bfdbfe",
   },
   dateBlock: {
     flex: 1,
@@ -105,17 +104,17 @@ const styles = StyleSheet.create({
   dateLabel: {
     fontSize: 9,
     fontWeight: "bold",
-    color: "#64748b", // slate-500
+    color: "#64748b",
     textTransform: "uppercase",
     marginBottom: 4,
   },
   dateLabelModern: {
-    color: "#3b82f6", // blue-500
+    color: "#3b82f6",
   },
   dateValue: {
     fontSize: 11,
     fontWeight: "bold",
-    color: "#0f172a", // slate-900
+    color: "#0f172a",
   },
   table: {
     marginBottom: 24,
@@ -123,29 +122,29 @@ const styles = StyleSheet.create({
   tableHeader: {
     flexDirection: "row",
     borderBottomWidth: 1,
-    borderBottomColor: "#e2e8f0", // slate-200
+    borderBottomColor: "#e2e8f0",
     paddingBottom: 12,
     marginBottom: 12,
   },
   tableHeaderCell: {
     fontSize: 10,
     fontWeight: "bold",
-    color: "#0f172a", // slate-900
+    color: "#0f172a",
   },
   tableRow: {
     flexDirection: "row",
     borderBottomWidth: 1,
-    borderBottomColor: "#f1f5f9", // slate-100
+    borderBottomColor: "#f1f5f9",
     paddingVertical: 12,
   },
   tableCell: {
     fontSize: 10,
-    color: "#334155", // slate-700
+    color: "#334155",
   },
   tableCellBold: {
     fontSize: 10,
     fontWeight: "bold",
-    color: "#0f172a", // slate-900
+    color: "#0f172a",
   },
   colDescription: {
     flex: 3,
@@ -177,11 +176,11 @@ const styles = StyleSheet.create({
   },
   totalLabel: {
     fontSize: 11,
-    color: "#64748b", // slate-500
+    color: "#64748b",
   },
   totalValue: {
     fontSize: 11,
-    color: "#0f172a", // slate-900
+    color: "#0f172a",
     fontWeight: "medium",
   },
   grandTotalRow: {
@@ -189,23 +188,23 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingTop: 12,
     borderTopWidth: 2,
-    borderTopColor: "#e2e8f0", // slate-200
+    borderTopColor: "#e2e8f0",
     marginTop: 8,
   },
   grandTotalLabel: {
     fontSize: 14,
     fontWeight: "bold",
-    color: "#0f172a", // slate-900
+    color: "#0f172a",
   },
   grandTotalValue: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#0f172a", // slate-900
+    color: "#0f172a",
   },
   totalInWords: {
     fontSize: 10,
     fontStyle: "italic",
-    color: "#64748b", // slate-500
+    color: "#64748b",
     textAlign: "right",
     marginTop: 8,
   },
@@ -214,7 +213,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingTop: 32,
     borderTopWidth: 1,
-    borderTopColor: "#e2e8f0", // slate-200
+    borderTopColor: "#e2e8f0",
     gap: 32,
   },
   footerSection: {
@@ -223,12 +222,12 @@ const styles = StyleSheet.create({
   footerTitle: {
     fontSize: 11,
     fontWeight: "bold",
-    color: "#0f172a", // slate-900
+    color: "#0f172a",
     marginBottom: 6,
   },
   footerText: {
     fontSize: 10,
-    color: "#475569", // slate-600
+    color: "#475569",
     lineHeight: 1.5,
   },
   signature: {
@@ -238,7 +237,7 @@ const styles = StyleSheet.create({
   signatureLabel: {
     fontSize: 10,
     fontWeight: "bold",
-    color: "#64748b", // slate-500
+    color: "#64748b",
     textTransform: "uppercase",
     marginBottom: 12,
   },
