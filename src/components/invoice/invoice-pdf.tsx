@@ -277,7 +277,6 @@ export function InvoicePDF({ data }: InvoicePDFProps) {
         size="A4"
         style={isModern ? [styles.page, styles.pageModern] : styles.page}
       >
-        {/* Header */}
         <View style={styles.header}>
           <View>
             <Text
@@ -300,7 +299,6 @@ export function InvoicePDF({ data }: InvoicePDFProps) {
           </View>
         </View>
 
-        {/* Addresses */}
         <View style={styles.addresses}>
           <View style={styles.addressBlock}>
             <Text
@@ -370,7 +368,6 @@ export function InvoicePDF({ data }: InvoicePDFProps) {
           </View>
         </View>
 
-        {/* Dates */}
         <View
           style={
             isModern
@@ -412,7 +409,6 @@ export function InvoicePDF({ data }: InvoicePDFProps) {
           </View>
         </View>
 
-        {/* Line Items Table */}
         <View style={styles.table}>
           <View style={styles.tableHeader}>
             <Text style={[styles.tableHeaderCell, styles.colDescription]}>
@@ -454,7 +450,6 @@ export function InvoicePDF({ data }: InvoicePDFProps) {
           )}
         </View>
 
-        {/* Totals */}
         <View style={styles.totalsSection}>
           <View style={styles.totalsBox}>
             <View style={styles.totalRow}>
@@ -537,7 +532,6 @@ export function InvoicePDF({ data }: InvoicePDFProps) {
           </View>
         </View>
 
-        {/* Footer */}
         <View style={styles.footer}>
           <View style={styles.footerSection}>
             {details.paymentInformation && (
@@ -576,7 +570,6 @@ export function InvoicePDF({ data }: InvoicePDFProps) {
           )}
         </View>
 
-        {/* Signature */}
         {details.signature && (
           <View style={styles.signature}>
             <Text style={styles.signatureLabel}>SIGNATURE</Text>

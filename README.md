@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧾 Magic Invoice
+<h1>✨ Magic Invoice ✨</h1>
 
 **Create beautiful, professional invoices in real-time. No sign-up required.**
 
