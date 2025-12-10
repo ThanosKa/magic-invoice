@@ -1,6 +1,6 @@
 "use client";
 
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { formSchema, FORM_DEFAULT_VALUES, FormSchemaType } from "@/lib/schemas";
 import { useEffect } from "react";
@@ -23,7 +23,7 @@ export default function InvoicePage() {
     mode: "onChange",
   });
 
-  const { watch, reset } = methods;
+  const { reset, control } = methods;
 
   // Load draft on mount
   useEffect(() => {
@@ -40,13 +40,14 @@ export default function InvoicePage() {
     }
   }, [reset]);
 
-  // Auto-save draft on change
+  // Auto-save draft on change using useWatch
+  const watchedValues = useWatch({ control });
+
   useEffect(() => {
-    const subscription = watch((value) => {
-      saveToLocalStorage(DRAFT_KEY, value);
-    });
-    return () => subscription.unsubscribe();
-  }, [watch]);
+    if (watchedValues && Object.keys(watchedValues).length > 0) {
+      saveToLocalStorage(DRAFT_KEY, watchedValues);
+    }
+  }, [watchedValues]);
 
   return (
     <InvoiceAppProviders methods={methods}>
