@@ -23,6 +23,14 @@
     "load": "Carica",
     "delete": "Elimina"
   },
+  "notFound": {
+    "title": "Pagina non trovata",
+    "description": "Ops! La pagina che cerchi non esiste. Potrebbe essere stata spostata o eliminata.",
+    "goHome": "Torna alla home",
+    "createInvoice": "Crea fattura",
+    "needHelp": "Serve aiuto?",
+    "returnHome": "Torna alla pagina iniziale"
+  },
   "errors": {
     "customKeyRequired": "La chiave è obbligatoria",
     "customValueRequired": "Il valore è obbligatorio",

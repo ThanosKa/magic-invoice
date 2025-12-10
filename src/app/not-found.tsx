@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FileQuestion, Home, FileText } from "lucide-react";
+import { useTranslation } from "@/contexts/TranslationContext";
 
 export default function NotFound() {
+    const { t } = useTranslation();
+
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-muted/20">
             <div className="container mx-auto px-6 py-16">
@@ -33,13 +38,12 @@ export default function NotFound() {
 
                     {/* Heading */}
                     <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
-                        Page Not Found
+                        {t("notFound.title")}
                     </h1>
 
                     {/* Description */}
                     <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto">
-                        Oops! The page you&apos;re looking for doesn&apos;t exist. It might
-                        have been moved or deleted.
+                        {t("notFound.description")}
                     </p>
 
                     {/* Action Buttons */}
@@ -51,7 +55,7 @@ export default function NotFound() {
                         >
                             <Link href="/">
                                 <Home className="mr-2 h-5 w-5" />
-                                Go Home
+                                {t("notFound.goHome")}
                             </Link>
                         </Button>
                         <Button
@@ -62,7 +66,7 @@ export default function NotFound() {
                         >
                             <Link href="/invoice">
                                 <FileText className="mr-2 h-5 w-5" />
-                                Create Invoice
+                                {t("notFound.createInvoice")}
                             </Link>
                         </Button>
                     </div>
@@ -70,12 +74,12 @@ export default function NotFound() {
                     {/* Additional Help */}
                     <div className="mt-12 pt-8 border-t border-border/50">
                         <p className="text-sm text-muted-foreground">
-                            Need help?{" "}
+                            {t("notFound.needHelp")}{" "}
                             <Link
                                 href="/"
                                 className="text-primary hover:underline font-medium"
                             >
-                                Return to homepage
+                                {t("notFound.returnHome")}
                             </Link>
                         </p>
                     </div>

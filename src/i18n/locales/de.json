@@ -23,6 +23,14 @@
     "load": "Laden",
     "delete": "Löschen"
   },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Hoppla! Die gesuchte Seite existiert nicht. Sie wurde möglicherweise verschoben oder gelöscht.",
+    "goHome": "Zur Startseite",
+    "createInvoice": "Rechnung erstellen",
+    "needHelp": "Brauchst du Hilfe?",
+    "returnHome": "Zurück zur Startseite"
+  },
   "errors": {
     "customKeyRequired": "Schlüssel ist erforderlich",
     "customValueRequired": "Wert ist erforderlich",
