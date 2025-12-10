@@ -35,9 +35,9 @@ export function InvoicePreview() {
     const headingColor = isTemplate2 ? "text-blue-500" : "text-slate-400";
 
     return (
-        <Card className={`overflow-hidden border-2 shadow-xl ${bgClass} text-slate-900`} id="invoice-preview">
+        <Card className={`overflow-hidden border shadow-xl ${bgClass} text-slate-900`} id="invoice-preview">
             {/* Invoice Header / Status Bar */}
-            <div className="bg-slate-100 p-3 border-b flex justify-between items-center text-xs text-slate-500">
+            <div className="bg-muted/50 dark:bg-muted/30 p-3 border-b border-border flex justify-between items-center text-xs text-muted-foreground">
                 <div className="flex items-center gap-2">
                     <Eye className="h-3 w-3" /> {t('invoice.preview.livePreview')}
                 </div>

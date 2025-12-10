@@ -17,7 +17,7 @@ export function Footer() {
             alt="Magic Invoice Logo"
             width={24}
             height={24}
-            className="dark:invert"
+            className="dark:invert rounded-md"
           />
           <span className="text-lg font-bold tracking-tight">
             {t("common.appName")}

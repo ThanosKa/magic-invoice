@@ -48,7 +48,7 @@ export function Header() {
             alt="Magic Invoice Logo"
             width={32}
             height={32}
-            className="dark:invert"
+            className="dark:invert rounded-lg"
           />
           <span className="text-xl font-bold tracking-tight">
             {t("common.appName")}
