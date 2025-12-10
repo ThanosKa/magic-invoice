@@ -25,11 +25,9 @@ export default function InvoicePage() {
 
   const { reset, control } = methods;
 
-  // Load draft on mount
   useEffect(() => {
     const draft = loadFromLocalStorage<FormSchemaType | null>(DRAFT_KEY, null);
     if (draft) {
-      // Revive dates
       if (draft.details.invoiceDate) {
         draft.details.invoiceDate = new Date(draft.details.invoiceDate);
       }
@@ -40,7 +38,6 @@ export default function InvoicePage() {
     }
   }, [reset]);
 
-  // Auto-save draft on change using useWatch
   const watchedValues = useWatch({ control });
 
   useEffect(() => {
@@ -67,12 +64,10 @@ export default function InvoicePage() {
         </div>
         <div className="container mx-auto p-4 lg:p-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Form Section */}
             <div className="space-y-6">
               <InvoiceForm />
             </div>
 
-            {/* Preview Section */}
             <div className="lg:sticky lg:top-8 lg:self-start space-y-4">
               <InvoiceActions />
               <InvoicePreview />

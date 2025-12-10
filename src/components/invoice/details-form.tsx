@@ -49,7 +49,6 @@ export function DetailsForm() {
   const sigPad = useRef<SignatureCanvas | null>(null);
   const [typedSignature, setTypedSignature] = useState("");
 
-  // Watch dates for calendar logic
   const invoiceDate = watch("details.invoiceDate");
   const dueDate = watch("details.dueDate");
   const currency = watch("details.currency");

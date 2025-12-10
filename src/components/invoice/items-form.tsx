@@ -150,7 +150,6 @@ function SortableItem({
   const quantity = watch(`details.items.${index}.quantity`);
   const unitPrice = watch(`details.items.${index}.unitPrice`);
 
-  // Update row total effect
   useEffect(() => {
     const total =
       (parseFloat(String(quantity)) || 0) *

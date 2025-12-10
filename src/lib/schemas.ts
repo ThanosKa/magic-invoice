@@ -46,7 +46,6 @@ export const invoiceDetailsSchema = z.object({
   totalAmount: z.number(),
   pdfTemplate: z.union([z.literal(1), z.literal(2)]),
 
-  // Charges
   discountDetails: chargeSchema,
   taxDetails: chargeSchema,
   shippingDetails: chargeSchema,

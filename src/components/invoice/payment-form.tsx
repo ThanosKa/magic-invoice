@@ -21,7 +21,6 @@ export function PaymentForm() {
   const { register, control, setValue, getValues } =
     useFormContext<FormSchemaType>();
 
-  // Watch all values at component level (not conditionally!)
   const currency = useWatch({ control, name: "details.currency" });
   const currencySymbol = getCurrencySymbol(currency || "USD");
 
