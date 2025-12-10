@@ -1,253 +1,261 @@
 {
-  "common": {
-    "appName": "Magic Invoice",
-    "getStarted": "Ξεκινήστε",
-    "learnMore": "Μάθετε περισσότερα",
-    "features": "Χαρακτηριστικά",
-    "faq": "Συχνές Ερωτήσεις",
-    "privacy": "Προστασία προσωπικών δεδομένων",
-    "terms": "Όροι",
-    "github": "GitHub",
-    "email": "Email",
-    "twitter": "Twitter",
-    "toggleTheme": "Εναλλαγή θέματος",
-    "previous": "Προηγούμενο",
-    "next": "Επόμενο",
-    "switchToEnglish": "Μετάβαση σε Αγγλικά",
-    "switchToGreek": "Μετάβαση σε Ελληνικά",
-    "languageEnglish": "Αγγλικά",
-    "languageGreek": "Ελληνικά",
-    "language": "Γλώσσα",
-    "remove": "Αφαίρεση",
-    "clear": "Καθαρισμός",
-    "load": "Φόρτωση",
-    "delete": "Διαγραφή"
-  },
-  "errors": {
-    "customKeyRequired": "Απαιτείται κλειδί",
-    "customValueRequired": "Απαιτείται τιμή",
-    "nameRequired": "Το όνομα είναι υποχρεωτικό",
-    "emailRequired": "Το email είναι υποχρεωτικό",
-    "emailInvalid": "Μη έγκυρη διεύθυνση email",
-    "phoneRequired": "Το τηλέφωνο είναι υποχρεωτικό",
-    "addressRequired": "Η διεύθυνση είναι υποχρεωτική",
-    "itemNameRequired": "Το όνομα γραμμής είναι υποχρεωτικό",
-    "quantityPositive": "Η ποσότητα πρέπει να είναι θετική",
-    "unitPricePositive": "Η τιμή μονάδας πρέπει να είναι θετική",
-    "numberRequired": "Απαιτείται αριθμητική τιμή",
-    "numberInvalid": "Εισαγάγετε έναν έγκυρο αριθμό",
-    "amountNonNegative": "Η τιμή πρέπει να είναι μη αρνητική",
-    "invoiceNumberRequired": "Ο αριθμός τιμολογίου είναι υποχρεωτικός",
-    "dateRequired": "Η ημερομηνία είναι υποχρεωτική",
-    "dateInvalid": "Εισαγάγετε έγκυρη ημερομηνία",
-    "currencyRequired": "Το νόμισμα είναι υποχρεωτικό",
-    "itemsRequired": "Προσθέστε τουλάχιστον μία γραμμή"
-  },
-  "header": {
-    "features": "Χαρακτηριστικά",
-    "howItWorks": "Πώς λειτουργεί",
-    "testimonials": "Μαρτυρίες",
-    "faq": "Συχνές Ερωτήσεις",
-    "getStarted": "Ξεκινήστε",
-    "supportUs": "Στηρίξτε μας",
-    "starOnGithub": "Κάντε star στο GitHub"
-  },
-  "footer": {
-    "copyright": "© 2025 Thaka. Με επιφύλαξη παντός δικαιώματος.",
-    "privacy": "Προστασία προσωπικών δεδομένων",
-    "terms": "Όροι"
-  },
-  "hero": {
-    "title": "Δημιουργήστε τιμολόγια σε",
-    "titleHighlight": "Πραγματικό χρόνο",
-    "subtitle": "Επαγγελματικός επεξεργαστής τιμολογίων με άμεση εξαγωγή PDF. Χωρίς εγγραφή. Δημιουργήστε, προσαρμόστε και κατεβάστε εντυπωσιακά τιμολόγια σε δευτερόλεπτα.",
-    "startCreating": "Ξεκινήστε",
-    "learnMore": "Μάθετε περισσότερα",
-    "previewAlt": "Προεπισκόπηση επεξεργαστή τιμολογίων"
-  },
-  "features": {
-    "lightningFast": {
-      "title": "Αστραπιαία ταχύτητα",
-      "description": "Σχεδιασμένο για ταχύτητα. Δημιουργήστε, επεξεργαστείτε και στείλτε τιμολόγια σε χιλιοστά του δευτερολέπτου."
+    "common": {
+        "appName": "Magic Invoice",
+        "getStarted": "Ξεκινήστε",
+        "learnMore": "Μάθετε περισσότερα",
+        "features": "Χαρακτηριστικά",
+        "faq": "Συχνές Ερωτήσεις",
+        "privacy": "Προστασία προσωπικών δεδομένων",
+        "terms": "Όροι",
+        "github": "GitHub",
+        "email": "Email",
+        "twitter": "Twitter",
+        "toggleTheme": "Εναλλαγή θέματος",
+        "previous": "Προηγούμενο",
+        "next": "Επόμενο",
+        "switchToEnglish": "Μετάβαση σε Αγγλικά",
+        "switchToGreek": "Μετάβαση σε Ελληνικά",
+        "languageEnglish": "Αγγλικά",
+        "languageGreek": "Ελληνικά",
+        "language": "Γλώσσα",
+        "remove": "Αφαίρεση",
+        "clear": "Καθαρισμός",
+        "load": "Φόρτωση",
+        "delete": "Διαγραφή"
     },
-    "privateSecure": {
-      "title": "Ιδιωτικό & ασφαλές",
-      "description": "Τα δεδομένα σας μένουν στη συσκευή σας. Δεν αποθηκεύουμε οικονομικές πληροφορίες."
+    "notFound": {
+        "title": "Η σελίδα δεν βρέθηκε",
+        "description": "Ουπς! Η σελίδα που ψάχνετε δεν υπάρχει. Μπορεί να έχει μετακινηθεί ή διαγραφεί.",
+        "goHome": "Αρχική σελίδα",
+        "createInvoice": "Δημιουργία τιμολογίου",
+        "needHelp": "Χρειάζεστε βοήθεια;",
+        "returnHome": "Επιστροφή στην αρχική σελίδα"
     },
-    "globalUniversal": {
-      "title": "Παγκόσμιο & ευέλικτο",
-      "description": "Υποστήριξη για 100+ νομίσματα και γλώσσες."
+    "errors": {
+        "customKeyRequired": "Απαιτείται κλειδί",
+        "customValueRequired": "Απαιτείται τιμή",
+        "nameRequired": "Το όνομα είναι υποχρεωτικό",
+        "emailRequired": "Το email είναι υποχρεωτικό",
+        "emailInvalid": "Μη έγκυρη διεύθυνση email",
+        "phoneRequired": "Το τηλέφωνο είναι υποχρεωτικό",
+        "addressRequired": "Η διεύθυνση είναι υποχρεωτική",
+        "itemNameRequired": "Το όνομα γραμμής είναι υποχρεωτικό",
+        "quantityPositive": "Η ποσότητα πρέπει να είναι θετική",
+        "unitPricePositive": "Η τιμή μονάδας πρέπει να είναι θετική",
+        "numberRequired": "Απαιτείται αριθμητική τιμή",
+        "numberInvalid": "Εισαγάγετε έναν έγκυρο αριθμό",
+        "amountNonNegative": "Η τιμή πρέπει να είναι μη αρνητική",
+        "invoiceNumberRequired": "Ο αριθμός τιμολογίου είναι υποχρεωτικός",
+        "dateRequired": "Η ημερομηνία είναι υποχρεωτική",
+        "dateInvalid": "Εισαγάγετε έγκυρη ημερομηνία",
+        "currencyRequired": "Το νόμισμα είναι υποχρεωτικό",
+        "itemsRequired": "Προσθέστε τουλάχιστον μία γραμμή"
     },
-    "pixelPerfect": {
-      "title": "Άψογο PDF",
-      "description": "Δημιουργήστε επαγγελματικά σχεδιασμένα PDF αμέσως."
-    }
-  },
-  "faq": {
-    "title": "Συχνές Ερωτήσεις",
-    "subtitle": "Ό,τι χρειάζεται να ξέρετε για το Magic Invoice",
-    "questions": {
-      "isFree": {
-        "question": "Είναι δωρεάν το Magic Invoice;",
-        "answer": "Ναι, το Magic Invoice είναι εντελώς δωρεάν. Μπορείτε να δημιουργείτε απεριόριστα τιμολόγια χωρίς κόστος."
-      },
-      "accountRequired": {
-        "question": "Χρειάζεται να δημιουργήσω λογαριασμό;",
-        "answer": "Όχι, μπορείτε να δημιουργήσετε και να κατεβάσετε τιμολόγια άμεσα χωρίς εγγραφή. Τα δεδομένα σας μένουν στη συσκευή σας."
-      },
-      "customize": {
-        "question": "Μπορώ να προσαρμόσω τον σχεδιασμό του τιμολογίου;",
-        "answer": "Ναι, μπορείτε να προσθέσετε λογότυπο, να αλλάξετε χρώματα και να ρυθμίσετε τη διάταξη ώστε να ταιριάζει με την εταιρική σας ταυτότητα."
-      },
-      "dataSecure": {
-        "question": "Είναι ασφαλή τα δεδομένα μου;",
-        "answer": "Απόλυτα. Δεν αποθηκεύουμε τα δεδομένα των τιμολογίων σας στους διακομιστές μας. Όλα επεξεργάζονται τοπικά στον browser σας."
-      }
-    }
-  },
-  "cta": {
-    "title": "Έτοιμοι να δημιουργήσετε το επαγγελματικό σας τιμολόγιο;",
-    "subtitle": "Χιλιάδες επαγγελματίες δημιούργησαν εντυπωσιακά τιμολόγια με το εργαλείο μας. Χωρίς εγγραφή - ξεκινήστε τώρα.",
-    "buttonText": "Ξεκινήστε την τιμολόγηση"
-  },
-  "invoice": {
-    "title": "Επεξεργαστής Τιμολογίων",
-    "subtitle": "Ο επεξεργαστής τιμολογίων θα υλοποιηθεί στην επόμενη φάση.",
-    "comingSoon": "Μείνετε συντονισμένοι για επεξεργασία σε πραγματικό χρόνο και εξαγωγή PDF!",
-    "badge": "Σύντομα διαθέσιμο",
-    "form": {
-      "tabs": {
-        "fromTo": "Αποστολέας/Παραλήπτης",
-        "details": "Στοιχεία τιμολογίου",
-        "items": "Γραμμές",
-        "payment": "Πληρωμή & σημειώσεις",
-        "summary": "Σύνοψη"
-      },
-      "party": {
-        "sender": {
-          "title": "Από (Αποστολέας)",
-          "nameLabel": "Όνομα / Εταιρεία",
-          "namePlaceholder": "Το όνομά σας ή η εταιρεία σας",
-          "emailLabel": "Email",
-          "emailPlaceholder": "to@email.sas",
-          "phoneLabel": "Τηλέφωνο",
-          "phonePlaceholder": "+30 210 0000000",
-          "addressLabel": "Διεύθυνση",
-          "addressPlaceholder": "Οδός 123, Πόλη, Χώρα",
-          "customInputs": "Προσαρμοσμένα πεδία",
-          "customKey": "Ετικέτα",
-          "customValue": "Τιμή",
-          "customHint": "Προσθέστε πεδία όπως ΑΦΜ, ΓΕΜΗ, τμήμα κ.λπ."
+    "header": {
+        "features": "Χαρακτηριστικά",
+        "howItWorks": "Πώς λειτουργεί",
+        "testimonials": "Μαρτυρίες",
+        "faq": "Συχνές Ερωτήσεις",
+        "getStarted": "Ξεκινήστε",
+        "supportUs": "Στηρίξτε μας",
+        "starOnGithub": "Κάντε star στο GitHub"
+    },
+    "footer": {
+        "copyright": "© 2025 Thaka. Με επιφύλαξη παντός δικαιώματος.",
+        "privacy": "Προστασία προσωπικών δεδομένων",
+        "terms": "Όροι"
+    },
+    "hero": {
+        "title": "Δημιουργήστε τιμολόγια σε",
+        "titleHighlight": "Πραγματικό χρόνο",
+        "subtitle": "Επαγγελματικός επεξεργαστής τιμολογίων με άμεση εξαγωγή PDF. Χωρίς εγγραφή. Δημιουργήστε, προσαρμόστε και κατεβάστε εντυπωσιακά τιμολόγια σε δευτερόλεπτα.",
+        "startCreating": "Ξεκινήστε",
+        "learnMore": "Μάθετε περισσότερα",
+        "previewAlt": "Προεπισκόπηση επεξεργαστή τιμολογίων"
+    },
+    "features": {
+        "lightningFast": {
+            "title": "Αστραπιαία ταχύτητα",
+            "description": "Σχεδιασμένο για ταχύτητα. Δημιουργήστε, επεξεργαστείτε και στείλτε τιμολόγια σε χιλιοστά του δευτερολέπτου."
         },
-        "receiver": {
-          "title": "Προς (Πελάτης)",
-          "nameLabel": "Όνομα / Εταιρεία",
-          "namePlaceholder": "Όνομα πελάτη ή εταιρεία",
-          "emailLabel": "Email",
-          "emailPlaceholder": "pelatis@email.com",
-          "phoneLabel": "Τηλέφωνο",
-          "phonePlaceholder": "+30 210 0000000",
-          "addressLabel": "Διεύθυνση",
-          "addressPlaceholder": "Οδός 456, Πόλη, Χώρα",
-          "customInputs": "Προσαρμοσμένα πεδία",
-          "customKey": "Ετικέτα",
-          "customValue": "Τιμή",
-          "customHint": "Προσθέστε πεδία όπως ΑΦΜ πελάτη, PO, τμήμα."
+        "privateSecure": {
+            "title": "Ιδιωτικό & ασφαλές",
+            "description": "Τα δεδομένα σας μένουν στη συσκευή σας. Δεν αποθηκεύουμε οικονομικές πληροφορίες."
+        },
+        "globalUniversal": {
+            "title": "Παγκόσμιο & ευέλικτο",
+            "description": "Υποστήριξη για 100+ νομίσματα και γλώσσες."
+        },
+        "pixelPerfect": {
+            "title": "Άψογο PDF",
+            "description": "Δημιουργήστε επαγγελματικά σχεδιασμένα PDF αμέσως."
         }
-      },
-      "details": {
-        "invoiceNumberLabel": "Αριθμός τιμολογίου",
-        "invoiceNumberPlaceholder": "ΤΙΜ-001",
-        "currencyLabel": "Νόμισμα",
-        "currencyPlaceholder": "Επιλέξτε νόμισμα",
-        "dateLabel": "Ημερομηνία",
-        "dueDateLabel": "Ημερομηνία λήξης",
-        "pickDate": "Επιλέξτε ημερομηνία",
-        "logoLabel": "Λογότυπο τιμολογίου",
-        "logoHelp": "Μεταφορτώστε λογότυπο για να προσαρμόσετε το τιμολόγιο.",
-        "logoUploadCta": "Κάντε κλικ για μεταφόρτωση ή αντικατάσταση λογότυπου",
-        "logoUploadButton": "Μεταφόρτωση",
-        "logoChange": "Αλλαγή",
-        "logoRemove": "Αφαίρεση",
-        "signatureLabel": "Υπογραφή",
-        "signatureSaved": "Η υπογραφή αποθηκεύτηκε",
-        "templateLabel": "Πρότυπο",
-        "template": "Πρότυπο",
-        "templateDescription": "Αλλάξτε τη διάταξη για PDF/προεπισκόπηση",
-        "totalInWordsLabel": "Σύνολο με λέξεις",
-        "totalInWordsHelp": "Εμφάνιση συνολικού ποσού γραπτώς"
-      },
-      "signature": {
-        "draw": "Σχεδίαση",
-        "type": "Πληκτρολόγηση",
-        "upload": "Μεταφόρτωση",
-        "typePlaceholder": "Πληκτρολογήστε την υπογραφή σας",
-        "signatureSaved": "Η υπογραφή αποθηκεύτηκε"
-      },
-      "items": {
-        "title": "Γραμμές τιμολογίου",
-        "addItem": "Προσθήκη γραμμής",
-        "emptyState": "Δεν έχετε προσθέσει γραμμές. Πατήστε «Προσθήκη γραμμής» για να ξεκινήσετε.",
-        "itemNameLabel": "Περιγραφή",
-        "itemNamePlaceholder": "Όνομα γραμμής",
-        "descriptionPlaceholder": "Περιγραφή (προαιρετικό)",
-        "qtyLabel": "Ποσότητα",
-        "priceLabel": "Τιμή",
-        "totalLabel": "Σύνολο"
-      },
-      "payment": {
-        "chargesTitle": "Χρεώσεις & εκπτώσεις",
-        "applyDiscount": "Εφαρμογή έκπτωσης",
-        "applyTax": "Εφαρμογή φόρου / ΦΠΑ",
-        "shippingCost": "Μεταφορικά",
-        "paymentInfoTitle": "Πληροφορίες πληρωμής",
-        "bankDetailsLabel": "Τραπεζικά στοιχεία / οδηγίες πληρωμής",
-        "bankDetailsPlaceholder": "Τράπεζα: Παράδειγμα\nΛογαριασμός: 123456789\nSwift: EXAMPLE",
-        "termsLabel": "Όροι & προϋποθέσεις",
-        "termsPlaceholder": "Πληρωμή εντός 30 ημερών...",
-        "notesLabel": "Πρόσθετες σημειώσεις",
-        "notesPlaceholder": "Σας ευχαριστούμε για τη συνεργασία!"
-      },
-      "summary": {
-        "fromTitle": "Από",
-        "toTitle": "Προς",
-        "invoiceDetailsTitle": "Στοιχεία τιμολογίου",
-        "numberLabel": "Αριθμός",
-        "dateLabel": "Ημερομηνία",
-        "dueDateLabel": "Ημερομηνία λήξης",
-        "totalLabel": "Σύνολο",
-        "itemsLabel": "Γραμμές"
-      }
     },
-    "preview": {
-      "livePreview": "Ζωντανή προεπισκόπηση",
-      "a4Format": "Μορφή A4",
-      "invoiceLabel": "Τιμολόγιο",
-      "dateIssue": "Ημερομηνία έκδοσης",
-      "dateDue": "Ημερομηνία λήξης",
-      "description": "Περιγραφή",
-      "amountLabel": "Ποσό",
-      "noItems": "Δεν έχουν προστεθεί γραμμές",
-      "subtotal": "Μερικό σύνολο",
-      "discount": "Έκπτωση",
-      "tax": "Φόρος",
-      "shipping": "Μεταφορικά",
-      "total": "Σύνολο",
-      "logoPlaceholder": "Λογότυπο",
-      "logoAlt": "Λογότυπο τιμολογίου",
-      "itemPlaceholder": "Όνομα γραμμής",
-      "placeholderSenderName": "Όνομα αποστολέα",
-      "placeholderSenderAddress": "Διεύθυνση αποστολέα...",
-      "placeholderClientName": "Όνομα πελάτη",
-      "placeholderClientAddress": "Διεύθυνση πελάτη...",
-      "signature": "Υπογραφή"
+    "faq": {
+        "title": "Συχνές Ερωτήσεις",
+        "subtitle": "Ό,τι χρειάζεται να ξέρετε για το Magic Invoice",
+        "questions": {
+            "isFree": {
+                "question": "Είναι δωρεάν το Magic Invoice;",
+                "answer": "Ναι, το Magic Invoice είναι εντελώς δωρεάν. Μπορείτε να δημιουργείτε απεριόριστα τιμολόγια χωρίς κόστος."
+            },
+            "accountRequired": {
+                "question": "Χρειάζεται να δημιουργήσω λογαριασμό;",
+                "answer": "Όχι, μπορείτε να δημιουργήσετε και να κατεβάσετε τιμολόγια άμεσα χωρίς εγγραφή. Τα δεδομένα σας μένουν στη συσκευή σας."
+            },
+            "customize": {
+                "question": "Μπορώ να προσαρμόσω τον σχεδιασμό του τιμολογίου;",
+                "answer": "Ναι, μπορείτε να προσθέσετε λογότυπο, να αλλάξετε χρώματα και να ρυθμίσετε τη διάταξη ώστε να ταιριάζει με την εταιρική σας ταυτότητα."
+            },
+            "dataSecure": {
+                "question": "Είναι ασφαλή τα δεδομένα μου;",
+                "answer": "Απόλυτα. Δεν αποθηκεύουμε τα δεδομένα των τιμολογίων σας στους διακομιστές μας. Όλα επεξεργάζονται τοπικά στον browser σας."
+            }
+        }
     },
-    "actions": {
-      "save": "Αποθήκευση",
-      "generatePdf": "Δημιουργία PDF",
-      "downloadPdf": "Λήψη PDF",
-      "importJson": "Εισαγωγή JSON",
-      "savedList": "Αποθηκευμένα τιμολόγια"
+    "cta": {
+        "title": "Έτοιμοι να δημιουργήσετε το επαγγελματικό σας τιμολόγιο;",
+        "subtitle": "Χιλιάδες επαγγελματίες δημιούργησαν εντυπωσιακά τιμολόγια με το εργαλείο μας. Χωρίς εγγραφή - ξεκινήστε τώρα.",
+        "buttonText": "Ξεκινήστε την τιμολόγηση"
+    },
+    "invoice": {
+        "title": "Επεξεργαστής Τιμολογίων",
+        "subtitle": "Ο επεξεργαστής τιμολογίων θα υλοποιηθεί στην επόμενη φάση.",
+        "comingSoon": "Μείνετε συντονισμένοι για επεξεργασία σε πραγματικό χρόνο και εξαγωγή PDF!",
+        "badge": "Σύντομα διαθέσιμο",
+        "form": {
+            "tabs": {
+                "fromTo": "Αποστολέας/Παραλήπτης",
+                "details": "Στοιχεία τιμολογίου",
+                "items": "Γραμμές",
+                "payment": "Πληρωμή & σημειώσεις",
+                "summary": "Σύνοψη"
+            },
+            "party": {
+                "sender": {
+                    "title": "Από (Αποστολέας)",
+                    "nameLabel": "Όνομα / Εταιρεία",
+                    "namePlaceholder": "Το όνομά σας ή η εταιρεία σας",
+                    "emailLabel": "Email",
+                    "emailPlaceholder": "to@email.sas",
+                    "phoneLabel": "Τηλέφωνο",
+                    "phonePlaceholder": "+30 210 0000000",
+                    "addressLabel": "Διεύθυνση",
+                    "addressPlaceholder": "Οδός 123, Πόλη, Χώρα",
+                    "customInputs": "Προσαρμοσμένα πεδία",
+                    "customKey": "Ετικέτα",
+                    "customValue": "Τιμή",
+                    "customHint": "Προσθέστε πεδία όπως ΑΦΜ, ΓΕΜΗ, τμήμα κ.λπ."
+                },
+                "receiver": {
+                    "title": "Προς (Πελάτης)",
+                    "nameLabel": "Όνομα / Εταιρεία",
+                    "namePlaceholder": "Όνομα πελάτη ή εταιρεία",
+                    "emailLabel": "Email",
+                    "emailPlaceholder": "pelatis@email.com",
+                    "phoneLabel": "Τηλέφωνο",
+                    "phonePlaceholder": "+30 210 0000000",
+                    "addressLabel": "Διεύθυνση",
+                    "addressPlaceholder": "Οδός 456, Πόλη, Χώρα",
+                    "customInputs": "Προσαρμοσμένα πεδία",
+                    "customKey": "Ετικέτα",
+                    "customValue": "Τιμή",
+                    "customHint": "Προσθέστε πεδία όπως ΑΦΜ πελάτη, PO, τμήμα."
+                }
+            },
+            "details": {
+                "invoiceNumberLabel": "Αριθμός τιμολογίου",
+                "invoiceNumberPlaceholder": "ΤΙΜ-001",
+                "currencyLabel": "Νόμισμα",
+                "currencyPlaceholder": "Επιλέξτε νόμισμα",
+                "dateLabel": "Ημερομηνία",
+                "dueDateLabel": "Ημερομηνία λήξης",
+                "pickDate": "Επιλέξτε ημερομηνία",
+                "logoLabel": "Λογότυπο τιμολογίου",
+                "logoHelp": "Μεταφορτώστε λογότυπο για να προσαρμόσετε το τιμολόγιο.",
+                "logoUploadCta": "Κάντε κλικ για μεταφόρτωση ή αντικατάσταση λογότυπου",
+                "logoUploadButton": "Μεταφόρτωση",
+                "logoChange": "Αλλαγή",
+                "logoRemove": "Αφαίρεση",
+                "signatureLabel": "Υπογραφή",
+                "signatureSaved": "Η υπογραφή αποθηκεύτηκε",
+                "templateLabel": "Πρότυπο",
+                "template": "Πρότυπο",
+                "templateDescription": "Αλλάξτε τη διάταξη για PDF/προεπισκόπηση",
+                "totalInWordsLabel": "Σύνολο με λέξεις",
+                "totalInWordsHelp": "Εμφάνιση συνολικού ποσού γραπτώς"
+            },
+            "signature": {
+                "draw": "Σχεδίαση",
+                "type": "Πληκτρολόγηση",
+                "upload": "Μεταφόρτωση",
+                "typePlaceholder": "Πληκτρολογήστε την υπογραφή σας",
+                "signatureSaved": "Η υπογραφή αποθηκεύτηκε"
+            },
+            "items": {
+                "title": "Γραμμές τιμολογίου",
+                "addItem": "Προσθήκη γραμμής",
+                "emptyState": "Δεν έχετε προσθέσει γραμμές. Πατήστε «Προσθήκη γραμμής» για να ξεκινήσετε.",
+                "itemNameLabel": "Περιγραφή",
+                "itemNamePlaceholder": "Όνομα γραμμής",
+                "descriptionPlaceholder": "Περιγραφή (προαιρετικό)",
+                "qtyLabel": "Ποσότητα",
+                "priceLabel": "Τιμή",
+                "totalLabel": "Σύνολο"
+            },
+            "payment": {
+                "chargesTitle": "Χρεώσεις & εκπτώσεις",
+                "applyDiscount": "Εφαρμογή έκπτωσης",
+                "applyTax": "Εφαρμογή φόρου / ΦΠΑ",
+                "shippingCost": "Μεταφορικά",
+                "paymentInfoTitle": "Πληροφορίες πληρωμής",
+                "bankDetailsLabel": "Τραπεζικά στοιχεία / οδηγίες πληρωμής",
+                "bankDetailsPlaceholder": "Τράπεζα: Παράδειγμα\nΛογαριασμός: 123456789\nSwift: EXAMPLE",
+                "termsLabel": "Όροι & προϋποθέσεις",
+                "termsPlaceholder": "Πληρωμή εντός 30 ημερών...",
+                "notesLabel": "Πρόσθετες σημειώσεις",
+                "notesPlaceholder": "Σας ευχαριστούμε για τη συνεργασία!"
+            },
+            "summary": {
+                "fromTitle": "Από",
+                "toTitle": "Προς",
+                "invoiceDetailsTitle": "Στοιχεία τιμολογίου",
+                "numberLabel": "Αριθμός",
+                "dateLabel": "Ημερομηνία",
+                "dueDateLabel": "Ημερομηνία λήξης",
+                "totalLabel": "Σύνολο",
+                "itemsLabel": "Γραμμές"
+            }
+        },
+        "preview": {
+            "livePreview": "Ζωντανή προεπισκόπηση",
+            "a4Format": "Μορφή A4",
+            "invoiceLabel": "Τιμολόγιο",
+            "dateIssue": "Ημερομηνία έκδοσης",
+            "dateDue": "Ημερομηνία λήξης",
+            "description": "Περιγραφή",
+            "amountLabel": "Ποσό",
+            "noItems": "Δεν έχουν προστεθεί γραμμές",
+            "subtotal": "Μερικό σύνολο",
+            "discount": "Έκπτωση",
+            "tax": "Φόρος",
+            "shipping": "Μεταφορικά",
+            "total": "Σύνολο",
+            "logoPlaceholder": "Λογότυπο",
+            "logoAlt": "Λογότυπο τιμολογίου",
+            "itemPlaceholder": "Όνομα γραμμής",
+            "placeholderSenderName": "Όνομα αποστολέα",
+            "placeholderSenderAddress": "Διεύθυνση αποστολέα...",
+            "placeholderClientName": "Όνομα πελάτη",
+            "placeholderClientAddress": "Διεύθυνση πελάτη...",
+            "signature": "Υπογραφή"
+        },
+        "actions": {
+            "save": "Αποθήκευση",
+            "generatePdf": "Δημιουργία PDF",
+            "downloadPdf": "Λήψη PDF",
+            "importJson": "Εισαγωγή JSON",
+            "savedList": "Αποθηκευμένα τιμολόγια"
+        }
     }
-  }
 }
