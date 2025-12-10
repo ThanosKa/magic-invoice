@@ -24,17 +24,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="mb-6 inline-block"
-          >
-            <Link
-              href="#features"
-              className="group inline-flex items-center rounded-full border px-4 py-1.5 text-sm shadow-sm transition-all hover:shadow-md"
-            >
-              <AnimatedShinyText className="inline-flex items-center gap-2">
-                <span>{t("hero.announcement")}</span>
-                <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
-              </AnimatedShinyText>
-            </Link>
-          </motion.div>
+          ></motion.div>
 
           {/* Headline */}
           <motion.h1
