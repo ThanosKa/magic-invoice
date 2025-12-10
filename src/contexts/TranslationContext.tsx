@@ -48,10 +48,13 @@ export function TranslationProvider({
   children: React.ReactNode;
 }) {
   const [locale, setLocaleState] = useState<Locale>(() => {
-    const savedLocale =
-      (localStorage.getItem("magic-invoice-locale") as Locale | null) ||
-      FALLBACK_LOCALE;
-    return savedLocale;
+    if (typeof window !== "undefined") {
+      const savedLocale =
+        (localStorage.getItem("magic-invoice-locale") as Locale | null) ||
+        FALLBACK_LOCALE;
+      return savedLocale;
+    }
+    return FALLBACK_LOCALE;
   });
 
   const translations = useMemo(

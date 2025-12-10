@@ -16,21 +16,24 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Magic Invoice - Create Beautiful Invoices in Real-Time",
-  description: "Professional invoice editor with instant PDF export. No sign-up required. Create, customize, and download beautiful invoices in seconds.",
-  keywords: ["invoice", "invoice generator", "PDF invoice", "free invoice", "invoice maker"],
+  description:
+    "Professional invoice editor with instant PDF export. No sign-up required. Create, customize, and download beautiful invoices in seconds.",
+  keywords: [
+    "invoice",
+    "invoice generator",
+    "PDF invoice",
+    "free invoice",
+    "invoice maker",
+  ],
   authors: [{ name: "Magic Invoice" }],
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon.png", type: "image/png" },
-    ],
-    apple: [
-      { url: "/icon.png" },
-    ],
+    icon: [{ url: "/favicon.ico" }, { url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/icon.png" }],
   },
   openGraph: {
     title: "Magic Invoice - Create Beautiful Invoices in Real-Time",
-    description: "Professional invoice editor with instant PDF export. No sign-up required.",
+    description:
+      "Professional invoice editor with instant PDF export. No sign-up required.",
     type: "website",
     url: "https://magicinvoice.com",
     siteName: "Magic Invoice",
@@ -61,9 +64,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Providers>
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
         <Script
           id="bmc-widget"
           src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
@@ -76,7 +77,7 @@ export default function RootLayout({
           data-position="Right"
           data-x_margin="18"
           data-y_margin="18"
-          strategy="lazyOnload"
+          strategy="beforeInteractive"
         />
       </body>
     </html>

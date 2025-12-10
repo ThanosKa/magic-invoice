@@ -161,8 +161,8 @@ export function InvoicePreview() {
               {details.invoiceDate && details.invoiceDate instanceof Date
                 ? formatDate(details.invoiceDate, undefined, intlLocale)
                 : typeof details.invoiceDate === "string"
-                ? details.invoiceDate
-                : t("invoice.form.details.pickDate")}
+                  ? details.invoiceDate
+                  : t("invoice.form.details.pickDate")}
             </div>
           </div>
           <div className="text-right">
@@ -175,8 +175,8 @@ export function InvoicePreview() {
               {details.dueDate && details.dueDate instanceof Date
                 ? formatDate(details.dueDate, undefined, intlLocale)
                 : typeof details.dueDate === "string"
-                ? details.dueDate
-                : t("invoice.form.details.pickDate")}
+                  ? details.dueDate
+                  : t("invoice.form.details.pickDate")}
             </div>
           </div>
         </div>
@@ -185,7 +185,7 @@ export function InvoicePreview() {
         <div className="mb-4">
           <Table className="text-left">
             <TableHeader>
-              <TableRow className="border-b border-slate-200">
+              <tr className="border-b border-slate-200">
                 <TableHead className="py-3 font-semibold text-slate-900">
                   {t("invoice.preview.description")}
                 </TableHead>
@@ -198,11 +198,11 @@ export function InvoicePreview() {
                 <TableHead className="py-3 text-right font-semibold text-slate-900 w-32">
                   {t("invoice.preview.amountLabel")}
                 </TableHead>
-              </TableRow>
+              </tr>
             </TableHeader>
             <TableBody>
               {details.items?.map((item, i) => (
-                <TableRow
+                <tr
                   key={i}
                   className="border-b border-slate-100 last:border-0"
                 >
@@ -233,17 +233,17 @@ export function InvoicePreview() {
                       intlLocale
                     )}
                   </TableCell>
-                </TableRow>
+                </tr>
               ))}
               {(!details.items || details.items.length === 0) && (
-                <TableRow>
+                <tr>
                   <TableCell
                     className="py-8 text-center text-slate-400"
                     colSpan={4}
                   >
                     {t("invoice.preview.noItems")}
                   </TableCell>
-                </TableRow>
+                </tr>
               )}
             </TableBody>
           </Table>
@@ -275,8 +275,8 @@ export function InvoicePreview() {
                   {formatCurrency(
                     details.discountDetails.amountType === "percentage"
                       ? (Number(details.subTotal || 0) *
-                          Number(details.discountDetails.amount || 0)) /
-                          100
+                        Number(details.discountDetails.amount || 0)) /
+                      100
                       : Number(details.discountDetails.amount || 0),
                     details.currency,
                     intlLocale
@@ -297,16 +297,16 @@ export function InvoicePreview() {
                   {formatCurrency(
                     details.taxDetails.amountType === "percentage"
                       ? ((Number(details.subTotal || 0) -
-                          (details.discountDetails?.enabled
-                            ? details.discountDetails.amountType ===
-                              "percentage"
-                              ? (Number(details.subTotal || 0) *
-                                  Number(details.discountDetails.amount || 0)) /
-                                100
-                              : Number(details.discountDetails.amount || 0)
-                            : 0)) *
-                          Number(details.taxDetails.amount || 0)) /
-                          100
+                        (details.discountDetails?.enabled
+                          ? details.discountDetails.amountType ===
+                            "percentage"
+                            ? (Number(details.subTotal || 0) *
+                              Number(details.discountDetails.amount || 0)) /
+                            100
+                            : Number(details.discountDetails.amount || 0)
+                          : 0)) *
+                        Number(details.taxDetails.amount || 0)) /
+                      100
                       : Number(details.taxDetails.amount || 0),
                     details.currency,
                     intlLocale
@@ -323,8 +323,8 @@ export function InvoicePreview() {
                   {formatCurrency(
                     details.shippingDetails.amountType === "percentage"
                       ? (Number(details.subTotal || 0) *
-                          Number(details.shippingDetails.amount || 0)) /
-                          100
+                        Number(details.shippingDetails.amount || 0)) /
+                      100
                       : Number(details.shippingDetails.amount || 0),
                     details.currency,
                     intlLocale
