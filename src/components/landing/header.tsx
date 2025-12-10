@@ -2,12 +2,14 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/contexts/TranslationContext";
 import { ThemeDropdown } from "@/components/theme-dropdown";
+import { GitHubStars } from "@/components/landing/github-stars";
 
 export function Header() {
   const { t } = useTranslation();
@@ -41,6 +43,13 @@ export function Header() {
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
+          <Image
+            src="/logo.png"
+            alt="Magic Invoice Logo"
+            width={32}
+            height={32}
+            className="dark:invert"
+          />
           <span className="text-xl font-bold tracking-tight">
             {t("common.appName")}
           </span>
@@ -60,6 +69,9 @@ export function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
+          <div className="hidden sm:block">
+            <GitHubStars />
+          </div>
           <ThemeDropdown />
           <Button className="rounded-full px-6 font-medium" asChild>
             <Link href="/invoice">{t("header.getStarted")}</Link>
@@ -94,6 +106,12 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+            <div className="flex items-center justify-between mt-2">
+              <span className="text-muted-foreground text-sm">
+                {t("header.supportUs")}
+              </span>
+              <GitHubStars />
+            </div>
             <div className="flex items-center justify-between mt-4">
               <span className="text-muted-foreground text-sm">
                 {t("common.toggleTheme")}

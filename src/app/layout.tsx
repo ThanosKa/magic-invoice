@@ -18,17 +18,29 @@ export const metadata: Metadata = {
   description: "Professional invoice editor with instant PDF export. No sign-up required. Create, customize, and download beautiful invoices in seconds.",
   keywords: ["invoice", "invoice generator", "PDF invoice", "free invoice", "invoice maker"],
   authors: [{ name: "Magic Invoice" }],
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
     title: "Magic Invoice - Create Beautiful Invoices in Real-Time",
     description: "Professional invoice editor with instant PDF export. No sign-up required.",
     type: "website",
     url: "https://magicinvoice.com",
     siteName: "Magic Invoice",
+    images: [
+      {
+        url: "/og-magic-invoice.png",
+        width: 1200,
+        height: 630,
+        alt: "Magic Invoice - Create Professional Invoices in Seconds",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Magic Invoice - Create Beautiful Invoices in Real-Time",
     description: "Professional invoice editor with instant PDF export.",
+    images: ["/og-magic-invoice.png"],
   },
 };
 
@@ -43,7 +55,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-            {children}
+          {children}
         </Providers>
       </body>
     </html>

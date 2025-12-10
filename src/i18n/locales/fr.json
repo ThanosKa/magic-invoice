@@ -48,7 +48,9 @@
     "howItWorks": "Comment ça marche",
     "testimonials": "Témoignages",
     "faq": "FAQ",
-    "getStarted": "Commencer"
+    "getStarted": "Commencer",
+    "supportUs": "Soutenez-nous",
+    "starOnGithub": "Mettre une étoile sur GitHub"
   },
   "footer": {
     "copyright": "© 2025 Thaka. Tous droits réservés.",

@@ -1,7 +1,7 @@
 export const siteMetadata = {
     title: 'Magic Invoice - Professional Invoice Generator',
     description: 'Create beautiful, professional invoices in seconds. No account required. Free and secure.',
-    ogImage: 'https://magicinvoice.com/og.png', // Placeholder
+    ogImage: '/og-magic-invoice.png',
     name: 'Magic Invoice',
     url: 'https://magicinvoice.com',
 };
