@@ -1,4 +1,5 @@
 import "@testing-library/jest-dom/vitest";
+import React from "react";
 
 if (!Element.prototype.hasPointerCapture) {
   Element.prototype.hasPointerCapture = () => false;
@@ -33,12 +34,14 @@ vi.mock("next/navigation", () => {
 });
 
 vi.mock("next/link", () => {
-  const React = require("react");
-  return {
-    __esModule: true,
-    default: React.forwardRef(function Link(props, ref) {
-      const { href, children, ...rest } = props;
-      return React.createElement("a", { href, ref, ...rest }, children);
-    }),
-  };
+  type LinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
+
+  const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link(
+    { href, children, ...rest },
+    ref
+  ) {
+    return React.createElement("a", { href, ref, ...rest }, children);
+  });
+
+  return { __esModule: true, default: Link };
 });
