@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Providers } from "@/contexts/Providers";
 
@@ -57,6 +58,20 @@ export default function RootLayout({
         <Providers>
           {children}
         </Providers>
+        <Script
+          id="bmc-widget"
+          src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+          data-name="BMC-Widget"
+          data-cfasync="false"
+          data-id="thaka"
+          data-description="Support me on Buy me a coffee!"
+          data-message=""
+          data-color="#5F7FFF"
+          data-position="Right"
+          data-x_margin="18"
+          data-y_margin="18"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
