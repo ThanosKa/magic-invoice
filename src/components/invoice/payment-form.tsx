@@ -18,35 +18,23 @@ import { useTranslation } from "@/contexts/TranslationContext";
 
 export function PaymentForm() {
   const { t } = useTranslation();
-  const { register, control, setValue, getValues } =
+  const { register, control, setValue, getValues, watch } =
     useFormContext<FormSchemaType>();
 
-  const currency = useWatch({ control, name: "details.currency" });
+  // Use single watch call for all needed values to prevent multiple re-renders
+  const watchedValues = watch();
+
+  const currency = watchedValues.details?.currency;
   const currencySymbol = getCurrencySymbol(currency || "USD");
 
-  const discountEnabled = useWatch({
-    control,
-    name: "details.discountDetails.enabled",
-  });
-  const discountAmountType = useWatch({
-    control,
-    name: "details.discountDetails.amountType",
-  });
+  const discountEnabled = watchedValues.details?.discountDetails?.enabled;
+  const discountAmountType = watchedValues.details?.discountDetails?.amountType;
 
-  const taxEnabled = useWatch({ control, name: "details.taxDetails.enabled" });
-  const taxAmountType = useWatch({
-    control,
-    name: "details.taxDetails.amountType",
-  });
+  const taxEnabled = watchedValues.details?.taxDetails?.enabled;
+  const taxAmountType = watchedValues.details?.taxDetails?.amountType;
 
-  const shippingEnabled = useWatch({
-    control,
-    name: "details.shippingDetails.enabled",
-  });
-  const shippingAmountType = useWatch({
-    control,
-    name: "details.shippingDetails.amountType",
-  });
+  const shippingEnabled = watchedValues.details?.shippingDetails?.enabled;
+  const shippingAmountType = watchedValues.details?.shippingDetails?.amountType;
 
   const ensureAmount = (
     path:
@@ -101,6 +89,7 @@ export function PaymentForm() {
                   setValue("details.discountDetails.amountType", v)
                 }
                 value={discountAmountType}
+                defaultValue="amount"
               >
                 <SelectTrigger className="w-24 cursor-pointer">
                   <SelectValue />
@@ -152,6 +141,7 @@ export function PaymentForm() {
                   setValue("details.taxDetails.amountType", v)
                 }
                 value={taxAmountType}
+                defaultValue="percentage"
               >
                 <SelectTrigger className="w-24 cursor-pointer">
                   <SelectValue />
@@ -203,6 +193,7 @@ export function PaymentForm() {
                   setValue("details.shippingDetails.amountType", v)
                 }
                 value={shippingAmountType}
+                defaultValue="amount"
               >
                 <SelectTrigger className="w-24 cursor-pointer">
                   <SelectValue />

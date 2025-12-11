@@ -97,6 +97,7 @@ export function DetailsForm() {
                     <Select
                         onValueChange={(value) => setValue("details.currency", value)}
                         value={currency}
+                        defaultValue="USD"
                     >
                         <SelectTrigger className="cursor-pointer">
                             <SelectValue
