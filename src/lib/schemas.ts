@@ -70,57 +70,64 @@ export type PartySchemaType = z.infer<typeof partySchema>;
 export type ItemSchemaType = z.infer<typeof itemSchema>;
 export type ChargeSchemaType = z.infer<typeof chargeSchema>;
 
-export const FORM_DEFAULT_VALUES: FormSchemaType = {
-  sender: {
-    name: "",
-    email: "",
-    phone: "",
-    address: "",
-    customInputs: [],
-  },
-  receiver: {
-    name: "",
-    email: "",
-    phone: "",
-    address: "",
-    customInputs: [],
-  },
-  details: {
-    invoiceNumber: "INV-0001",
-    invoiceDate: new Date(),
-    dueDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
-    currency: "USD",
-    items: [
-      {
-        name: "",
-        description: "",
-        quantity: 1,
-        unitPrice: 0,
-        total: 0,
+export function buildDefaultInvoice(): FormSchemaType {
+  const invoiceDate = new Date();
+  const dueDate = new Date(invoiceDate.getTime() + 30 * 24 * 60 * 60 * 1000);
+
+  return {
+    sender: {
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      customInputs: [],
+    },
+    receiver: {
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      customInputs: [],
+    },
+    details: {
+      invoiceNumber: "INV-0001",
+      invoiceDate,
+      dueDate,
+      currency: "USD",
+      items: [
+        {
+          name: "",
+          description: "",
+          quantity: 1,
+          unitPrice: 0,
+          total: 0,
+        },
+      ],
+      subTotal: 0,
+      totalAmount: 0,
+      pdfTemplate: 1,
+      discountDetails: {
+        enabled: false,
+        amount: 0,
+        amountType: "amount" as const,
       },
-    ],
-    subTotal: 0,
-    totalAmount: 0,
-    pdfTemplate: 1,
-    discountDetails: {
-      enabled: false,
-      amount: 0,
-      amountType: "amount" as const,
+      taxDetails: {
+        enabled: false,
+        amount: 0,
+        amountType: "percentage" as const,
+      },
+      shippingDetails: {
+        enabled: false,
+        amount: 0,
+        amountType: "amount" as const,
+      },
+      paymentInformation: "",
+      termsConditions: "",
+      notes: "",
+      totalInWordsEnabled: false,
+      totalInWords: "",
     },
-    taxDetails: {
-      enabled: false,
-      amount: 0,
-      amountType: "percentage" as const,
-    },
-    shippingDetails: {
-      enabled: false,
-      amount: 0,
-      amountType: "amount" as const,
-    },
-    paymentInformation: "",
-    termsConditions: "",
-    notes: "",
-    totalInWordsEnabled: false,
-    totalInWords: "",
-  },
-};
+  };
+}
+
+export const FORM_DEFAULT_VALUES: FormSchemaType = buildDefaultInvoice();

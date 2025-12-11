@@ -2,7 +2,7 @@
 
 import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { formSchema, FORM_DEFAULT_VALUES, FormSchemaType } from "@/lib/schemas";
+import { buildDefaultInvoice, formSchema, FormSchemaType } from "@/lib/schemas";
 import { useEffect } from "react";
 import { saveToLocalStorage, loadFromLocalStorage } from "@/lib/helpers";
 import { InvoiceForm } from "@/components/invoice/invoice-form";
@@ -19,7 +19,7 @@ export default function InvoicePage() {
   const { t } = useTranslation();
   const methods = useForm<FormSchemaType>({
     resolver: zodResolver(formSchema),
-    defaultValues: FORM_DEFAULT_VALUES,
+    defaultValues: buildDefaultInvoice(),
     mode: "onChange",
   });
 

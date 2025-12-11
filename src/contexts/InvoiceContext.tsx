@@ -3,8 +3,12 @@
 import React, { createContext, useCallback, useContext, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { pdf } from "@react-pdf/renderer";
-import { FormSchemaType } from "@/lib/schemas";
-import { loadFromLocalStorage, saveToLocalStorage } from "@/lib/helpers";
+import { buildDefaultInvoice, FormSchemaType } from "@/lib/schemas";
+import {
+  loadFromLocalStorage,
+  removeFromLocalStorage,
+  saveToLocalStorage,
+} from "@/lib/helpers";
 import { InvoicePDF } from "@/components/invoice/invoice-pdf";
 
 type ExportFormat = "json" | "csv" | "xml" | "xlsx";
@@ -26,6 +30,7 @@ interface InvoiceContextType {
 }
 
 const SAVED_KEY = "magic-invoice:savedInvoices";
+const DRAFT_KEY = "magic-invoice:invoiceDraft";
 
 const InvoiceContext = createContext<InvoiceContextType | undefined>(undefined);
 
@@ -36,10 +41,10 @@ export function InvoiceProvider({ children }: { children: React.ReactNode }) {
     loadFromLocalStorage<SavedInvoice[]>(SAVED_KEY, [])
   );
 
-  const persistSavedInvoices = (items: SavedInvoice[]) => {
+  const persistSavedInvoices = useCallback((items: SavedInvoice[]) => {
     setSavedInvoices(items);
     saveToLocalStorage(SAVED_KEY, items);
-  };
+  }, []);
 
   const saveInvoice = useCallback(() => {
     const formValues = getValues();
@@ -56,7 +61,7 @@ export function InvoiceProvider({ children }: { children: React.ReactNode }) {
       ),
     ];
     persistSavedInvoices(updated);
-  }, [getValues]);
+  }, [getValues, persistSavedInvoices]);
 
   const loadInvoice = useCallback(
     (invoiceNumber: string) => {
@@ -72,11 +77,20 @@ export function InvoiceProvider({ children }: { children: React.ReactNode }) {
     [reset]
   );
 
-  const deleteInvoice = useCallback((invoiceNumber: string) => {
-    const list = loadFromLocalStorage<SavedInvoice[]>(SAVED_KEY, []);
-    const updated = list.filter((i) => i.invoiceNumber !== invoiceNumber);
-    persistSavedInvoices(updated);
-  }, []);
+  const deleteInvoice = useCallback(
+    (invoiceNumber: string) => {
+      const list = loadFromLocalStorage<SavedInvoice[]>(SAVED_KEY, []);
+      const updated = list.filter((i) => i.invoiceNumber !== invoiceNumber);
+      persistSavedInvoices(updated);
+
+      const current = getValues();
+      if (current.details.invoiceNumber === invoiceNumber) {
+        reset(buildDefaultInvoice());
+        removeFromLocalStorage(DRAFT_KEY);
+      }
+    },
+    [getValues, reset, persistSavedInvoices]
+  );
 
   const downloadBlob = (blob: Blob, filename: string) => {
     const url = URL.createObjectURL(blob);
