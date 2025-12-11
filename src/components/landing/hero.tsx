@@ -80,7 +80,7 @@ export function Hero() {
           >
             <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-border bg-background shadow-2xl">
               <Image
-                src="/hero-preview.png"
+                src="/hero-invoice-editor.svg"
                 alt="Magic Invoice Editor Preview"
                 fill
                 className="object-cover"

@@ -42,7 +42,7 @@ export function Footer() {
             <X className="h-5 w-5" />
           </Link>
           <Link
-            href="mailto:hello@magic-self.dev"
+            href="mailto:kazakis.th@gmail.com"
             className="text-muted-foreground hover:text-foreground transition-colors"
             aria-label="Email"
           >

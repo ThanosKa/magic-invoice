@@ -1,0 +1,13 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1280" height="720" fill="#18181B"/>
+<rect x="100" y="50" width="200" height="620" rx="8" fill="#27272A"/>
+<rect x="340" y="50" width="840" height="620" rx="8" fill="#FFFFFF"/>
+<rect x="380" y="90" width="120" height="120" rx="4" fill="#E4E4E7"/>
+<rect x="380" y="250" width="300" height="32" rx="4" fill="#E4E4E7"/>
+<rect x="380" y="300" width="200" height="16" rx="4" fill="#F4F4F5"/>
+<rect x="380" y="360" width="760" height="60" rx="4" fill="#F4F4F5"/>
+<rect x="380" y="440" width="760" height="60" rx="4" fill="#F4F4F5"/>
+<rect x="380" y="520" width="760" height="60" rx="4" fill="#F4F4F5"/>
+<rect x="940" y="620" width="200" height="40" rx="4" fill="#E4E4E7"/>
+<text x="640" y="360" font-family="sans-serif" font-size="24" fill="#A1A1AA" text-anchor="middle">Invoice Editor Preview (Placeholder)</text>
+</svg>

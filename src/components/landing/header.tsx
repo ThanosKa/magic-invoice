@@ -44,11 +44,11 @@ export function Header() {
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
           <Image
-            src="/logo.png"
+            src="/logo-rounded.svg"
             alt="Magic Invoice Logo"
             width={32}
             height={32}
-            className="dark:invert rounded-lg"
+            className="rounded-lg"
           />
           <span className="text-xl font-bold tracking-tight">
             {t("common.appName")}
