@@ -13,11 +13,11 @@ export function Footer() {
       <div className="container px-4 mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex items-center gap-2">
           <Image
-            src="/logo.png"
+            src="/logo-rounded.svg"
             alt="Magic Invoice Logo"
             width={24}
             height={24}
-            className="dark:invert rounded-md"
+            className="rounded-md"
           />
           <span className="text-lg font-bold tracking-tight">
             {t("common.appName")}
