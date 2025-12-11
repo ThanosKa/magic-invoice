@@ -1,6 +1,6 @@
 "use client";
 
-import { useFormContext, useWatch } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import { FormSchemaType } from "@/lib/schemas";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -18,7 +18,7 @@ import { useTranslation } from "@/contexts/TranslationContext";
 
 export function PaymentForm() {
   const { t } = useTranslation();
-  const { register, control, setValue, getValues, watch } =
+  const { register, setValue, getValues, watch } =
     useFormContext<FormSchemaType>();
 
   // Use single watch call for all needed values to prevent multiple re-renders

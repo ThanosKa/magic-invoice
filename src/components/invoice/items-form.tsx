@@ -161,7 +161,7 @@ function SortableItem({
       (parseFloat(String(unitPrice)) || 0);
     setValue(`details.items.${index}.total`, total);
     calculateTotalsRef.current();
-  }, [quantity, unitPrice, index, setValue]);
+  }, [quantity, unitPrice, index, setValue, calculateTotalsRef]);
 
   return (
     <div
