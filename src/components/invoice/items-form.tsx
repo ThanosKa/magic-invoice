@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Plus, Trash2, GripVertical } from "lucide-react";
 import { useCharges } from "@/contexts/ChargesContext";
-import { useEffect } from "react";
+import { MutableRefObject, useEffect, useRef } from "react";
 import { getCurrencySymbol } from "@/lib/helpers";
 import { useTranslation } from "@/contexts/TranslationContext";
 import {
@@ -35,6 +35,11 @@ export function ItemsForm() {
     name: "details.items",
   });
   const { calculateTotals } = useCharges();
+  const calculateTotalsRef = useRef(calculateTotals);
+
+  useEffect(() => {
+    calculateTotalsRef.current = calculateTotals;
+  }, [calculateTotals]);
 
   const currency = watch("details.currency");
   const currencySymbol = getCurrencySymbol(currency || "USD");
@@ -97,7 +102,7 @@ export function ItemsForm() {
                 register={register}
                 watch={watch}
                 setValue={setValue}
-                calculateTotals={calculateTotals}
+                calculateTotalsRef={calculateTotalsRef}
                 t={t}
               />
             ))}
@@ -123,7 +128,7 @@ type SortableItemProps = {
   register: ReturnType<typeof useFormContext<FormSchemaType>>["register"];
   watch: ReturnType<typeof useFormContext<FormSchemaType>>["watch"];
   setValue: ReturnType<typeof useFormContext<FormSchemaType>>["setValue"];
-  calculateTotals: () => void;
+  calculateTotalsRef: MutableRefObject<() => void>;
   t: ReturnType<typeof useTranslation>["t"];
 };
 
@@ -136,7 +141,7 @@ function SortableItem({
   register,
   watch,
   setValue,
-  calculateTotals,
+  calculateTotalsRef,
   t,
 }: SortableItemProps) {
   const { attributes, listeners, setNodeRef, transform, transition } =
@@ -155,8 +160,8 @@ function SortableItem({
       (parseFloat(String(quantity)) || 0) *
       (parseFloat(String(unitPrice)) || 0);
     setValue(`details.items.${index}.total`, total);
-    calculateTotals();
-  }, [quantity, unitPrice, index, setValue, calculateTotals]);
+    calculateTotalsRef.current();
+  }, [quantity, unitPrice, index, setValue]);
 
   return (
     <div
