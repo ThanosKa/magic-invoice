@@ -22,7 +22,7 @@ type SavedInvoice = {
 interface InvoiceContextType {
   downloadPdf: () => Promise<void>;
   exportInvoice: (format: ExportFormat) => Promise<void>;
-  sendPdfToEmail: (email: string) => Promise<void>;
+
   savedInvoices: SavedInvoice[];
   saveInvoice: () => void;
   loadInvoice: (invoiceNumber: string) => FormSchemaType | null;
@@ -124,27 +124,12 @@ export function InvoiceProvider({ children }: { children: React.ReactNode }) {
     [getValues]
   );
 
-  const sendPdfToEmail = useCallback(
-    async (email: string) => {
-      const formValues = getValues();
-      const blob = await pdf(<InvoicePDF data={formValues} />).toBlob();
-      const formData = new FormData();
-      formData.append("email", email);
-      formData.append("invoiceNumber", formValues.details.invoiceNumber);
-      formData.append("invoicePdf", blob, "invoice.pdf");
-      const res = await fetch("/api/invoice/send", {
-        method: "POST",
-        body: formData,
-      });
-      if (!res.ok) throw new Error("Failed to send email");
-    },
-    [getValues]
-  );
+
 
   const value: InvoiceContextType = {
     downloadPdf,
     exportInvoice,
-    sendPdfToEmail,
+
     savedInvoices,
     saveInvoice,
     loadInvoice,
