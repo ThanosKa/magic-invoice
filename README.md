@@ -18,8 +18,15 @@
 
 ---
 
+## 📸 Screenshot
+
+<div align="center">
+  <img src="public/hero-invoice-editor.svg" alt="Magic Invoice Editor Screenshot" width="100%">
+</div>
+
 ## Table of Contents
 
+- [Screenshot](#screenshot)
 - [About](#about)
 - [Features](#features)
 - [Demo](#demo)
