@@ -29,7 +29,7 @@ export function InvoicePreview() {
   const bgClass = isTemplate2 ? "bg-slate-50" : "bg-white";
   const accentColor = isTemplate2 ? "text-blue-600" : "text-slate-900";
   const borderColor = isTemplate2 ? "border-blue-200" : "border-slate-200";
-  const headingColor = isTemplate2 ? "text-blue-500" : "text-slate-400";
+  const headingColor = isTemplate2 ? "text-blue-500" : "text-slate-600";
 
   return (
     <Card
@@ -37,7 +37,7 @@ export function InvoicePreview() {
       id="invoice-preview"
     >
       {/* Invoice Header / Status Bar */}
-      <div className="bg-muted/50 dark:bg-muted/30 p-3 border-b border-border flex justify-between items-center text-xs text-muted-foreground">
+      <div className="bg-muted/50 dark:bg-muted/30 p-3 border-b border-border flex justify-between items-center text-xs text-foreground/70">
         <div className="flex items-center gap-2">
           <Eye className="h-3 w-3" /> {t("invoice.preview.livePreview")}
         </div>
@@ -68,7 +68,7 @@ export function InvoicePreview() {
                 unoptimized
               />
             ) : (
-              <div className="h-16 w-16 bg-slate-100 rounded flex items-center justify-center text-xs text-slate-400 ml-auto">
+              <div className="h-16 w-16 bg-slate-100 rounded flex items-center justify-center text-xs text-slate-600 ml-auto">
                 {t("invoice.preview.logoPlaceholder")}
               </div>
             )}
@@ -78,11 +78,11 @@ export function InvoicePreview() {
         {/* Addresses */}
         <div className="grid grid-cols-2 gap-8 mb-12">
           <div>
-            <h3
+            <h2
               className={`text-xs uppercase tracking-wider font-bold ${headingColor} mb-2`}
             >
               {t("invoice.form.summary.fromTitle")}
-            </h3>
+            </h2>
             <div className="font-semibold text-slate-900">
               {sender.name || t("invoice.preview.placeholderSenderName")}
             </div>
@@ -111,11 +111,11 @@ export function InvoicePreview() {
             )}
           </div>
           <div className="text-right">
-            <h3
+            <h2
               className={`text-xs uppercase tracking-wider font-bold ${headingColor} mb-2`}
             >
               {t("invoice.form.summary.toTitle")}
-            </h3>
+            </h2>
             <div className="font-semibold text-slate-900">
               {receiver.name || t("invoice.preview.placeholderClientName")}
             </div>
@@ -151,11 +151,11 @@ export function InvoicePreview() {
           className={`grid grid-cols-2 gap-8 mb-12 bg-slate-50 p-6 rounded-lg border ${borderColor}`}
         >
           <div>
-            <div
+            <h3
               className={`text-xs uppercase tracking-wider font-bold ${headingColor} mb-1`}
             >
               {t("invoice.preview.dateIssue")}
-            </div>
+            </h3>
             <div className="font-medium cursor-pointer">
               {details.invoiceDate && details.invoiceDate instanceof Date
                 ? formatDate(details.invoiceDate, undefined, intlLocale)
@@ -165,11 +165,11 @@ export function InvoicePreview() {
             </div>
           </div>
           <div className="text-right">
-            <div
+            <h3
               className={`text-xs uppercase tracking-wider font-bold ${headingColor} mb-1`}
             >
               {t("invoice.preview.dateDue")}
-            </div>
+            </h3>
             <div className="font-medium">
               {details.dueDate && details.dueDate instanceof Date
                 ? formatDate(details.dueDate, undefined, intlLocale)
@@ -237,7 +237,7 @@ export function InvoicePreview() {
               {(!details.items || details.items.length === 0) && (
                 <tr>
                   <TableCell
-                    className="py-8 text-center text-slate-400"
+                    className="py-8 text-center text-slate-600"
                     colSpan={4}
                   >
                     {t("invoice.preview.noItems")}
@@ -392,9 +392,9 @@ export function InvoicePreview() {
 
         {details.signature && (
           <div className="mt-8 text-right">
-            <p className="text-xs uppercase tracking-wider text-slate-400 mb-2">
+            <h4 className="text-xs uppercase tracking-wider text-slate-600 mb-2">
               {t("invoice.preview.signature")}
-            </p>
+            </h4>
             {details.signature.type === "type" && (
               <div
                 className="text-2xl font-semibold"

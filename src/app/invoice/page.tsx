@@ -62,7 +62,7 @@ export default function InvoicePage() {
             </div>
           </div>
         </div>
-        <div className="container mx-auto p-4 lg:p-8">
+        <main className="container mx-auto p-4 lg:p-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="space-y-6">
               <InvoiceForm />
@@ -73,7 +73,7 @@ export default function InvoicePage() {
               <InvoicePreview />
             </div>
           </div>
-        </div>
+        </main>
       </div>
     </InvoiceAppProviders>
   );
