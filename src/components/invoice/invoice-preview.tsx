@@ -13,7 +13,6 @@ import {
   TableCell,
   TableHead,
   TableHeader,
-  TableRow,
 } from "@/components/ui/table";
 
 export function InvoicePreview() {
