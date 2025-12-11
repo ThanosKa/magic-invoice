@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
             userAgent: '*',
             allow: '/',
         },
-        sitemap: 'https://magicinvoice.com/sitemap.xml',
+        sitemap: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://magic-invoice-seven.vercel.app'}/sitemap.xml`,
     }
 }

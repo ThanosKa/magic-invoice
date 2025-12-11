@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://magicinvoice.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://magic-invoice-seven.vercel.app"),
   title: "Magic Invoice - Create Beautiful Invoices in Real-Time",
   description:
     "Professional invoice editor with instant PDF export. No sign-up required. Create, customize, and download beautiful invoices in seconds.",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description:
       "Professional invoice editor with instant PDF export. No sign-up required.",
     type: "website",
-    url: "https://magicinvoice.com",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://magic-invoice-seven.vercel.app",
     siteName: "Magic Invoice",
     images: [
       {
