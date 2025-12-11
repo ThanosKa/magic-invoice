@@ -39,20 +39,30 @@ export const metadata: Metadata = {
     type: "website",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://magic-invoice-seven.vercel.app",
     siteName: "Magic Invoice",
+    locale: "en_US",
     images: [
       {
-        url: "/og-magic-invoice.png",
+        url: process.env.NEXT_PUBLIC_SITE_URL ? `${process.env.NEXT_PUBLIC_SITE_URL}/og-magic-invoice.png` : "/og-magic-invoice.png",
         width: 1200,
         height: 630,
         alt: "Magic Invoice - Create Professional Invoices in Seconds",
+        type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Magic Invoice - Create Beautiful Invoices in Real-Time",
-    description: "Professional invoice editor with instant PDF export.",
-    images: ["/og-magic-invoice.png"],
+    description: "Professional invoice editor with instant PDF export. No sign-up required.",
+    images: [process.env.NEXT_PUBLIC_SITE_URL ? `${process.env.NEXT_PUBLIC_SITE_URL}/og-magic-invoice.png` : "/og-magic-invoice.png"],
+  },
+  // Additional meta tags for various platforms (LinkedIn, WhatsApp, Telegram, Discord, Slack)
+  other: {
+    "og:image:secure_url": process.env.NEXT_PUBLIC_SITE_URL ? `${process.env.NEXT_PUBLIC_SITE_URL}/og-magic-invoice.png` : "/og-magic-invoice.png",
+    "og:image:type": "image/png",
+  },
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_SITE_URL || "https://magic-invoice-seven.vercel.app",
   },
 };
 
