@@ -1,0 +1,261 @@
+{
+    "common": {
+        "appName": "Magic Invoice",
+        "getStarted": "Começar",
+        "learnMore": "Saber mais",
+        "features": "Funcionalidades",
+        "faq": "FAQ",
+        "privacy": "Privacidade",
+        "terms": "Termos",
+        "github": "GitHub",
+        "email": "E-mail",
+        "twitter": "Twitter",
+        "toggleTheme": "Alternar tema",
+        "previous": "Anterior",
+        "next": "Próximo",
+        "switchToEnglish": "Mudar para Inglês",
+        "switchToGreek": "Mudar para Grego",
+        "languageEnglish": "Inglês",
+        "languageGreek": "Grego",
+        "language": "Idioma",
+        "remove": "Remover",
+        "clear": "Limpar",
+        "load": "Carregar",
+        "delete": "Eliminar"
+    },
+    "notFound": {
+        "title": "Página não encontrada",
+        "description": "Ops! A página que procura não existe. Pode ter sido movida ou eliminada.",
+        "goHome": "Ir para casa",
+        "createInvoice": "Criar fatura",
+        "needHelp": "Precisa de ajuda?",
+        "returnHome": "Voltar à página inicial"
+    },
+    "errors": {
+        "customKeyRequired": "Chave é obrigatória",
+        "customValueRequired": "Valor é obrigatório",
+        "nameRequired": "Nome é obrigatório",
+        "emailRequired": "E-mail é obrigatório",
+        "emailInvalid": "Endereço de e-mail inválido",
+        "phoneRequired": "Telefone é obrigatório",
+        "addressRequired": "Morada é obrigatória",
+        "itemNameRequired": "Nome do item é obrigatório",
+        "quantityPositive": "Quantidade deve ser positiva",
+        "unitPricePositive": "Preço unitário deve ser positivo",
+        "numberRequired": "Um valor é obrigatório",
+        "numberInvalid": "Introduza um número válido",
+        "amountNonNegative": "Montante deve ser zero ou superior",
+        "invoiceNumberRequired": "Número da fatura é obrigatório",
+        "dateRequired": "Data é obrigatória",
+        "dateInvalid": "Selecione uma data válida",
+        "currencyRequired": "Moeda é obrigatória",
+        "itemsRequired": "Adicione pelo menos um item de linha"
+    },
+    "header": {
+        "features": "Funcionalidades",
+        "howItWorks": "Como funciona",
+        "testimonials": "Testemunhos",
+        "faq": "FAQ",
+        "getStarted": "Começar",
+        "supportUs": "Apoie-nos",
+        "starOnGithub": "Dar estrela no GitHub"
+    },
+    "footer": {
+        "copyright": "© 2025 Thaka. Todos os direitos reservados.",
+        "privacy": "Privacidade",
+        "terms": "Termos"
+    },
+    "hero": {
+        "title": "Criar faturas em",
+        "titleHighlight": "Tempo Real",
+        "subtitle": "Editor de faturas profissional com exportação PDF instantânea. Sem registo necessário. Crie, personalize e descarregue faturas bonitas em segundos.",
+        "startCreating": "Começar a criar",
+        "learnMore": "Saber mais",
+        "previewAlt": "Pré-visualização do Editor de Faturas"
+    },
+    "features": {
+        "lightningFast": {
+            "title": "Extremamente Rápido",
+            "description": "Construído para velocidade. Crie, edite e envie faturas em milissegundos."
+        },
+        "privateSecure": {
+            "title": "Privado & Seguro",
+            "description": "Os seus dados ficam no seu dispositivo. Não armazenamos as suas informações financeiras."
+        },
+        "globalUniversal": {
+            "title": "Global & Universal",
+            "description": "Suporte para 100+ moedas e idiomas."
+        },
+        "pixelPerfect": {
+            "title": "PDF Perfeito",
+            "description": "Gere PDFs profissionalmente concebidos instantaneamente."
+        }
+    },
+    "faq": {
+        "title": "Perguntas frequentes",
+        "subtitle": "Tudo o que precisa de saber sobre Magic Invoice",
+        "questions": {
+            "isFree": {
+                "question": "Magic Invoice é gratuito?",
+                "answer": "Sim, Magic Invoice é completamente gratuito. Pode criar faturas ilimitadas sem qualquer custo."
+            },
+            "accountRequired": {
+                "question": "Preciso de criar uma conta?",
+                "answer": "Não, pode criar e descarregar faturas instantaneamente sem se registar. Os seus dados ficam no seu dispositivo."
+            },
+            "customize": {
+                "question": "Posso personalizar o design da fatura?",
+                "answer": "Sim, pode adicionar o seu logótipo, alterar cores e ajustar a disposição para corresponder à sua identidade de marca."
+            },
+            "dataSecure": {
+                "question": "Os meus dados estão seguros?",
+                "answer": "Absolutamente. Não armazenamos os seus dados de faturas nos nossos servidores. Tudo é processado localmente no seu navegador."
+            }
+        }
+    },
+    "cta": {
+        "title": "Pronto para criar a sua fatura profissional?",
+        "subtitle": "Junte-se a milhares de profissionais que criaram faturas impressionantes com a nossa ferramenta. Sem registo necessário - comece a construir agora.",
+        "buttonText": "Começar a faturar"
+    },
+    "invoice": {
+        "title": "Editor de Faturas",
+        "subtitle": "O editor de faturas será implementado na próxima fase.",
+        "comingSoon": "Fique atento para funcionalidades de edição em tempo real e exportação PDF!",
+        "badge": "Em breve",
+        "form": {
+            "tabs": {
+                "fromTo": "De/Para",
+                "details": "Detalhes da Fatura",
+                "items": "Itens de Linha",
+                "payment": "Pagamento & Notas",
+                "summary": "Visão geral"
+            },
+            "party": {
+                "sender": {
+                    "title": "De (Remetente)",
+                    "nameLabel": "Nome / Empresa",
+                    "namePlaceholder": "O seu nome ou empresa",
+                    "emailLabel": "E-mail",
+                    "emailPlaceholder": "seu@email.com",
+                    "phoneLabel": "Telefone",
+                    "phonePlaceholder": "+351 21 123 4567",
+                    "addressLabel": "Morada",
+                    "addressPlaceholder": "Rua Principal 123, Cidade, País",
+                    "customInputs": "Campos personalizados",
+                    "customKey": "Etiqueta",
+                    "customValue": "Valor",
+                    "customHint": "Adicione campos personalizados como IVA, registo, departamento, etc."
+                },
+                "receiver": {
+                    "title": "Para (Cliente)",
+                    "nameLabel": "Nome / Empresa",
+                    "namePlaceholder": "Nome do cliente ou empresa",
+                    "emailLabel": "E-mail",
+                    "emailPlaceholder": "cliente@email.com",
+                    "phoneLabel": "Telefone",
+                    "phonePlaceholder": "+351 21 123 4567",
+                    "addressLabel": "Morada",
+                    "addressPlaceholder": "Rua do Cliente 456, Cidade, País",
+                    "customInputs": "Campos personalizados",
+                    "customKey": "Etiqueta",
+                    "customValue": "Valor",
+                    "customHint": "Adicione campos específicos do cliente como IVA, número PO, departamento."
+                }
+            },
+            "details": {
+                "invoiceNumberLabel": "Número da Fatura",
+                "invoiceNumberPlaceholder": "FAT-001",
+                "currencyLabel": "Moeda",
+                "currencyPlaceholder": "Selecionar moeda",
+                "dateLabel": "Data",
+                "dueDateLabel": "Data de vencimento",
+                "pickDate": "Escolher uma data",
+                "logoLabel": "Logótipo da Fatura",
+                "logoHelp": "Faça upload de um logótipo para marcar a sua fatura.",
+                "logoUploadCta": "Clique para fazer upload ou substituir logótipo",
+                "logoUploadButton": "Upload",
+                "logoChange": "Alterar",
+                "logoRemove": "Remover",
+                "signatureLabel": "Assinatura",
+                "signatureSaved": "Assinatura guardada",
+                "templateLabel": "Modelo",
+                "template": "Modelo",
+                "templateDescription": "Alterar disposição para PDF/pré-visualização",
+                "totalInWordsLabel": "Total por extenso",
+                "totalInWordsHelp": "Mostrar o montante total escrito por extenso"
+            },
+            "signature": {
+                "draw": "Desenhar",
+                "type": "Escrever",
+                "upload": "Upload",
+                "typePlaceholder": "Escreva a sua assinatura",
+                "signatureSaved": "Assinatura guardada"
+            },
+            "items": {
+                "title": "Itens de Linha",
+                "addItem": "Adicionar Item",
+                "emptyState": "Ainda não foram adicionados itens. Clique em \"Adicionar Item\" para começar.",
+                "itemNameLabel": "Nome do Item",
+                "itemNamePlaceholder": "Nome do item",
+                "descriptionPlaceholder": "Descrição (opcional)",
+                "qtyLabel": "Qtd",
+                "priceLabel": "Preço",
+                "totalLabel": "Total"
+            },
+            "payment": {
+                "chargesTitle": "Custos & Descontos",
+                "applyDiscount": "Aplicar Desconto",
+                "applyTax": "Aplicar Imposto / IVA",
+                "shippingCost": "Custos de envio",
+                "paymentInfoTitle": "Informações de Pagamento",
+                "bankDetailsLabel": "Dados bancários / Instruções de pagamento",
+                "bankDetailsPlaceholder": "Nome do Banco: Banco Exemplo\nNº Conta: 123456789\nCódigo Swift: EXEMPLO",
+                "termsLabel": "Termos & Condições",
+                "termsPlaceholder": "Pagamento devido dentro de 30 dias...",
+                "notesLabel": "Notas adicionais",
+                "notesPlaceholder": "Obrigado pelo seu negócio!"
+            },
+            "summary": {
+                "fromTitle": "De",
+                "toTitle": "Para",
+                "invoiceDetailsTitle": "Detalhes da Fatura",
+                "numberLabel": "Número",
+                "dateLabel": "Data",
+                "dueDateLabel": "Data de vencimento",
+                "totalLabel": "Total",
+                "itemsLabel": "Itens"
+            }
+        },
+        "preview": {
+            "livePreview": "Pré-visualização Live",
+            "a4Format": "Formato A4",
+            "invoiceLabel": "Fatura",
+            "dateIssue": "Data de emissão",
+            "dateDue": "Data de vencimento",
+            "description": "Descrição",
+            "amountLabel": "Montante",
+            "noItems": "Nenhum item adicionado",
+            "subtotal": "Subtotal",
+            "discount": "Desconto",
+            "tax": "Imposto",
+            "shipping": "Envio",
+            "total": "Total",
+            "logoPlaceholder": "Logótipo",
+            "logoAlt": "Logótipo da fatura",
+            "itemPlaceholder": "Nome do Item",
+            "placeholderSenderName": "Nome do Remetente",
+            "placeholderSenderAddress": "Morada do Remetente...",
+            "placeholderClientName": "Nome do Cliente",
+            "placeholderClientAddress": "Morada do Cliente...",
+            "signature": "Assinatura"
+        },
+        "actions": {
+            "save": "Guardar",
+            "generatePdf": "Gerar PDF",
+            "downloadPdf": "Descarregar PDF",
+            "importJson": "Importar JSON",
+            "savedList": "Faturas guardadas"
+        }
+    }
+}

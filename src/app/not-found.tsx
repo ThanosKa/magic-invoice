@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Home, FileText } from "lucide-react";
 import { useTranslation } from "@/contexts/TranslationContext";
-import { Header } from "@/components/layout/header";
+import { Header } from "@/components/landing/header";
 import { Footer } from "@/components/landing/footer";
 
 export default function NotFound() {

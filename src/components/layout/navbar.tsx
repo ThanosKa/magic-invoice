@@ -8,6 +8,8 @@ import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/contexts/TranslationContext";
+import { Logo } from "@/components/Logo";
+import { LanguageSelector } from "@/components/language-selector";
 
 export function Navbar() {
     const { setTheme, theme } = useTheme();
@@ -42,9 +44,8 @@ export function Navbar() {
             transition={{ duration: 0.5 }}
         >
             <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2 group">
-                    <div className="size-8 rounded-lg bg-foreground group-hover:scale-105 transition-transform duration-300" />
-                    <span className="text-xl font-bold tracking-tight">{t('common.appName')}</span>
+                <Link href="/" className="group">
+                    <Logo className="transition-transform duration-300 group-hover:scale-105" />
                 </Link>
 
                 {/* Desktop Nav */}
@@ -61,6 +62,7 @@ export function Navbar() {
                 </nav>
 
                 <div className="hidden md:flex items-center gap-4">
+                    <LanguageSelector compact />
                     <Button
                         variant="ghost"
                         size="icon"
@@ -71,7 +73,6 @@ export function Navbar() {
                         <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                         <span className="sr-only">{t('common.toggleTheme')}</span>
                     </Button>
-                    <Button className="rounded-full px-6 font-medium">{t('header.getStarted')}</Button>
                 </div>
 
                 {/* Mobile Menu Toggle */}
@@ -92,6 +93,9 @@ export function Navbar() {
                     className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border p-6 shadow-xl"
                 >
                     <nav className="flex flex-col gap-4">
+                        <div className="pb-4 border-b border-border/50">
+                            <LanguageSelector />
+                        </div>
                         {navLinks.map((link) => (
                             <Link
                                 key={link.label}
@@ -114,7 +118,6 @@ export function Navbar() {
                                 <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                             </Button>
                         </div>
-                        <Button className="w-full rounded-full mt-4" size="lg">{t('header.getStarted')}</Button>
                     </nav>
                 </motion.div>
             )}

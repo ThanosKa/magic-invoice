@@ -6,10 +6,10 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/contexts/TranslationContext";
 import { ThemeDropdown } from "@/components/theme-dropdown";
 import { GitHubStars } from "@/components/landing/github-stars";
+import { LanguageSelector } from "@/components/language-selector";
 
 export function Header() {
   const { t } = useTranslation();
@@ -72,13 +72,10 @@ export function Header() {
           <div className="hidden sm:block">
             <GitHubStars />
           </div>
+          <LanguageSelector compact />
           <ThemeDropdown />
-          <Button className="rounded-full px-6 font-medium" asChild>
-            <Link href="/invoice">{t("header.getStarted")}</Link>
-          </Button>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <button
           className="md:hidden p-2 text-foreground"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -87,7 +84,6 @@ export function Header() {
         </button>
       </div>
 
-      {/* Mobile Nav */}
       {isMobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -96,6 +92,9 @@ export function Header() {
           className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border p-6 shadow-xl"
         >
           <nav className="flex flex-col gap-4">
+            <div className="pb-4 border-b border-border/50">
+              <LanguageSelector />
+            </div>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -118,9 +117,6 @@ export function Header() {
               </span>
               <ThemeDropdown />
             </div>
-            <Button className="w-full rounded-full mt-4" size="lg" asChild>
-              <Link href="/invoice">{t("header.getStarted")}</Link>
-            </Button>
           </nav>
         </motion.div>
       )}

@@ -1,0 +1,261 @@
+{
+    "common": {
+        "appName": "Magic Invoice",
+        "getStarted": "Začít",
+        "learnMore": "Zjistit více",
+        "features": "Funkce",
+        "faq": "FAQ",
+        "privacy": "Soukromí",
+        "terms": "Podmínky",
+        "github": "GitHub",
+        "email": "E-mail",
+        "twitter": "Twitter",
+        "toggleTheme": "Přepnout motiv",
+        "previous": "Předchozí",
+        "next": "Další",
+        "switchToEnglish": "Přepnout na angličtinu",
+        "switchToGreek": "Přepnout na řečtinu",
+        "languageEnglish": "Angličtina",
+        "languageGreek": "Řečtina",
+        "language": "Jazyk",
+        "remove": "Odstranit",
+        "clear": "Vymazat",
+        "load": "Načíst",
+        "delete": "Smazat"
+    },
+    "notFound": {
+        "title": "Stránka nenalezena",
+        "description": "Jejda! Stránka, kterou hledáte, neexistuje. Mohla být přesunuta nebo odstraněna.",
+        "goHome": "Jít domů",
+        "createInvoice": "Vytvořit fakturu",
+        "needHelp": "Potřebujete pomoc?",
+        "returnHome": "Návrat na domovskou stránku"
+    },
+    "errors": {
+        "customKeyRequired": "Klíč je povinný",
+        "customValueRequired": "Hodnota je povinná",
+        "nameRequired": "Jméno je povinné",
+        "emailRequired": "E-mail je povinný",
+        "emailInvalid": "Neplatná e-mailová adresa",
+        "phoneRequired": "Telefon je povinný",
+        "addressRequired": "Adresa je povinná",
+        "itemNameRequired": "Název položky je povinný",
+        "quantityPositive": "Množství musí být kladné",
+        "unitPricePositive": "Jednotková cena musí být kladná",
+        "numberRequired": "Hodnota je povinná",
+        "numberInvalid": "Zadejte platné číslo",
+        "amountNonNegative": "Částka musí být nula nebo více",
+        "invoiceNumberRequired": "Číslo faktury je povinné",
+        "dateRequired": "Datum je povinné",
+        "dateInvalid": "Vyberte platné datum",
+        "currencyRequired": "Měna je povinná",
+        "itemsRequired": "Přidejte alespoň jednu položku řádku"
+    },
+    "header": {
+        "features": "Funkce",
+        "howItWorks": "Jak to funguje",
+        "testimonials": "Reference",
+        "faq": "FAQ",
+        "getStarted": "Začít",
+        "supportUs": "Podpořte nás",
+        "starOnGithub": "Hvězdička na GitHub"
+    },
+    "footer": {
+        "copyright": "© 2025 Thaka. Všechna práva vyhrazena.",
+        "privacy": "Soukromí",
+        "terms": "Podmínky"
+    },
+    "hero": {
+        "title": "Vytvářejte faktury v",
+        "titleHighlight": "Reálném Čase",
+        "subtitle": "Profesionální editor faktur s okamžitým exportem PDF. Bez registrace. Vytvářejte, přizpůsobujte a stahujte krásné faktury během několika sekund.",
+        "startCreating": "Začít vytvářet",
+        "learnMore": "Zjistit více",
+        "previewAlt": "Náhled editoru faktur"
+    },
+    "features": {
+        "lightningFast": {
+            "title": "Bleskově rychlý",
+            "description": "Vybudován pro rychlost. Vytvářejte, upravujte a odesílejte faktury během milisekund."
+        },
+        "privateSecure": {
+            "title": "Soukromý a bezpečný",
+            "description": "Vaše data zůstávají na vašem zařízení. Neukládáme vaše finanční informace."
+        },
+        "globalUniversal": {
+            "title": "Globální a univerzální",
+            "description": "Podpora pro 100+ měn a jazyků."
+        },
+        "pixelPerfect": {
+            "title": "Dokonalý PDF",
+            "description": "Generujte profesionálně navržené PDF okamžitě."
+        }
+    },
+    "faq": {
+        "title": "Často kladené otázky",
+        "subtitle": "Vše, co potřebujete vědět o Magic Invoice",
+        "questions": {
+            "isFree": {
+                "question": "Je Magic Invoice zdarma?",
+                "answer": "Ano, Magic Invoice je zcela zdarma. Můžete vytvářet neomezený počet faktur bez nákladů."
+            },
+            "accountRequired": {
+                "question": "Musím vytvořit účet?",
+                "answer": "Ne, můžete vytvářet a stahovat faktury okamžitě bez registrace. Vaše data zůstávají na vašem zařízení."
+            },
+            "customize": {
+                "question": "Mohu přizpůsobit design faktury?",
+                "answer": "Ano, můžete přidat své logo, změnit barvy a upravit rozložení tak, aby odpovídalo vaší značce."
+            },
+            "dataSecure": {
+                "question": "Jsou moje data bezpečná?",
+                "answer": "Absolutně. Neukládáme data vašich faktur na našich serverech. Vše je zpracováno lokálně ve vašem prohlížeči."
+            }
+        }
+    },
+    "cta": {
+        "title": "Připraveni vytvořit svou profesionální fakturu?",
+        "subtitle": "Připojte se k tisícům profesionálů, kteří vytvořili krásné faktury pomocí našeho nástroje. Bez registrace - začněte stavět nyní.",
+        "buttonText": "Začít fakturovat"
+    },
+    "invoice": {
+        "title": "Editor faktur",
+        "subtitle": "Editor faktur bude implementován v další fázi.",
+        "comingSoon": "Sledujte novinky o funkcích úprav v reálném čase a exportu PDF!",
+        "badge": "Již brzy",
+        "form": {
+            "tabs": {
+                "fromTo": "Od/Komu",
+                "details": "Podrobnosti faktury",
+                "items": "Položky řádku",
+                "payment": "Platba a poznámky",
+                "summary": "Souhrn"
+            },
+            "party": {
+                "sender": {
+                    "title": "Od (Odesílatel)",
+                    "nameLabel": "Jméno / Společnost",
+                    "namePlaceholder": "Vaše jméno nebo společnost",
+                    "emailLabel": "E-mail",
+                    "emailPlaceholder": "vas@email.com",
+                    "phoneLabel": "Telefon",
+                    "phonePlaceholder": "+420 123 456 789",
+                    "addressLabel": "Adresa",
+                    "addressPlaceholder": "Hlavní 123, Město, Země",
+                    "customInputs": "Vlastní pole",
+                    "customKey": "Štítek",
+                    "customValue": "Hodnota",
+                    "customHint": "Přidejte vlastní pole jako DPH, registrace, oddělení, atd."
+                },
+                "receiver": {
+                    "title": "Komu (Klient)",
+                    "nameLabel": "Jméno / Společnost",
+                    "namePlaceholder": "Jméno klienta nebo společnost",
+                    "emailLabel": "E-mail",
+                    "emailPlaceholder": "klient@email.com",
+                    "phoneLabel": "Telefon",
+                    "phonePlaceholder": "+420 123 456 789",
+                    "addressLabel": "Adresa",
+                    "addressPlaceholder": "Klientova 456, Město, Země",
+                    "customInputs": "Vlastní pole",
+                    "customKey": "Štítek",
+                    "customValue": "Hodnota",
+                    "customHint": "Přidejte pole specifická pro klienta jako DPH, číslo objednávky, oddělení."
+                }
+            },
+            "details": {
+                "invoiceNumberLabel": "Číslo faktury",
+                "invoiceNumberPlaceholder": "FAK-001",
+                "currencyLabel": "Měna",
+                "currencyPlaceholder": "Vyberte měnu",
+                "dateLabel": "Datum",
+                "dueDateLabel": "Datum splatnosti",
+                "pickDate": "Vyberte datum",
+                "logoLabel": "Logo faktury",
+                "logoHelp": "Nahrajte logo pro označení své faktury.",
+                "logoUploadCta": "Klikněte pro nahrání nebo nahrazení loga",
+                "logoUploadButton": "Nahrát",
+                "logoChange": "Změnit",
+                "logoRemove": "Odstranit",
+                "signatureLabel": "Podpis",
+                "signatureSaved": "Podpis uložen",
+                "templateLabel": "Šablona",
+                "template": "Šablona",
+                "templateDescription": "Přepnout rozložení pro PDF/náhled",
+                "totalInWordsLabel": "Celkem slovy",
+                "totalInWordsHelp": "Zobrazit celkovou částku napsanou slovy"
+            },
+            "signature": {
+                "draw": "Kreslit",
+                "type": "Psát",
+                "upload": "Nahrát",
+                "typePlaceholder": "Napište svůj podpis",
+                "signatureSaved": "Podpis uložen"
+            },
+            "items": {
+                "title": "Položky řádku",
+                "addItem": "Přidat položku",
+                "emptyState": "Zatím nebyly přidány žádné položky. Klikněte na \"Přidat položku\" pro začátek.",
+                "itemNameLabel": "Název položky",
+                "itemNamePlaceholder": "Název položky",
+                "descriptionPlaceholder": "Popis (volitelný)",
+                "qtyLabel": "Množ",
+                "priceLabel": "Cena",
+                "totalLabel": "Celkem"
+            },
+            "payment": {
+                "chargesTitle": "Poplatky a slevy",
+                "applyDiscount": "Použít slevu",
+                "applyTax": "Použít daň / DPH",
+                "shippingCost": "Poštovné",
+                "paymentInfoTitle": "Informace o platbě",
+                "bankDetailsLabel": "Bankovní údaje / Platební instrukce",
+                "bankDetailsPlaceholder": "Název banky: Příklad Banka\nČíslo účtu: 123456789\nSwift kód: PRIKLAD",
+                "termsLabel": "Smluvní podmínky",
+                "termsPlaceholder": "Platba splatná do 30 dnů...",
+                "notesLabel": "Další poznámky",
+                "notesPlaceholder": "Děkujeme za obchod!"
+            },
+            "summary": {
+                "fromTitle": "Od",
+                "toTitle": "Komu",
+                "invoiceDetailsTitle": "Podrobnosti faktury",
+                "numberLabel": "Číslo",
+                "dateLabel": "Datum",
+                "dueDateLabel": "Datum splatnosti",
+                "totalLabel": "Celkem",
+                "itemsLabel": "Položky"
+            }
+        },
+        "preview": {
+            "livePreview": "Živý náhled",
+            "a4Format": "Formát A4",
+            "invoiceLabel": "Faktura",
+            "dateIssue": "Datum vydání",
+            "dateDue": "Datum splatnosti",
+            "description": "Popis",
+            "amountLabel": "Částka",
+            "noItems": "Žádné položky nepřidány",
+            "subtotal": "Mezisoučet",
+            "discount": "Sleva",
+            "tax": "Daň",
+            "shipping": "Doprava",
+            "total": "Celkem",
+            "logoPlaceholder": "Logo",
+            "logoAlt": "Logo faktury",
+            "itemPlaceholder": "Název položky",
+            "placeholderSenderName": "Jméno odesílatele",
+            "placeholderSenderAddress": "Adresa odesílatele...",
+            "placeholderClientName": "Jméno klienta",
+            "placeholderClientAddress": "Adresa klienta...",
+            "signature": "Podpis"
+        },
+        "actions": {
+            "save": "Uložit",
+            "generatePdf": "Generovat PDF",
+            "downloadPdf": "Stáhnout PDF",
+            "importJson": "Importovat JSON",
+            "savedList": "Uložené faktury"
+        }
+    }
+}

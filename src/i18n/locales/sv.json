@@ -1,0 +1,261 @@
+{
+    "common": {
+        "appName": "Magic Invoice",
+        "getStarted": "Kom igång",
+        "learnMore": "Läs mer",
+        "features": "Funktioner",
+        "faq": "FAQ",
+        "privacy": "Integritet",
+        "terms": "Villkor",
+        "github": "GitHub",
+        "email": "E-post",
+        "twitter": "Twitter",
+        "toggleTheme": "Växla tema",
+        "previous": "Föregående",
+        "next": "Nästa",
+        "switchToEnglish": "Växla till engelska",
+        "switchToGreek": "Växla till grekiska",
+        "languageEnglish": "Engelska",
+        "languageGreek": "Grekiska",
+        "language": "Språk",
+        "remove": "Ta bort",
+        "clear": "Rensa",
+        "load": "Ladda",
+        "delete": "Radera"
+    },
+    "notFound": {
+        "title": "Sidan hittades inte",
+        "description": "Hoppsan! Sidan du letar efter finns inte. Den kan ha flyttats eller tagits bort.",
+        "goHome": "Gå hem",
+        "createInvoice": "Skapa faktura",
+        "needHelp": "Behöver du hjälp?",
+        "returnHome": "Återvänd till startsidan"
+    },
+    "errors": {
+        "customKeyRequired": "Nyckel krävs",
+        "customValueRequired": "Värde krävs",
+        "nameRequired": "Namn krävs",
+        "emailRequired": "E-post krävs",
+        "emailInvalid": "Ogiltig e-postadress",
+        "phoneRequired": "Telefon krävs",
+        "addressRequired": "Adress krävs",
+        "itemNameRequired": "Artikelnamn krävs",
+        "quantityPositive": "Kvantitet måste vara positiv",
+        "unitPricePositive": "Enhetspris måste vara positivt",
+        "numberRequired": "Ett värde krävs",
+        "numberInvalid": "Ange ett giltigt nummer",
+        "amountNonNegative": "Belopp måste vara noll eller högre",
+        "invoiceNumberRequired": "Fakturanummer krävs",
+        "dateRequired": "Datum krävs",
+        "dateInvalid": "Välj ett giltigt datum",
+        "currencyRequired": "Valuta krävs",
+        "itemsRequired": "Lägg till minst ett radobjekt"
+    },
+    "header": {
+        "features": "Funktioner",
+        "howItWorks": "Hur det fungerar",
+        "testimonials": "Vittnesmål",
+        "faq": "FAQ",
+        "getStarted": "Kom igång",
+        "supportUs": "Stöd oss",
+        "starOnGithub": "Stjärna på GitHub"
+    },
+    "footer": {
+        "copyright": "© 2025 Thaka. Alla rättigheter förbehållna.",
+        "privacy": "Integritet",
+        "terms": "Villkor"
+    },
+    "hero": {
+        "title": "Skapa fakturor i",
+        "titleHighlight": "Real-Tid",
+        "subtitle": "Professionell fakturaeditor med omedelbar PDF-export. Ingen registrering krävs. Skapa, anpassa och ladda ner vackra fakturor på sekunder.",
+        "startCreating": "Börja skapa",
+        "learnMore": "Läs mer",
+        "previewAlt": "Förhandsgranskning av fakturaeditor"
+    },
+    "features": {
+        "lightningFast": {
+            "title": "Blixtsnabb",
+            "description": "Byggd för hastighet. Skapa, redigera och skicka fakturor på millisekunder."
+        },
+        "privateSecure": {
+            "title": "Privat & Säkert",
+            "description": "Dina data stannar på din enhet. Vi lagrar inte din finansiella information."
+        },
+        "globalUniversal": {
+            "title": "Global & Universal",
+            "description": "Stöd för 100+ valutor och språk."
+        },
+        "pixelPerfect": {
+            "title": "Pixelperfekt PDF",
+            "description": "Generera professionellt designade PDF:er direkt."
+        }
+    },
+    "faq": {
+        "title": "Vanliga frågor",
+        "subtitle": "Allt du behöver veta om Magic Invoice",
+        "questions": {
+            "isFree": {
+                "question": "Är Magic Invoice gratis att använda?",
+                "answer": "Ja, Magic Invoice är helt gratis att använda. Du kan skapa obegränsat antal fakturor utan kostnad."
+            },
+            "accountRequired": {
+                "question": "Måste jag skapa ett konto?",
+                "answer": "Nej, du kan skapa och ladda ner fakturor direkt utan att registrera dig. Dina data stannar på din enhet."
+            },
+            "customize": {
+                "question": "Kan jag anpassa fakturadesignen?",
+                "answer": "Ja, du kan lägga till din logotyp, ändra färger och justera layouten för att matcha din varumärkesidentitet."
+            },
+            "dataSecure": {
+                "question": "Är mina data säkra?",
+                "answer": "Absolut. Vi lagrar inte dina fakturadata på våra servrar. Allt bearbetas lokalt i din webbläsare."
+            }
+        }
+    },
+    "cta": {
+        "title": "Redo att skapa din professionella faktura?",
+        "subtitle": "Gå med tusentals proffs som har skapat vackra fakturor med vårt verktyg. Ingen registrering krävs - börja bygga nu.",
+        "buttonText": "Börja fakturera"
+    },
+    "invoice": {
+        "title": "Fakturaeditor",
+        "subtitle": "Fakturaeditorn kommer att implementeras i nästa fas.",
+        "comingSoon": "Håll utkik efter realtidsredigering och PDF-exportfunktioner!",
+        "badge": "Kommer snart",
+        "form": {
+            "tabs": {
+                "fromTo": "Från/Till",
+                "details": "Fakturadetaljer",
+                "items": "Radobjekt",
+                "payment": "Betalning & Anteckningar",
+                "summary": "Översikt"
+            },
+            "party": {
+                "sender": {
+                    "title": "Från (Avsändare)",
+                    "nameLabel": "Namn / Företag",
+                    "namePlaceholder": "Ditt namn eller företag",
+                    "emailLabel": "E-post",
+                    "emailPlaceholder": "din@epost.com",
+                    "phoneLabel": "Telefon",
+                    "phonePlaceholder": "+46 8 123 4567",
+                    "addressLabel": "Adress",
+                    "addressPlaceholder": "Huvudgatan 123, Stad, Land",
+                    "customInputs": "Anpassade fält",
+                    "customKey": "Etikett",
+                    "customValue": "Värde",
+                    "customHint": "Lägg till anpassade fält som moms, registrering, avdelning, etc."
+                },
+                "receiver": {
+                    "title": "Till (Kund)",
+                    "nameLabel": "Namn / Företag",
+                    "namePlaceholder": "Kundnamn eller företag",
+                    "emailLabel": "E-post",
+                    "emailPlaceholder": "kund@epost.com",
+                    "phoneLabel": "Telefon",
+                    "phonePlaceholder": "+46 8 123 4567",
+                    "addressLabel": "Adress",
+                    "addressPlaceholder": "Kundgatan 456, Stad, Land",
+                    "customInputs": "Anpassade fält",
+                    "customKey": "Etikett",
+                    "customValue": "Värde",
+                    "customHint": "Lägg till kundspecifika fält som moms, PO-nummer, avdelning."
+                }
+            },
+            "details": {
+                "invoiceNumberLabel": "Fakturanummer",
+                "invoiceNumberPlaceholder": "FAK-001",
+                "currencyLabel": "Valuta",
+                "currencyPlaceholder": "Välj valuta",
+                "dateLabel": "Datum",
+                "dueDateLabel": "Förfallodatum",
+                "pickDate": "Välj ett datum",
+                "logoLabel": "Fakturalogotyp",
+                "logoHelp": "Ladda upp en logotyp för att varumärkesmärka din faktura.",
+                "logoUploadCta": "Klicka för att ladda upp eller ersätta logotyp",
+                "logoUploadButton": "Ladda upp",
+                "logoChange": "Ändra",
+                "logoRemove": "Ta bort",
+                "signatureLabel": "Signatur",
+                "signatureSaved": "Signatur sparad",
+                "templateLabel": "Mall",
+                "template": "Mall",
+                "templateDescription": "Växla layout för PDF/förhandsgranskning",
+                "totalInWordsLabel": "Totalt i ord",
+                "totalInWordsHelp": "Visa det totala beloppet skrivet med ord"
+            },
+            "signature": {
+                "draw": "Rita",
+                "type": "Skriv",
+                "upload": "Ladda upp",
+                "typePlaceholder": "Skriv din signatur",
+                "signatureSaved": "Signatur sparad"
+            },
+            "items": {
+                "title": "Radobjekt",
+                "addItem": "Lägg till objekt",
+                "emptyState": "Inga objekt tillagda ännu. Klicka på \"Lägg till objekt\" för att börja.",
+                "itemNameLabel": "Objektnamn",
+                "itemNamePlaceholder": "Objektnamn",
+                "descriptionPlaceholder": "Beskrivning (valfritt)",
+                "qtyLabel": "Antal",
+                "priceLabel": "Pris",
+                "totalLabel": "Totalt"
+            },
+            "payment": {
+                "chargesTitle": "Avgifter & Rabatter",
+                "applyDiscount": "Tillämpa rabatt",
+                "applyTax": "Tillämpa skatt / moms",
+                "shippingCost": "Fraktkostnad",
+                "paymentInfoTitle": "Betalningsinformation",
+                "bankDetailsLabel": "Bankuppgifter / Betalningsinstruktioner",
+                "bankDetailsPlaceholder": "Banknamn: Exempel Bank\nKontonr: 123456789\nSwift-kod: EXEMPEL",
+                "termsLabel": "Villkor & Bestämmelser",
+                "termsPlaceholder": "Betalning förfallen inom 30 dagar...",
+                "notesLabel": "Ytterligare anteckningar",
+                "notesPlaceholder": "Tack för dina affärer!"
+            },
+            "summary": {
+                "fromTitle": "Från",
+                "toTitle": "Till",
+                "invoiceDetailsTitle": "Fakturadetaljer",
+                "numberLabel": "Nummer",
+                "dateLabel": "Datum",
+                "dueDateLabel": "Förfallodatum",
+                "totalLabel": "Totalt",
+                "itemsLabel": "Objekt"
+            }
+        },
+        "preview": {
+            "livePreview": "Live Förhandsgranskning",
+            "a4Format": "A4-format",
+            "invoiceLabel": "Faktura",
+            "dateIssue": "Utfärdandedatum",
+            "dateDue": "Förfallodatum",
+            "description": "Beskrivning",
+            "amountLabel": "Belopp",
+            "noItems": "Inga objekt tillagda",
+            "subtotal": "Delsumma",
+            "discount": "Rabatt",
+            "tax": "Skatt",
+            "shipping": "Frakt",
+            "total": "Totalt",
+            "logoPlaceholder": "Logotyp",
+            "logoAlt": "Fakturalogotyp",
+            "itemPlaceholder": "Objektnamn",
+            "placeholderSenderName": "Avsändarnamn",
+            "placeholderSenderAddress": "Avsändaradress...",
+            "placeholderClientName": "Kundnamn",
+            "placeholderClientAddress": "Kundadress...",
+            "signature": "Signatur"
+        },
+        "actions": {
+            "save": "Spara",
+            "generatePdf": "Generera PDF",
+            "downloadPdf": "Ladda ner PDF",
+            "importJson": "Importera JSON",
+            "savedList": "Sparade fakturor"
+        }
+    }
+}

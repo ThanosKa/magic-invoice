@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Magic Invoice" }],
   icons: {
-    icon: [{ url: "/favicon.ico" }, { url: "/icon.png", type: "image/png" }],
-    apple: [{ url: "/icon.png" }],
+    icon: [{ url: "/logo.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/logo.svg" }],
   },
   openGraph: {
     title: "Magic Invoice - Create Beautiful Invoices in Real-Time",

@@ -1,0 +1,261 @@
+{
+    "common": {
+        "appName": "Magic Invoice",
+        "getStarted": "Aan de slag",
+        "learnMore": "Meer informatie",
+        "features": "Functies",
+        "faq": "FAQ",
+        "privacy": "Privacy",
+        "terms": "Voorwaarden",
+        "github": "GitHub",
+        "email": "E-mail",
+        "twitter": "Twitter",
+        "toggleTheme": "Thema wisselen",
+        "previous": "Vorige",
+        "next": "Volgende",
+        "switchToEnglish": "Omschakelen naar Engels",
+        "switchToGreek": "Omschakelen naar Grieks",
+        "languageEnglish": "Engels",
+        "languageGreek": "Grieks",
+        "language": "Taal",
+        "remove": "Verwijderen",
+        "clear": "Wissen",
+        "load": "Laden",
+        "delete": "Verwijderen"
+    },
+    "notFound": {
+        "title": "Pagina niet gevonden",
+        "description": "Oeps! De pagina die u zoekt bestaat niet. Het kan zijn verplaatst of verwijderd.",
+        "goHome": "Naar huis",
+        "createInvoice": "Factuur maken",
+        "needHelp": "Hulp nodig?",
+        "returnHome": "Terug naar homepage"
+    },
+    "errors": {
+        "customKeyRequired": "Sleutel is vereist",
+        "customValueRequired": "Waarde is vereist",
+        "nameRequired": "Naam is vereist",
+        "emailRequired": "E-mail is vereist",
+        "emailInvalid": "Ongeldig e-mailadres",
+        "phoneRequired": "Telefoon is vereist",
+        "addressRequired": "Adres is vereist",
+        "itemNameRequired": "Artikelnaam is vereist",
+        "quantityPositive": "Hoeveelheid moet positief zijn",
+        "unitPricePositive": "Eenheidsprijs moet positief zijn",
+        "numberRequired": "Een waarde is vereist",
+        "numberInvalid": "Voer een geldig nummer in",
+        "amountNonNegative": "Bedrag moet nul of meer zijn",
+        "invoiceNumberRequired": "Factuurnummer is vereist",
+        "dateRequired": "Datum is vereist",
+        "dateInvalid": "Selecteer een geldige datum",
+        "currencyRequired": "Valuta is vereist",
+        "itemsRequired": "Voeg ten minste één regelitem toe"
+    },
+    "header": {
+        "features": "Functies",
+        "howItWorks": "Hoe het werkt",
+        "testimonials": "Getuigenissen",
+        "faq": "FAQ",
+        "getStarted": "Aan de slag",
+        "supportUs": "Steun ons",
+        "starOnGithub": "Ster op GitHub"
+    },
+    "footer": {
+        "copyright": "© 2025 Thaka. Alle rechten voorbehouden.",
+        "privacy": "Privacy",
+        "terms": "Voorwaarden"
+    },
+    "hero": {
+        "title": "Facturen maken in",
+        "titleHighlight": "Real-Time",
+        "subtitle": "Professionele factuur editor met directe PDF export. Geen registratie vereist. Maak, pas aan en download mooie facturen in seconden.",
+        "startCreating": "Begin met maken",
+        "learnMore": "Meer informatie",
+        "previewAlt": "Factuur Editor Voorvertoning"
+    },
+    "features": {
+        "lightningFast": {
+            "title": "Bliksem Snel",
+            "description": "Gebouwd voor snelheid. Maak, bewerk en verzend facturen in milliseconden."
+        },
+        "privateSecure": {
+            "title": "Privé & Veilig",
+            "description": "Uw gegevens blijven op uw apparaat. Wij slaan uw financiële informatie niet op."
+        },
+        "globalUniversal": {
+            "title": "Globaal & Universeel",
+            "description": "Ondersteuning voor 100+ valuta's en talen."
+        },
+        "pixelPerfect": {
+            "title": "Pixel Perfect PDF",
+            "description": "Genereer professioneel ontworpen PDF's direct."
+        }
+    },
+    "faq": {
+        "title": "Veelgestelde vragen",
+        "subtitle": "Alles wat u moet weten over Magic Invoice",
+        "questions": {
+            "isFree": {
+                "question": "Is Magic Invoice gratis te gebruiken?",
+                "answer": "Ja, Magic Invoice is volledig gratis te gebruiken. U kunt onbeperkt facturen maken zonder kosten."
+            },
+            "accountRequired": {
+                "question": "Moet ik een account aanmaken?",
+                "answer": "Nee, u kunt facturen maken en downloaden zonder u aan te melden. Uw gegevens blijven op uw apparaat."
+            },
+            "customize": {
+                "question": "Kan ik het factuurontwerp aanpassen?",
+                "answer": "Ja, u kunt uw logo toevoegen, kleuren wijzigen en de lay-out aanpassen om bij uw merkidentiteit te passen."
+            },
+            "dataSecure": {
+                "question": "Zijn mijn gegevens veilig?",
+                "answer": "Absoluut. Wij slaan uw factuurgegevens niet op onze servers op. Alles wordt lokaal verwerkt in uw browser."
+            }
+        }
+    },
+    "cta": {
+        "title": "Klaar om uw professionele factuur te maken?",
+        "subtitle": "Sluit u aan bij duizenden professionals die prachtige facturen hebben gemaakt met onze tool. Geen registratie vereist - begin nu met bouwen.",
+        "buttonText": "Begin met factureren"
+    },
+    "invoice": {
+        "title": "Factuur Editor",
+        "subtitle": "De factuur editor wordt geïmplementeerd in de volgende fase.",
+        "comingSoon": "Blijf op de hoogte voor realtime bewerking en PDF export functies!",
+        "badge": "Binnenkort",
+        "form": {
+            "tabs": {
+                "fromTo": "Van/Aan",
+                "details": "Factuur Details",
+                "items": "Regel Items",
+                "payment": "Betaling & Notities",
+                "summary": "Overzicht"
+            },
+            "party": {
+                "sender": {
+                    "title": "Van (Afzender)",
+                    "nameLabel": "Naam / Bedrijf",
+                    "namePlaceholder": "Uw naam of bedrijf",
+                    "emailLabel": "E-mail",
+                    "emailPlaceholder": "uw@email.com",
+                    "phoneLabel": "Telefoon",
+                    "phonePlaceholder": "+31 20 123 4567",
+                    "addressLabel": "Adres",
+                    "addressPlaceholder": "Hoofdstraat 123, Stad, Land",
+                    "customInputs": "Aangepaste velden",
+                    "customKey": "Label",
+                    "customValue": "Waarde",
+                    "customHint": "Voeg aangepaste velden toe zoals BTW, registratie, afdeling, etc."
+                },
+                "receiver": {
+                    "title": "Aan (Klant)",
+                    "nameLabel": "Naam / Bedrijf",
+                    "namePlaceholder": "Klantnaam of bedrijf",
+                    "emailLabel": "E-mail",
+                    "emailPlaceholder": "klant@email.com",
+                    "phoneLabel": "Telefoon",
+                    "phonePlaceholder": "+31 20 123 4567",
+                    "addressLabel": "Adres",
+                    "addressPlaceholder": "Klantstraat 456, Stad, Land",
+                    "customInputs": "Aangepaste velden",
+                    "customKey": "Label",
+                    "customValue": "Waarde",
+                    "customHint": "Voeg klant-specifieke velden toe zoals BTW, PO nummer, afdeling."
+                }
+            },
+            "details": {
+                "invoiceNumberLabel": "Factuurnummer",
+                "invoiceNumberPlaceholder": "FAC-001",
+                "currencyLabel": "Valuta",
+                "currencyPlaceholder": "Selecteer valuta",
+                "dateLabel": "Datum",
+                "dueDateLabel": "Vervaldatum",
+                "pickDate": "Kies een datum",
+                "logoLabel": "Factuur Logo",
+                "logoHelp": "Upload een logo om uw factuur te brandmerken.",
+                "logoUploadCta": "Klik om te uploaden of logo te vervangen",
+                "logoUploadButton": "Uploaden",
+                "logoChange": "Wijzigen",
+                "logoRemove": "Verwijderen",
+                "signatureLabel": "Handtekening",
+                "signatureSaved": "Handtekening opgeslagen",
+                "templateLabel": "Sjabloon",
+                "template": "Sjabloon",
+                "templateDescription": "Layout wisselen voor PDF/voorbeeld",
+                "totalInWordsLabel": "Totaal in woorden",
+                "totalInWordsHelp": "Toon het totaalbedrag uitgeschreven in woorden"
+            },
+            "signature": {
+                "draw": "Tekenen",
+                "type": "Typen",
+                "upload": "Uploaden",
+                "typePlaceholder": "Typ uw handtekening",
+                "signatureSaved": "Handtekening opgeslagen"
+            },
+            "items": {
+                "title": "Regel Items",
+                "addItem": "Item toevoegen",
+                "emptyState": "Nog geen items toegevoegd. Klik op \"Item toevoegen\" om te beginnen.",
+                "itemNameLabel": "Artikelnaam",
+                "itemNamePlaceholder": "Artikelnaam",
+                "descriptionPlaceholder": "Beschrijving (optioneel)",
+                "qtyLabel": "Aantal",
+                "priceLabel": "Prijs",
+                "totalLabel": "Totaal"
+            },
+            "payment": {
+                "chargesTitle": "Kosten & Kortingen",
+                "applyDiscount": "Korting toepassen",
+                "applyTax": "Belasting / BTW toepassen",
+                "shippingCost": "Verzendkosten",
+                "paymentInfoTitle": "Betalingsinformatie",
+                "bankDetailsLabel": "Bankgegevens / Betaalinstructies",
+                "bankDetailsPlaceholder": "Banknaam: Voorbeeld Bank\nRekeningnr: 123456789\nSwift Code: VOORBEELD",
+                "termsLabel": "Voorwaarden",
+                "termsPlaceholder": "Betaling verschuldigd binnen 30 dagen...",
+                "notesLabel": "Aanvullende notities",
+                "notesPlaceholder": "Bedankt voor uw zaken!"
+            },
+            "summary": {
+                "fromTitle": "Van",
+                "toTitle": "Aan",
+                "invoiceDetailsTitle": "Factuur Details",
+                "numberLabel": "Nummer",
+                "dateLabel": "Datum",
+                "dueDateLabel": "Vervaldatum",
+                "totalLabel": "Totaal",
+                "itemsLabel": "Items"
+            }
+        },
+        "preview": {
+            "livePreview": "Live Voorvertoning",
+            "a4Format": "A4 Formaat",
+            "invoiceLabel": "Factuur",
+            "dateIssue": "Uitgiftedatum",
+            "dateDue": "Vervaldatum",
+            "description": "Beschrijving",
+            "amountLabel": "Bedrag",
+            "noItems": "Geen items toegevoegd",
+            "subtotal": "Subtotaal",
+            "discount": "Korting",
+            "tax": "Belasting",
+            "shipping": "Verzending",
+            "total": "Totaal",
+            "logoPlaceholder": "Logo",
+            "logoAlt": "Factuur logo",
+            "itemPlaceholder": "Artikelnaam",
+            "placeholderSenderName": "Afzendernaam",
+            "placeholderSenderAddress": "Afzenderadres...",
+            "placeholderClientName": "Klantnaam",
+            "placeholderClientAddress": "Klantadres...",
+            "signature": "Handtekening"
+        },
+        "actions": {
+            "save": "Opslaan",
+            "generatePdf": "PDF genereren",
+            "downloadPdf": "PDF downloaden",
+            "importJson": "JSON importeren",
+            "savedList": "Opgeslagen facturen"
+        }
+    }
+}

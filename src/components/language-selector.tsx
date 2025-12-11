@@ -2,6 +2,7 @@
 
 import { useTranslation } from "@/contexts/TranslationContext";
 import { locales, type AppLocale } from "@/i18n/routing";
+import { cn } from "@/lib/utils";
 import {
   Select,
   SelectContent,
@@ -31,7 +32,11 @@ function GlobeIcon({ className }: { className?: string }) {
   );
 }
 
-export function LanguageSelector() {
+interface LanguageSelectorProps {
+  compact?: boolean;
+}
+
+export function LanguageSelector({ compact = false }: LanguageSelectorProps = {}) {
   const { locale, setLocale, t } = useTranslation();
 
   const labels: Record<AppLocale, string> = {
@@ -41,6 +46,11 @@ export function LanguageSelector() {
     es: "Español",
     de: "Deutsch",
     fr: "Français",
+    nl: "Nederlands",
+    pt: "Português",
+    sv: "Svenska",
+    pl: "Polski",
+    cs: "Čeština",
   };
 
   return (
@@ -48,13 +58,19 @@ export function LanguageSelector() {
       value={locale}
       onValueChange={(val) => setLocale(val as typeof locale)}
     >
-      <SelectTrigger className="w-40 cursor-pointer">
+      <SelectTrigger className={cn(
+        "cursor-pointer",
+        compact ? "w-32 h-9 px-2" : "w-40"
+      )}>
         <div className="flex items-center gap-2">
-          <GlobeIcon className="h-4 w-4" />
+          <GlobeIcon className={cn(
+            "flex-shrink-0",
+            compact ? "h-3 w-3" : "h-4 w-4"
+          )} />
           <SelectValue placeholder={t("common.language")} />
         </div>
       </SelectTrigger>
-      <SelectContent className="cursor-pointer">
+      <SelectContent className="cursor-pointer max-h-[500px]">
         {locales.map((loc) => (
           <SelectItem key={loc} value={loc} className="cursor-pointer">
             {labels[loc]}

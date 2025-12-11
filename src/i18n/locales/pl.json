@@ -1,0 +1,261 @@
+{
+    "common": {
+        "appName": "Magic Invoice",
+        "getStarted": "Rozpocznij",
+        "learnMore": "Dowiedz się więcej",
+        "features": "Funkcje",
+        "faq": "FAQ",
+        "privacy": "Prywatność",
+        "terms": "Warunki",
+        "github": "GitHub",
+        "email": "E-mail",
+        "twitter": "Twitter",
+        "toggleTheme": "Przełącz motyw",
+        "previous": "Poprzedni",
+        "next": "Następny",
+        "switchToEnglish": "Przełącz na angielski",
+        "switchToGreek": "Przełącz na grecki",
+        "languageEnglish": "Angielski",
+        "languageGreek": "Grecki",
+        "language": "Język",
+        "remove": "Usuń",
+        "clear": "Wyczyść",
+        "load": "Załaduj",
+        "delete": "Usuń"
+    },
+    "notFound": {
+        "title": "Strona nie znaleziona",
+        "description": "Ups! Strona, której szukasz, nie istnieje. Mogła zostać przeniesiona lub usunięta.",
+        "goHome": "Idź do domu",
+        "createInvoice": "Utwórz fakturę",
+        "needHelp": "Potrzebujesz pomocy?",
+        "returnHome": "Powrót do strony głównej"
+    },
+    "errors": {
+        "customKeyRequired": "Klucz jest wymagany",
+        "customValueRequired": "Wartość jest wymagana",
+        "nameRequired": "Nazwa jest wymagana",
+        "emailRequired": "E-mail jest wymagany",
+        "emailInvalid": "Nieprawidłowy adres e-mail",
+        "phoneRequired": "Telefon jest wymagany",
+        "addressRequired": "Adres jest wymagany",
+        "itemNameRequired": "Nazwa przedmiotu jest wymagana",
+        "quantityPositive": "Ilość musi być dodatnia",
+        "unitPricePositive": "Cena jednostkowa musi być dodatnia",
+        "numberRequired": "Wartość jest wymagana",
+        "numberInvalid": "Wprowadź prawidłowy numer",
+        "amountNonNegative": "Kwota musi wynosić zero lub więcej",
+        "invoiceNumberRequired": "Numer faktury jest wymagany",
+        "dateRequired": "Data jest wymagana",
+        "dateInvalid": "Wybierz prawidłową datę",
+        "currencyRequired": "Waluta jest wymagana",
+        "itemsRequired": "Dodaj co najmniej jedną pozycję"
+    },
+    "header": {
+        "features": "Funkcje",
+        "howItWorks": "Jak to działa",
+        "testimonials": "Referencje",
+        "faq": "FAQ",
+        "getStarted": "Rozpocznij",
+        "supportUs": "Wesprzyj nas",
+        "starOnGithub": "Gwiazdka na GitHub"
+    },
+    "footer": {
+        "copyright": "© 2025 Thaka. Wszelkie prawa zastrzeżone.",
+        "privacy": "Prywatność",
+        "terms": "Warunki"
+    },
+    "hero": {
+        "title": "Twórz faktury w",
+        "titleHighlight": "Czasie Rzeczywistym",
+        "subtitle": "Profesjonalny edytor faktur z natychmiastowym eksportem PDF. Bez rejestracji. Twórz, dostosowuj i pobieraj piękne faktury w kilka sekund.",
+        "startCreating": "Zacznij tworzenie",
+        "learnMore": "Dowiedz się więcej",
+        "previewAlt": "Podgląd edytora faktur"
+    },
+    "features": {
+        "lightningFast": {
+            "title": "Błyskawicznie szybki",
+            "description": "Zbudowany dla prędkości. Twórz, edytuj i wysyłaj faktury w milisekundach."
+        },
+        "privateSecure": {
+            "title": "Prywatny i bezpieczny",
+            "description": "Twoje dane pozostają na Twoim urządzeniu. Nie przechowujemy Twoich informacji finansowych."
+        },
+        "globalUniversal": {
+            "title": "Globalny i uniwersalny",
+            "description": "Wsparcie dla 100+ walut i języków."
+        },
+        "pixelPerfect": {
+            "title": "Doskonały PDF",
+            "description": "Generuj profesjonalnie zaprojektowane pliki PDF natychmiast."
+        }
+    },
+    "faq": {
+        "title": "Często zadawane pytania",
+        "subtitle": "Wszystko, co musisz wiedzieć o Magic Invoice",
+        "questions": {
+            "isFree": {
+                "question": "Czy Magic Invoice jest bezpłatny?",
+                "answer": "Tak, Magic Invoice jest całkowicie bezpłatny. Możesz tworzyć nieograniczoną liczbę faktur bez kosztów."
+            },
+            "accountRequired": {
+                "question": "Czy muszę utworzyć konto?",
+                "answer": "Nie, możesz tworzyć i pobierać faktury natychmiast bez rejestracji. Twoje dane pozostają na Twoim urządzeniu."
+            },
+            "customize": {
+                "question": "Czy mogę dostosować wygląd faktury?",
+                "answer": "Tak, możesz dodać swoje logo, zmienić kolory i dostosować układ, aby pasował do Twojej tożsamości marki."
+            },
+            "dataSecure": {
+                "question": "Czy moje dane są bezpieczne?",
+                "answer": "Absolutnie. Nie przechowujemy danych Twoich faktur na naszych serwerach. Wszystko jest przetwarzane lokalnie w Twojej przeglądarce."
+            }
+        }
+    },
+    "cta": {
+        "title": "Gotowy do stworzenia swojej profesjonalnej faktury?",
+        "subtitle": "Dołącz do tysięcy profesjonalistów, którzy stworzyli piękne faktury za pomocą naszego narzędzia. Bez rejestracji - zacznij budować teraz.",
+        "buttonText": "Zacznij fakturowanie"
+    },
+    "invoice": {
+        "title": "Edytor faktur",
+        "subtitle": "Edytor faktur zostanie zaimplementowany w następnej fazie.",
+        "comingSoon": "Śledź nowości dotyczące edycji w czasie rzeczywistym i funkcji eksportu PDF!",
+        "badge": "Wkrótce",
+        "form": {
+            "tabs": {
+                "fromTo": "Od/Do",
+                "details": "Szczegóły faktury",
+                "items": "Pozycje",
+                "payment": "Płatność i notatki",
+                "summary": "Podsumowanie"
+            },
+            "party": {
+                "sender": {
+                    "title": "Od (Nadawca)",
+                    "nameLabel": "Nazwa / Firma",
+                    "namePlaceholder": "Twoja nazwa lub firma",
+                    "emailLabel": "E-mail",
+                    "emailPlaceholder": "twoj@email.com",
+                    "phoneLabel": "Telefon",
+                    "phonePlaceholder": "+48 22 123 4567",
+                    "addressLabel": "Adres",
+                    "addressPlaceholder": "Główna 123, Miasto, Kraj",
+                    "customInputs": "Pola niestandardowe",
+                    "customKey": "Etykieta",
+                    "customValue": "Wartość",
+                    "customHint": "Dodaj pola niestandardowe takie jak VAT, rejestracja, dział, itp."
+                },
+                "receiver": {
+                    "title": "Do (Klient)",
+                    "nameLabel": "Nazwa / Firma",
+                    "namePlaceholder": "Nazwa klienta lub firma",
+                    "emailLabel": "E-mail",
+                    "emailPlaceholder": "klient@email.com",
+                    "phoneLabel": "Telefon",
+                    "phonePlaceholder": "+48 22 123 4567",
+                    "addressLabel": "Adres",
+                    "addressPlaceholder": "Klienta 456, Miasto, Kraj",
+                    "customInputs": "Pola niestandardowe",
+                    "customKey": "Etykieta",
+                    "customValue": "Wartość",
+                    "customHint": "Dodaj pola specyficzne dla klienta takie jak VAT, numer zamówienia, dział."
+                }
+            },
+            "details": {
+                "invoiceNumberLabel": "Numer faktury",
+                "invoiceNumberPlaceholder": "FAK-001",
+                "currencyLabel": "Waluta",
+                "currencyPlaceholder": "Wybierz walutę",
+                "dateLabel": "Data",
+                "dueDateLabel": "Data płatności",
+                "pickDate": "Wybierz datę",
+                "logoLabel": "Logo faktury",
+                "logoHelp": "Prześlij logo, aby oznaczyć swoją fakturę.",
+                "logoUploadCta": "Kliknij, aby przesłać lub zastąpić logo",
+                "logoUploadButton": "Prześlij",
+                "logoChange": "Zmień",
+                "logoRemove": "Usuń",
+                "signatureLabel": "Podpis",
+                "signatureSaved": "Podpis zapisany",
+                "templateLabel": "Szablon",
+                "template": "Szablon",
+                "templateDescription": "Przełącz układ dla PDF/podglądu",
+                "totalInWordsLabel": "Razem słownie",
+                "totalInWordsHelp": "Pokaż całkowitą kwotę napisana słownie"
+            },
+            "signature": {
+                "draw": "Rysuj",
+                "type": "Pisz",
+                "upload": "Prześlij",
+                "typePlaceholder": "Wpisz swój podpis",
+                "signatureSaved": "Podpis zapisany"
+            },
+            "items": {
+                "title": "Pozycje",
+                "addItem": "Dodaj pozycję",
+                "emptyState": "Nie dodano jeszcze pozycji. Kliknij \"Dodaj pozycję\", aby rozpocząć.",
+                "itemNameLabel": "Nazwa pozycji",
+                "itemNamePlaceholder": "Nazwa pozycji",
+                "descriptionPlaceholder": "Opis (opcjonalny)",
+                "qtyLabel": "Ilość",
+                "priceLabel": "Cena",
+                "totalLabel": "Razem"
+            },
+            "payment": {
+                "chargesTitle": "Opłaty i rabaty",
+                "applyDiscount": "Zastosuj rabat",
+                "applyTax": "Zastosuj podatek / VAT",
+                "shippingCost": "Koszt wysyłki",
+                "paymentInfoTitle": "Informacje o płatności",
+                "bankDetailsLabel": "Dane bankowe / Instrukcje płatności",
+                "bankDetailsPlaceholder": "Nazwa banku: Przykład Bank\nNr konta: 123456789\nKod Swift: PRZYKLAD",
+                "termsLabel": "Warunki i postanowienia",
+                "termsPlaceholder": "Płatność należna w ciągu 30 dni...",
+                "notesLabel": "Dodatkowe uwagi",
+                "notesPlaceholder": "Dziękujemy za biznes!"
+            },
+            "summary": {
+                "fromTitle": "Od",
+                "toTitle": "Do",
+                "invoiceDetailsTitle": "Szczegóły faktury",
+                "numberLabel": "Numer",
+                "dateLabel": "Data",
+                "dueDateLabel": "Data płatności",
+                "totalLabel": "Razem",
+                "itemsLabel": "Pozycje"
+            }
+        },
+        "preview": {
+            "livePreview": "Podgląd na żywo",
+            "a4Format": "Format A4",
+            "invoiceLabel": "Faktura",
+            "dateIssue": "Data wystawienia",
+            "dateDue": "Data płatności",
+            "description": "Opis",
+            "amountLabel": "Kwota",
+            "noItems": "Nie dodano pozycji",
+            "subtotal": "Suma częściowa",
+            "discount": "Rabat",
+            "tax": "Podatek",
+            "shipping": "Wysyłka",
+            "total": "Razem",
+            "logoPlaceholder": "Logo",
+            "logoAlt": "Logo faktury",
+            "itemPlaceholder": "Nazwa pozycji",
+            "placeholderSenderName": "Nazwa nadawcy",
+            "placeholderSenderAddress": "Adres nadawcy...",
+            "placeholderClientName": "Nazwa klienta",
+            "placeholderClientAddress": "Adres klienta...",
+            "signature": "Podpis"
+        },
+        "actions": {
+            "save": "Zapisz",
+            "generatePdf": "Generuj PDF",
+            "downloadPdf": "Pobierz PDF",
+            "importJson": "Importuj JSON",
+            "savedList": "Zapisane faktury"
+        }
+    }
+}
