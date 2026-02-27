@@ -76,6 +76,9 @@ export const metadata: Metadata = {
     site: "@KazakisThanos",
     creator: "@KazakisThanos",
   },
+  verification: {
+    google: "sI5IoP56qmWRshEy6pdms48hYZIoufNnintjdZI_dtQ",
+  },
   robots: {
     index: true,
     follow: true,
