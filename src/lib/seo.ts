@@ -3,7 +3,7 @@ export const siteMetadata = {
     description: 'Create beautiful, professional invoices in seconds. No account required. Free forever, 100% browser-based, instant PDF export.',
     ogImage: '/og-magic-invoice.png',
     name: 'Magic Invoice',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://magic-invoice-seven.vercel.app',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://magic-invoice.kazakis-th.workers.dev',
 };
 
 export function organizationJsonLd() {
