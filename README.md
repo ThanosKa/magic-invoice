@@ -5,7 +5,7 @@
 **Create beautiful, professional invoices in real-time. No sign-up required.**
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.0.8-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19.2.1-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
+[![React](https://img.shields.io/badge/React-19.3.1-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 
@@ -36,6 +36,7 @@
   - [Installation](#installation)
   - [Environment Setup](#environment-setup)
 - [Usage](#usage)
+- [Deployment](#deployment)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
@@ -72,7 +73,7 @@ Magic Invoice is a modern, real-time invoice editor built with Next.js, Shadcn U
 
 ## Demo
 
-Visit the live demo: [magicinvoice.com](https://magicinvoice.com)
+Visit the live demo: [magic-invoice.kazakis-th.workers.dev](https://magic-invoice.kazakis-th.workers.dev)
 
 ### Quick Preview
 
@@ -87,7 +88,7 @@ Visit the live demo: [magicinvoice.com](https://magicinvoice.com)
 | Technology                                      | Purpose                         | Version  |
 | ----------------------------------------------- | ------------------------------- | -------- |
 | [Next.js](https://nextjs.org/)                  | React framework with App Router | 16.0.8   |
-| [React](https://react.dev/)                     | UI library                      | 19.2.1   |
+| [React](https://react.dev/)                     | UI library                      | 19.3.1   |
 | [TypeScript](https://www.typescriptlang.org/)   | Type safety                     | 5.0+     |
 | [Tailwind CSS](https://tailwindcss.com/)        | Utility-first CSS framework     | 4.0      |
 | [Shadcn UI](https://ui.shadcn.com/)             | High-quality component library  | Latest   |
@@ -166,6 +167,18 @@ Before you begin, ensure you have the following installed:
 - `pnpm test` - Run tests
 - `pnpm test:watch` - Run tests in watch mode
 - `pnpm test:coverage` - Generate test coverage report
+- `pnpm dev:vinext` - Run the app the way the Worker does (Vite dev server on port 3001)
+- `pnpm build:vinext` - Build the Cloudflare Worker
+- `pnpm start:vinext` - Preview the Worker build locally
+
+## Deployment
+
+Magic Invoice runs on a Cloudflare Worker named `magic-invoice` through [vinext](https://github.com/cloudflare/vinext), served at [magic-invoice.kazakis-th.workers.dev](https://magic-invoice.kazakis-th.workers.dev). The Worker settings live in `cloudflare.config.ts`.
+
+1. Put the values from `.env.example` in `.env.production.local`, with `NEXT_PUBLIC_SITE_URL` set to the `https://` production URL. The Worker build stops if it is missing
+2. Build with `pnpm build:vinext`, which bakes in the `NEXT_PUBLIC_*` values
+3. Deploy with `pnpm exec cf deploy --prebuilt`, on Node 24.22 or newer. Server values such as `LOG_LEVEL` are Worker secrets: pass them once with `--secrets-file <file>` (a JSON file outside the repo); later deploys keep them
+
 
 ## Contributing
 

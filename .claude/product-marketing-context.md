@@ -110,4 +110,4 @@
 **Business goal:** Achieve 1,000,000 organic search visits in 3 months through aggressive SEO, content marketing, AI SEO, and programmatic page generation
 **Conversion action:** User clicks "Start Creating" and creates an invoice (+ GitHub star)
 **Current metrics:** Early stage — building organic traffic from zero
-**Site URL:** https://magic-invoice-seven.vercel.app/ (pending custom domain)
+**Site URL:** https://magic-invoice.kazakis-th.workers.dev/ (pending custom domain)

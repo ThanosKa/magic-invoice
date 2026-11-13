@@ -3,7 +3,7 @@ import { getAllTemplateSlugs } from '@/lib/templates-data'
 import { getAllCompetitorSlugs } from '@/lib/competitors-data'
 import { getAllBlogSlugs } from '@/lib/blog-data'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://magic-invoice-seven.vercel.app'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://magic-invoice.kazakis-th.workers.dev'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const templateUrls: MetadataRoute.Sitemap = getAllTemplateSlugs().map((slug) => ({
